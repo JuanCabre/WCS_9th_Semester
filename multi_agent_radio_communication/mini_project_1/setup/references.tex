@@ -1,0 +1,14 @@
+\chapter{List of references}  \label{ch:reflist}
+	Figures and tables are produced by the project group unless otherwise specified.
+\begingroup  
+  \let\chapter\section 
+  \makeatletter\let\markboth\@firstoftwo\makeatother 
+  \pagestyle{plain}
+  \listoffigures 
+  \listoftables
+	\bibliographystyle{apalike}
+   \begin{flushleft}
+    \bibliography{references}
+   \end{flushleft} 
+  \pagestyle{fancy}
+\endgroup

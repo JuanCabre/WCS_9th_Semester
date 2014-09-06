@@ -1,0 +1,50 @@
+
+\input{setup/preamble.tex}
+
+\begin{document}
+    \pagenumbering{Roman}
+    \singlespacing
+    \pagestyle{empty}	
+	\input{setup/frontpage}
+	\cleardoublepage
+	\input{setup/titlepage}
+	%\cleardoublepage
+	\pagestyle{plain}
+		
+%%%%% Table of content %%%%%
+	\tableofcontents 
+	\onehalfspacing
+	\pagestyle{fancy} % Normal pagesetup with page numbering (change to plain to remove header)
+	\pagenumbering{arabic} 
+    \setcounter{page}{0} % Sætter sidetal til 1
+%%%%% START OF DOCUMENT  %%%%%	
+
+%%%%% Mini Project %%%%%%
+\part{MiniProject}
+
+\input{MiniProject/Introduction.tex}
+% \input{MiniProject/PbA.tex}
+% \input{MiniProject/PbB.tex}
+% \input{MiniProject/PbC.tex}
+% \input{MiniProject/PbD.tex}
+% \input{MiniProject/PbE.tex}
+% \input{MiniProject/PbF.tex}
+%\input{MiniProject/code.tex}
+
+%%%%% Mini Modules %%%%%%
+% \part{MiniModulesEx}
+% 
+% \input{MiniModul/mm6.tex}
+% \input{MiniModul/mm7.tex}
+% \input{MiniModul/mm8.tex}
+% \input{MiniModul/mm9.tex}
+
+%%%%% REFERENCES %%%%%%
+\part{References}
+\input{setup/references.tex}
+
+
+%%%%% NOTES %%%%%
+%\input{NOTES.tex}
+
+\end{document}

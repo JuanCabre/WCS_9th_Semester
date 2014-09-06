@@ -1,0 +1,82 @@
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Python
+*.pyc
+
+# Emacs temp / auto save
+\#*#
+*.#*
+*~
+
+# Vim temp
+*.swp
+
+# compiled documentation
+*.pdf
+*.dvi
+*.lof
+*.lot
+*.ps
+
+# compiled documentation
+*.temp
+
+#Eclipse ignore
+.cproject
+.project
+.metadata
+local.properties
+.classpath
+
+# Visual Studio ignore
+*.bat
+*.sln
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+*.log
+VSProjects
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.slo
+ 
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+ 
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+ 
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

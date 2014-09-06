@@ -1,0 +1,582 @@
+%%%%%    PREAMBLE     %%%%%
+% Basics
+\documentclass[11pt,twoside]{report}
+\usepackage{type1cm}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{a4}
+\usepackage{float}
+\usepackage{lastpage}
+\usepackage{amsmath} 
+\usepackage[section]{placeins} % Package til \FloatBarrier så man kan styre floats ([section] inkludere automatisk \FloatBarrier i alle sections)
+\usepackage[table]{xcolor}
+\usepackage{umoline}		   % Package til \Overline{text} .. husk case sensitive !
+\usepackage[small]{caption}
+%\usepackage{microtype}
+
+%farve til tabler
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+%\usepackage{kpfonts}
+
+% Indhold -> Indholdsfortegnelse, Bilag -> Appendiks
+\addto\captionsdanish{
+	\renewcommand\appendixname{Appendix}
+	\renewcommand\contentsname{Table of contents}
+}
+%\usepackage{alnumsec} % Giver mulighed for at bruge \alnumsecstyle{L}, se http://ctan.mackichan.com/macros/latex/contrib/alnumsec/alnumsec.pdf
+%\surroundLetter{}{}
+\usepackage{appendix}
+
+% Fjerner mellemrum efter , i equations
+\usepackage{icomma}
+
+% Giver mulighed for at inkludere pdf'er
+%\usepackage{pdfpages}
+
+% Overhold standarder for SI-enheder
+\usepackage[%
+    %decimalsymbol=comma,                   % Komma som tusindtalsseperator (not anymore!)
+    per-mode=fraction,                     % Brug fraction ved fx \meter\per\second (ellers bruger den ms^{-1})
+    exponent-product=\cdot,                % Brug \cdot ved videnskabelig notation, fx 21\cdot 10^{3} (ellers bruger den \times)
+    complex-root-position = before-number, % Sæt kompleks-del foran tallet
+    output-complex-root = \text{j},        % Brug j for kompleks notation
+    %output-exponent-marker = \text{e}     % Brug 21e3 i stedet for 21\cdot 10^3
+    group-digits = true,                    % Lille mellemrum som tusindtalsseperator
+    binary-units = true
+    ]{siunitx}
+% ex:
+%  $\SI{10}{\kilo\ohm}$ svarer til $10\:\text{k}\Omega$
+%  Lille si er kun til enheder, fx: \si{\kilo\ohm}
+\newcommand{\SIf}[2]{ % \SI med lille fraction (god til in-line stuff)
+    %\SI[fraction-function=\slfrac]{#1}{#2}
+    \SI[per-mode=symbol]{#1}{#2}
+}
+
+% Giver mulighed for at anvende Decibel i SI funktionen
+\DeclareSIUnit{\decibel}{dB}
+\DeclareSIUnit{\decibelm}{dBm}
+
+
+% Giver adgang til \singlespacing, \doublespacing, og \onehalfspacing
+\usepackage{setspace}
+% Halvanden linjeafstand (se også software.tex)
+\onehalfspacing
+
+% Fjern indents!
+%\setlength{\parindent}{0in}
+
+% Afstand mellem caption og teksten nedenunder
+%\setlength{\belowcaptionskip}{10pt}
+%\setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
+%\setlength{\floatsep}{5pt plus 1.0pt minus 2.0pt}
+%\setlength{\intextsep}{5pt plus 1.0pt minus 2.0pt}
+% Standard in articles:
+%\textfloatsep: 20.0pt plus 2.0pt minus 4.0pt;
+%\floatsep: 12.0pt plus 2.0pt minus 2.0pt;
+%\intextsep: 12.0pt plus 2.0pt minus 2.0pt.
+%\setlength{\abovecaptionskip}{-2ex}
+%\setlength{\belowcaptionskip}{-2ex}
+
+% Margins
+\usepackage{vmargin}
+%\setmargrb{2cm}{1cm}{3cm}{2cm} % Ligesom nedenstående, bare til PS
+%\setmargrb{2cm}{1cm}{3cm}{2cm} % Ligesom udskrift, bare med plads til warnings i margin
+\setmargrb{2.5cm}{3cm}{2.5cm}{2cm} % Optimal til udskrift! {Venstre/Ryg}{Top}{Højre/Ud}{Bund}
+
+% Billeder
+\usepackage{graphicx}
+%\usepackage{epstopdf}
+\graphicspath{{figures/}}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage{pst-circ} % For circuits
+\usepackage{pst-func} % For functions
+\psset{gridcolor=lightgray,subgridcolor=white}
+
+
+% References laves til links
+\usepackage{hyperref}
+\hypersetup{ 				% Borders omkring links fjernes
+	pdfborder = {0 0 0}
+}
+
+% Pænere headers og footers
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\fancyhf{} % clear header and footer and let me choos myself
+% NOTE: http://timmurphy.org/2010/08/07/headers-and-footers-in-latex-using-fancyhdr/
+\chead{\leftmark}
+\cfoot{\thepage}
+% Pænere chapter headings
+%\usepackage[Conny]{fncychap}
+\usepackage[Lenny]{fncychap}
+
+% Redefiner "Lenny" så der ikke kommer så meget topmargin v. chapter headings
+% Originale styles: ftp://cam.ctan.org/tex-archive/macros/latex/contrib/fncychap/fncychap.sty
+\makeatletter
+\ChNameVar{\fontsize{14}{16}\usefont{OT1}{phv}{m}{n}\selectfont}
+  \ChNumVar{\fontsize{60}{62}\usefont{OT1}{ptm}{m}{n}\selectfont}
+  \ChTitleVar{\Huge\bfseries\rm}
+  \ChRuleWidth{1pt}
+  \renewcommand{\DOCH}{%
+  	\vspace*{-3cm}                           %flytter kapitel navn op
+    \settowidth{\px}{\CNV\FmN{\@chapapp}}
+    \addtolength{\px}{2pt}
+    \settoheight{\py}{\CNV\FmN{\@chapapp}}
+    \addtolength{\py}{1pt}
+
+    \settowidth{\mylen}{\CNV\FmN{\@chapapp}\space\CNoV\thechapter}
+    \addtolength{\mylen}{1pt}
+    \settowidth{\pxx}{\CNoV\thechapter}
+    \addtolength{\pxx}{-1pt}
+
+    \settoheight{\pyy}{\CNoV\thechapter}
+    \addtolength{\pyy}{-2pt}
+    \setlength{\myhi}{\pyy}
+    \addtolength{\myhi}{-1\py}
+    \par
+    \parbox[b]{\textwidth}{%
+    \rule[\py]{\RW}{\myhi}%
+    \hskip -\RW%
+    \rule[\pyy]{\px}{\RW}%
+    \hskip -\px%
+    \raggedright%
+    \CNV\FmN{\@chapapp}\space\CNoV\thechapter%
+    \hskip1pt%
+    \mghrulefill{\RW}%
+    \rule{\RW}{\pyy}\par\nobreak%
+    \vskip -\baselineskip%
+    \vskip -\pyy%
+    \hskip \mylen%
+    \mghrulefill{\RW}\par\nobreak%
+    \vskip \pyy}%
+    \vskip 20\p@}
+ 
+
+  \renewcommand{\DOTI}[1]{                   % Chapters m. chapter headings
+    \raggedright
+    \CTV\FmTi{#1}\par\nobreak
+    \vskip 20\p@} %\vskip 40\p@}             % 40->20=mindre afstand mellem chaptername og tekst
+
+  \renewcommand{\DOTIS}[1]{                  % Chapter uden chapter headings
+  	\vspace*{-3cm}                           % flytter kapitel navn op
+    \raggedright
+    \CTV\FmTi{#1}\par\nobreak
+    \vskip -20\p@} %\vskip 40\p@}            % 40->-20=mindre afstand mellem chaptername og tekst 
+\makeatother
+
+% Nemmere multirow-cells i tabeller
+\usepackage{multirow}
+
+% Nemmere multi kolonner
+\usepackage{multicol}
+
+% Matematik
+\usepackage{amsmath,amsfonts,amssymb}
+\newcommand{\slfrac}[2]{\left.#1\middle/#2\right.} % frac med slash
+\usepackage{xfrac}
+
+% Placer flere figurer ved siden af hinanden
+\usepackage[center]{subfigure}
+
+% Farver på tabeller
+\usepackage{colortbl}
+\usepackage{array}
+\definecolor{lightgray}{RGB}{220,220,220}
+\definecolor{lightergray}{RGB}{250,250,250}
+\definecolor{jgray}{RGB}{130,130,130}
+\definecolor{darkgray}{RGB}{40,40,40}
+\definecolor{darkred}{RGB}{136,0,21}
+\definecolor{darkblue}{RGB}{0,4,183}
+\definecolor{darkerred}{RGB}{110,0,20}
+\definecolor{darkgreen}{RGB}{0,160,0}
+\definecolor{darkgreen2}{RGB}{16,100,36}
+\definecolor{pink}{rgb}{1.,0.75,0.8}
+\definecolor{lightblue}{RGB}{153,217,234}
+\definecolor{lightyellow}{RGB}{255,255,128}
+\definecolor{lightred}{RGB}{255,128,128}
+\definecolor{lightpurple}{RGB}{204,0,204}
+\definecolor{purple}{RGB}{128,0,128}
+\definecolor{sand}{RGB}{245,240,220}
+\definecolor{coolblue}{RGB}{0,128,255}
+
+
+\renewcommand\arraystretch{1.2} % Sæt row height i tabeller
+
+% Giver adgang til \begin{verbatimtab}[8] som viser indents i verbatim environments
+\usepackage{moreverb}
+\usepackage{fancyvrb}
+\usepackage{relsize} % font size som \relsize{2}, relativt til alm fontsize
+
+% Custom commands defineres
+% Nemmere figurer, syntaks:
+% \fig[keepaspectratio=true,height=40mm]{image}{Teksten til billledet}{billedelabel}
+\newcommand{\fig}[4][width=40mm]{
+	\begin{figure}[h!]
+		\centering
+	    \includegraphics[#1]{#2}
+	    \caption{#3}
+	    \label{#4}	
+		%\end{centering}
+	\end{figure}
+}
+
+\newcommand{\figuc}[4][width=40mm]{
+	\begin{figure}[h!]
+	    \includegraphics[#1]{#2}
+	    \caption{#3}
+	    \label{#4}	
+	\end{figure}
+}
+
+\newcommand{\pfig}[3]{
+	\begin{figure}[h!]
+		\centering
+	    #1
+	    \caption{#2}
+	    \label{#3}	
+
+	\end{figure}
+}
+
+\newcommand{\pcapfig}[4]{
+	\begin{figure}[h!]
+		\centering
+	    #1
+	    \caption[#2]{#3}
+	    \label{#4}	
+	\end{figure}
+}
+
+% Nemmere referencer, syntaks:
+% \figref{labelpåfigur}         --> figur 3.4 (s. 23)
+% \secref{labelpåsektion}       --> sektion 2.7 (s. 7)
+% \chref{labelpåchapter}        --> kapitel 2 (s. 4)
+% \tref{labelpåtabel}           --> tabel 7.4 (s. 45)
+% \cref{labelpåkode}            --> kodeudsnit 8.3 (s. 76)
+% \bilref{labelpåbilag}         --> bilag 2.3 (s. 25)
+\usepackage{nameref} % Giver adgang til \nameref
+
+%\newcommand{\figref}[1]{figure \ref{#1} (p. \pageref{#1})}
+%\newcommand{\Figref}[1]{Figure \ref{#1} (p. \pageref{#1})}
+%\newcommand{\secref}[1]{section \ref{#1} (p. \pageref{#1})}
+%\newcommand{\Secref}[1]{Section \ref{#1} (p. \pageref{#1})}
+%\newcommand{\chref}[1]{chapter \ref{#1} (p. \pageref{#1})}
+%\newcommand{\tref}[1]{table \ref{#1} (p. \pageref{#1})}
+%\newcommand{\cref}[1]{code snippet \ref{#1} (p. \pageref{#1})}
+%\newcommand{\bilref}[1]{annex (Se oversigt, chap. \ref{#1} (p. \pageref{#1}))}
+%\newcommand{\equref}[1]{equation \ref{#1} (p. \pageref{#1})}
+%\newcommand{\apref}[1]{appendix \ref{#1} (p. \pageref{#1})}
+\newcommand{\figref}[1]{figure \vref{#1}}
+\newcommand{\Figref}[1]{Figure \Vref{#1}}
+\newcommand{\secref}[1]{section \vref{#1}}
+\newcommand{\Secref}[1]{Section \Vref{#1}}
+\newcommand{\chref}[1]{chapter \ref{#1}}
+\newcommand{\tref}[1]{table \vref{#1}}
+\newcommand{\cref}[1]{code snippet \vref{#1}}
+\newcommand{\anref}[1]{annex (See list, chap. \ref{#1} (p. \pageref{#1}))}
+\newcommand{\equref}[1]{equation \vref{#1}}
+\newcommand{\apref}[1]{appendix \vref{#1}}
+\newcommand{\afigref}[1]{figure \vref{#1}}
+\newcommand{\aafigref}[1]{figure \ref{#1}}
+\newcommand{\asecref}[1]{section \vref{#1}}
+\newcommand{\atref}[1]{table \vref{#1}}
+\newcommand{\acref}[1]{code snippet \vref{#1}}
+\newcommand{\achref}[1]{chapter \ref{#1} (p. \pageref{#1})}
+\newcommand{\aequref}[1]{\vref{#1}}
+
+
+% Funktion til at få latex til kun at medtage side tal hvis referancen er på en anden side end den der refereres fra
+\usepackage{varioref}
+\makeatletter
+\vref@addto\extrasenglish{%
+  \def\reftextfaceafter{(p.~\thevpagerefnum)}
+  \def\reftextfacebefore{(p.~\thevpagerefnum)}
+  \def\reftextafter{(p.~\thevpagerefnum)}
+  \def\reftextbefore{(p.~\thevpagerefnum)}
+	\def\reftextfaraway#1{(p.~\thevpagerefnum)}
+  \def\reftextcurrent{}
+}
+\makeatother
+
+% Itemize uden mellemrum mellem linjer
+\newenvironment{pitemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+% Enumrate uden mellemrum mellem linjer
+\newenvironment{penumrate}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+% Kommentarer i margen (noter til forfattere)
+\usepackage{xkvltxp}
+\usepackage[draft]{fixme}
+%\usepackage{fixme}       % Skjul margin kommentarer (til udskrift)
+% Nemmere kommentarer i margin, syntaks:
+%  \note{DitNavn}{Din note}{teksten, noten skal hæftes ved}
+% Eks.:
+%  Dette er en \note{Tausen}{Hov hov! Du har vist byttet om på kage og gulerødder}{Jeg kan godt lide kage - men gulerødder er nu bedre.} haha - hilsen jesper :D
+\newcommand{\note}[3]{
+	\fxnote*[author=#1,footnote,nomargin]{#2}{#3}
+}
+
+% Til kode-eksempler
+\usepackage{color}                        % Package til \color-kommandoen
+\usepackage{listings}                     % Package til kodeeksempler
+% Caption customization:
+%\usepackage{xcolor}
+%\usepackage{courier}
+%\usepackage{caption}
+%\DeclareCaptionFont{white}{\color{white}}
+%\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+%\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\newcommand{\code}[2]{
+  \FloatBarrier
+  \lstinputlisting[#1]{#2}
+  \FloatBarrier
+}
+
+%Ny command til tabler:
+%\ptable[scalebox værdi (hvis den bare skal være default skal man ikke have de firkantede parenteser med)]{søjlernes formatering}{
+%  tablen uden øverste \hline
+%}{caption tekst}{label tekst}
+\newcommand{\ptable}[5][0.75]{
+  \begin{table}[h!]
+    \centering
+    %  \rowcolors{2}{lightergray}{}
+      \scalebox{#1}{
+        \begin{tabular}{#2}
+          \hline
+          \rowcolor[gray]{0.8}#3
+        \end{tabular}
+      }
+      \caption{#4}
+      \label{#5}
+    %\end{center}
+  \end{table}
+}
+% Tabeller med notes under, alt andet ligesom ovenstående
+% Noterne specificeres som en itemize som sidste parameter:
+% \ntable[scalebox]{column format}{table uden første \hline}{caption}{label}{notes}
+% ex:
+% \ntable{|m{5cm}|}{
+%   \textbf{Example table with notes}
+%   \hline
+%   \hline
+%   Row 1\tnote{1} \\
+%   \hline
+%   Row 2\tnote{2} \\
+%   \hline
+%   Row 3 \\
+%   \hline
+% }{
+%   \item[1] This is the first row
+%   \item[2] And this is the second
+% }
+\usepackage{threeparttable}
+\newcommand{\ntable}[6][0.65]{
+  \begin{table}[h!]
+    \centering
+      \scalebox{#1}{
+        \begin{threeparttable}
+          \rowcolors{2}{lightergray}{}
+          \begin{tabular}{#2}
+          #3
+          \end{tabular}
+          \begin{tablenotes}
+            #6
+          \end{tablenotes}
+        \end{threeparttable}
+      }
+      \caption{#4}
+      \label{#5}
+ %   \end{center}
+  \end{table}
+}
+
+%Ny command til tabler med multirow:
+%\ptablemr[scalebox værdi (hvis den bare skal være default skal man ikke have de firkantede parenteser med)]{søjlernes formatering}{
+%  tablen uden øverste \hline
+%}{caption tekst}{label tekst}
+%Derefter skal man selv ind og sætte farve i rækkerne
+\newcommand{\ptablemr}[5][0.8]{
+  \begin{table}[h!]
+    \centering
+      \scalebox{#1}{
+        \begin{tabular}{#2}
+          \hline
+          \rowcolor[gray]{0.8}#3
+        \end{tabular}
+      }
+      \caption{#4}
+      \label{#5}
+  %  \end{center}
+  \end{table}
+}
+
+%Ny command til tabler til mr. t:
+%\ptable[scalebox værdi (hvis den bare skal være default skal man ikke have de firkantede parenteser med)]{søjlernes formatering}{
+%  tablen 
+%}{caption tekst}{label tekst}
+\newcommand{\ptablemrt}[5][0.65]{
+  \begin{table}[h!]
+    \centering
+      \rowcolors{2}{lightergray}{}
+      \scalebox{#1}{
+        \begin{tabular}{#2}
+          #3
+        \end{tabular}
+      }
+      \caption{#4}
+      \label{#5}
+ %   \end{center}
+  \end{table}
+}
+    
+\def\lstlistingname{Code snippet}           % Definerer hvad der står foran et stykke kodes caption
+\lstset{
+	basicstyle=\footnotesize\ttfamily,    % Lille skrifttype
+	keywordstyle=\color{blue}\bfseries,   % Keywords blå og bold
+	commentstyle=\color[RGB]{34,139,34},  % Default comments mørkegrøn
+	showstringspaces=false,               % Ingen symbol for mellemrum i strings
+	numbers=left,                         % Linjenumre til venstre
+	numberstyle=\tiny\color{darkgray},    % Små tal på linjenumre med farve skrift
+	numbersep=5pt,                        % Afstand fra linjenummer og ind til kode
+	backgroundcolor=\color{lightergray},  % Bg farve
+	tabsize=2,                            % Indenteringer = 4 spaces
+	columns=fixed,                   	  % Kan give problemer med bredde på bogstaver men skulle ikke da vi bruger ttfamily
+	breaklines=true,                      % Deler en for lang linje over to linjer
+	frame=tb,                		      % Styrer hvor streger skal placeres
+	captionpos=t,                         % Caption til kode under og over kodeeksemplet
+	rulecolor=\color{black},			  % Farven på frame
+	escapeinside={(*@}{@*)},               % Giver mulighed for at lave en (*@\label{label}@*), på en kodelinje,
+%										    så man kan referere til linjen
+    literate={~}{$\sim$}1 {^}{$\wedge$}1,
+}
+\lstdefinelanguage{bascom} {              % Definition af BASCOM-language
+	classoffset=4,	
+	morekeywords={\$regfile,\$crystal,Config, Output, Input, Timer1, Timer0, Do, Loop, If, Then, End, Sub, Wait, Waitms, Declare, As, Int, Word, Byte, Call, And, Or, Else, Until, Goto, Alias, Dim},
+		keywordstyle=\color[RGB]{0,0,128}\bfseries,classoffset=3,
+	morekeywords={PORTA, PORTB, TCCR1A, TCCR1B, TCCR1C, TCCR1D, TCNT1, OCR1A, OCR1B, OCR1C, OCR1D, PINA, PINB, PINC},
+		keywordstyle=\color[RGB]{128,0,0},classoffset=2,
+	morekeywords={=, \&, <, >, +, -, *, /, .},
+		keywordstyle=\color[RGB]{255,0,0},classoffset=1,
+	sensitive=false,
+	morecomment=[l]{'},
+	commentstyle=\color[RGB]{34,139,34}
+}
+\lstdefinelanguage{arduino} {              % Definition af ARDUINO-language
+	classoffset=4,
+	morekeywords={char,int,void,long,
+			pinMode,random,available,read,print,millis,digitalWrite,digitalRead,analogWrite,analogRead,delay,
+			for,while,switch,break,if,else,bitRead,print,println,begin,return,float,cos,sin,pow,sqrt,bitClear,bitSet,
+			true,false},
+		keywordstyle=\color[RGB]{204,102,0},classoffset=3,
+	morekeywords={setup,Serial,Serial1,Serial2,loop},
+		keywordstyle=\color[RGB]{204,102,0}\bfseries,classoffset=2,
+	morekeywords={HIGH,LOW,OUTPUT,INPUT},
+		keywordstyle=\color[RGB]{0,102,153},classoffset=1,
+	sensitive=false,
+	morecomment=[l]{//},
+	stringstyle=\color[RGB]{0,0,255},
+	morestring=[b]",
+	morestring=[b]',
+	commentstyle=\color[RGB]{50,50,50}
+}
+\lstdefinelanguage{csharp} {              % Definition af C#-language
+	classoffset=3,
+	% Variabletypes, keywords
+	morekeywords={char,int,void,long,object,string,true,char,false,using,class,
+			this,delegate,partial,namespace,
+			for,while,switch,break,if,else,new,try,catch,private,public,\#region,\#endregion},
+		keywordstyle=\color[RGB]{0,0,255},classoffset=2,
+	% Classes
+	morekeywords={EventArgs,SerialPortController,StringBuilder,SerialDataReceivedEventHandler,MySqlConnection,
+			Exception,MySqlCommand,MySqlDataReader,ConnectionState,PointPairList,ZedGraphControl,Color,
+			SymbolType,GraphPane,LineItem,Fill,Size,Point,MethodInvoker,Convert,FormClosedEventArgs,EventArgs,
+			SerialPort,StopBits,Parity,Form,Form1},
+		keywordstyle=\color[RGB]{43,145,175},classoffset=1,
+	sensitive=true,
+	morecomment=[l]{//},
+	stringstyle=\color[RGB]{163,21,21},
+	morestring=[b]",
+	morestring=[b]',
+	commentstyle=\color[RGB]{0,128,0}
+}
+\lstdefinelanguage{vhdl} {              % Definition af VHDL-language
+	classoffset=4,
+	morekeywords={library,use,all,entity,generic,map,architecture,of,is,downto,others,then,if,port,signal,elsif,else,when,for,while,
+	              end,process,begin,or,and,not,xor,\&,constant,wait,for,nor,nand,in,out,type,array,with,select,case},
+		keywordstyle=\color[RGB]{255,0,0},classoffset=3,
+	morekeywords={std_logic,std_logic_vector,to_integer,unsigned,integer,time,natural,1,2,3,4,5,6,7,8,9,0},
+		keywordstyle=\color[RGB]{0,145,185},classoffset=2,
+    morekeywords={=, <, >, +, -, *, /, .},
+		keywordstyle=\color[RGB]{0,0,255},classoffset=1,
+	sensitive=true,
+	morecomment=[l]{--},
+	stringstyle=\color[RGB]{0,145,185},
+	morestring=[b]",
+	commentstyle=\color[RGB]{0,128,0}
+}
+\lstdefinelanguage{psm} {              % Definition af PSM(ASM)-language
+	classoffset=4,
+	morekeywords={and,or,xor,out,in,load,sub,add,comp,call,jump,ret,store,fetch,test,sr0,sr1,sl0,sl1},
+		keywordstyle=\color[RGB]{0,0,255},classoffset=3,
+	morekeywords={equ,dsout,dsin},
+		keywordstyle=\color[RGB]{108,0,117},classoffset=2,
+    morekeywords={\$,0,1,2,3,4,5,6,7,8,9},
+		keywordstyle=\color[RGB]{0,232,116},classoffset=1,
+	sensitive=true,
+	morecomment=[l]{;},
+	stringstyle=\color[RGB]{0,145,185}
+%	morecomment=[l]{\$},
+%    commentstyle=\color[RGB]{0,232,116}
+}
+% TOC settings
+\setcounter{tocdepth}{1} % Begræns table of contents til kun 2 niveauer
+%\setcounter{tocdepth}{10}
+\addtocontents{toc}{\protect\thispagestyle{empty}} % Fjern sidetal fra TOC
+
+% Flowcharts
+\usepackage{tikz} 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{ % circle om tekst
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usetikzlibrary{shapes,arrows}
+% Define block styles
+\tikzstyle{decision} = [diamond, draw=gray, aspect=2, fill=lightgray, text width=2cm, text badly centered, node distance=3cm, inner sep=0pt,minimum height=1cm]
+%\tikzstyle{decision} = [regular polygon, regular polygon sides=4, shape border rotate=45, draw, fill=lightgray, text width=1.5cm, text badly centered, node distance=3cm, inner sep=0pt,minimum height=1cm]
+\tikzstyle{block} = [rectangle, draw=gray, fill=lightgray, text width=3cm, text centered, minimum height=1cm]
+\tikzstyle{endpoint} = [ellipse, draw=gray, fill=lightgray, text width=2cm, text centered, minimum height=1cm]
+\tikzstyle{line} = [draw, thick, -latex]
+
+\newcommand{\flowcirc}[1]{
+  \psovalbox[fillstyle=solid,fillcolor=lightgray,linecolor=gray]{#1}
+}
+\newcommand{\flowbox}[1]{
+  \psframebox[fillstyle=solid,fillcolor=lightgray,linecolor=gray]{#1}
+}
+\newcommand{\flowdiamond}[1]{
+  \psdiabox[fillstyle=solid,fillcolor=lightgray,linecolor=gray]{#1}
+}
+\usepackage[square]{natbib}
+
+
+% This should make latex try to avoid orphans more... Max is 10000 but will probably fuck up latex :P
+%\widowpenalty=300
+%\clubpenalty=300
+
+% Glossaries
+\usepackage[acronym,xindy]{glossaries}
+\makeglossaries
+\usepackage[xindy]{imakeidx}
+\makeindex
