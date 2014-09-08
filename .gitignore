@@ -20,6 +20,13 @@
 *.lof
 *.lot
 *.ps
+*.acn
+*.aux
+*.glo
+*.idx
+*.out
+*.toc
+*.xdy
 
 # compiled documentation
 *.temp
