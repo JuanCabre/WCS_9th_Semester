@@ -103,6 +103,18 @@ delay_spread_y= spread(tr_axis,pdp_y);
 figure
 plot(tr_axis,abs(y(1,:)))
 
+% Plotting real and imag part separately
+
+% % symmetry_line = (length(y(1,:))+1)/2;
+% % figure
+% % hold on
+% % plot(real(y(1,:)),'r')
+% % plot(imag(y(1,:)),'b')
+% % legend('real part', 'imag part')
+% % y_axis_limit = get(gca,'YLim'); 
+% % height = arrayfun(@(symmetry_line) line([symmetry_line symmetry_line],y_axis_limit),symmetry_line);
+% % hold off
+
 %% Exercise D
 
 % Generate some other realizations h_2 independent of h following the same
