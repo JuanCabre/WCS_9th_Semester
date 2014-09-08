@@ -136,3 +136,28 @@ delay_spread_y_MISO = spread(tr_axis_MISO,pdp_y_MISO);
 
 figure
 plot(tr_axis_MISO,abs(y_MISO(1,:)))
+
+%% Extra
+
+numb_links = 16;
+% Create diferent set of impulse responses
+for m=1:numb_links
+    for k=1:size(h,1)
+        y_MISO(k,:,m)= conv(h(k,:),conj(flip(h(k,:))));
+    end
+end
+
+% Sum all the impulse responses
+
+y_MISO=sum(y_MISO,3);
+
+% Once again we need to fix the axis of the convolutions
+tr_axis_MISO = linspace(0,10,size(y_MISO,2));
+
+% Calculate the new PDP in MISO fashion with more than 2 antennas
+pdp_y_MISO_multiple = mean(abs(y_MISO));
+% Calculate new delay spread in MISO fashion with more than 2 antennas
+delay_spread_y_MISO_multiple = spread(tr_axis_MISO,pdp_y_MISO_multiple);
+
+figure
+plot(tr_axis_MISO,abs(y_MISO(1,:)))

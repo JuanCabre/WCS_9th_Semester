@@ -6,18 +6,18 @@ Mini-Projects and other excercises for the courses Multi-Agent Radio Communicati
 
 Collaborators:
 
-Juan Cabrera (Repo-owner)
+-Juan Cabrera (Repo-owner)
 
-Maria Stefan
+-Maria Stefan
 
-Anders Karstensen
+-Anders Karstensen
 
-Johannes Hejselbæk
+-Johannes Hejselbæk
 
-Jesper Nysted
+-Jesper Nysted
 
-Marika Cascino
+-Marika Cascino
 
-Djam S.
+-Djamschid Safi
 
-Pablo Fuentes
+-Pablo Fuentes
