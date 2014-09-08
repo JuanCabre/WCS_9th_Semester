@@ -21,3 +21,6 @@ Collaborators:
 -Djamschid Safi
 
 -Pablo Fuentes
+
+
+Note: This is a very nice document with information about a good git-branching model. http://nvie.com/posts/a-successful-git-branching-model/
