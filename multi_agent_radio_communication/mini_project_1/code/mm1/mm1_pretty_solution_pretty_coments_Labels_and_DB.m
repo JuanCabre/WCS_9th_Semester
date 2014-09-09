@@ -83,7 +83,7 @@ channelResponse=size(h , 1);
 for i=1:numbLinks
     for k=1:length(h)
         y(k,:)= conv(h(k,:),conj(flip(h(k,:))));
-        y_n(k,:) = y(k,:)./sum(abs(y,:));   %Normalize the power
+        y_n(k,:) = y(k,:)./sum(abs(y(k,:)));   %Normalize the power
     end
 end
 
@@ -130,11 +130,16 @@ delay_spread_y= spread(tr_axis,pdp_y);
 % Option Linear
 figure
 plot(tr_axis,pdp_y);
-hold on; 
+xlabel('Delay(us)');
+ylabel('Power(W)');
+legend('Average Realizations');
+title('Ex C: Power Delay Profile');
+
+figure 
 plot(tr_axis,pdp_y_n,'g'); 
 xlabel('Delay(us)');
 ylabel('Power(W)');
-legend('Average Realizations','Average Realizations (Normalized)');
+legend('Average Realizations (Normalized)');
 title('Ex C: Power Delay Profile');
 
 
