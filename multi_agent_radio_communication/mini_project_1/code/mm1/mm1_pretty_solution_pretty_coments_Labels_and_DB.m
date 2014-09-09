@@ -33,11 +33,14 @@ delay_spread = spread(delays,linear);
 
 %%---------------------------------------------------------------
 %% Excercise B
-for i=1:1000
-    for k = 1:length(delays)
-        h(i,k) = (randn() + j*randn()) * 10.^(power_DB(k)/10);
-    end
-end
+% for i=1:1000
+%     for k = 1:length(delays)
+%         h(i,k) = (randn() + j*randn()) * 10.^(power_DB(k)/10);
+%     end
+% end
+Nr = 1000;
+Nd = length(delays);
+h = (randn(Nr,Nd) + j*randn(Nr,Nd)) .* repmat(linear,[1000,1]);
 
 %     stem(delays,abs(h(1,:)))
 %     plot(delays,10.^(power_DB./10))
@@ -55,14 +58,14 @@ legend('Realizations','GSM (Urban)');
 title('Ex B: Power Delay Profile');
 
 %Option B.2 (dB):
-% figure
-% stem(delays,h_mean_abs_DB,'b') %% Average Power delay profile
-% hold on
-% plot(delays,power_DB,'r')
-% xlabel('Delay(us)');
-% ylabel('Power(dB)');
-% legend('Realizations','GSM (Urban)');
-% title('Ex B: Power Delay Profile');
+figure
+stem(delays,h_mean_abs_DB,'b') %% Average Power delay profile
+hold on
+plot(delays,power_DB,'r')
+xlabel('Delay(us)');
+ylabel('Power(dB)');
+legend('Realizations','GSM (Urban)');
+title('Ex B: Power Delay Profile');
 
 
 delay_spread_h = spread(delays,h_mean_abs);
@@ -136,7 +139,7 @@ legend('Average Realizations');
 title('Ex C: Power Delay Profile');
 
 figure 
-plot(tr_axis,pdp_y_n,'g'); 
+plot(tr_axis,pdp_y_n); 
 xlabel('Delay(us)');
 ylabel('Power(W)');
 legend('Average Realizations (Normalized)');
@@ -144,14 +147,19 @@ title('Ex C: Power Delay Profile');
 
 
 % Option DB
-% figure
-% plot(tr_axis,pdp_y_DB);
-% xlabel('Delay(us)');
-% ylabel('Power(dB)');
-% legend('Average Realizations');
-% title('Ex C: Power Delay Profile');
+figure
+plot(tr_axis,pdp_y_DB);
+xlabel('Delay(us)');
+ylabel('Power(dB)');
+legend('Average Realizations');
+title('Ex C: Power Delay Profile');
 
-
+figure 
+plot(tr_axis,10.*log(pdp_y_n)); 
+xlabel('Delay(us)');
+ylabel('Power(dB)');
+legend('Average Realizations (Normalized)');
+title('Ex C: Power Delay Profile');
 
 % Plotting real and imag part separately
 
@@ -241,12 +249,12 @@ figure
 plot(tr_axis_MISO,abs(y_MISO(1,:)))
 xlabel('Delay(us)');
 ylabel('Power(W)');
-
+title('PDP MISO (Time Reversal)');
 
 %Option DB
 % figure
 % plot(tr_axis_MISO,10*log(abs(y_MISO(1,:))));
 % xlabel('Delay(us)');
 % ylabel('Power(DB)');
-
+% title('PDP MISO (Time Reversal)');
 
