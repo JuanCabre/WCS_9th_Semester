@@ -6,6 +6,9 @@
 # Python
 *.pyc
 
+# Matlab AutoSave files
+*.asv
+
 # Emacs temp / auto save
 \#*#
 *.#*

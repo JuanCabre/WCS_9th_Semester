@@ -2,7 +2,8 @@ This is gonna be a pretty Introduction some day\\
 \textbf{SISO without TR, SISO with TR, MISO with TR}\\
 
 Assume that the channel impulse response follows a known power delay profile. In this problem we use the GSM Typical Urban model with 12 rays.\\ The tap delays and their corresponding amplitudes in dB are given in the following table: 
-\begin{center}
+\begin{table}[ht]
+\centering
 \begin{tabular}{c|c}
 {\em Tap delay ($\mu$ sec)\/} & {\em Tap Power (dB)\/}  \\
 \hline 0 & -4  \\
@@ -17,7 +18,9 @@ Assume that the channel impulse response follows a known power delay profile. In
 3.1 & -8.6\\
 3.2 & -11\\
 5 & -10
-\end{tabular}
-\end{center} 
+\end{tabular}\label{Test}
+\caption{Amplitudes corresponding to tap delays}
+\label{tab:1_intro}
+\end{table} 
 
 The taps are assumed to fade independently and to follow the Rayleigh amplitude distribution. 
