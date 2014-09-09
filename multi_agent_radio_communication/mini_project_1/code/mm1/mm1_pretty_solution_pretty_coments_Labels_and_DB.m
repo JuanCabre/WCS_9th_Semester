@@ -33,11 +33,14 @@ delay_spread = spread(delays,linear);
 
 %%---------------------------------------------------------------
 %% Excercise B
-for i=1:1000
-    for k = 1:length(delays)
-        h(i,k) = (randn() + j*randn()) * 10.^(power_DB(k)/10);
-    end
-end
+% for i=1:1000
+%     for k = 1:length(delays)
+%         h(i,k) = (randn() + j*randn()) * 10.^(power_DB(k)/10);
+%     end
+% end
+Nr = 1000;
+Nd = length(delays);
+h = (randn(Nr,Nd) + j*randn(Nr,Nd)) .* repmat(linear,[1000,1]);
 
 %     stem(delays,abs(h(1,:)))
 %     plot(delays,10.^(power_DB./10))
@@ -136,7 +139,7 @@ legend('Average Realizations');
 title('Ex C: Power Delay Profile');
 
 figure 
-plot(tr_axis,pdp_y_n,'g'); 
+plot(tr_axis,pdp_y_n); 
 xlabel('Delay(us)');
 ylabel('Power(W)');
 legend('Average Realizations (Normalized)');
@@ -152,7 +155,7 @@ legend('Average Realizations');
 title('Ex C: Power Delay Profile');
 
 figure 
-plot(tr_axis,10.*log(pdp_y_n),'g'); 
+plot(tr_axis,10.*log(pdp_y_n)); 
 xlabel('Delay(us)');
 ylabel('Power(dB)');
 legend('Average Realizations (Normalized)');
