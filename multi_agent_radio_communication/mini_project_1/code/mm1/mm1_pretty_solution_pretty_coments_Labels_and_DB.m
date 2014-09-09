@@ -55,14 +55,14 @@ legend('Realizations','GSM (Urban)');
 title('Ex B: Power Delay Profile');
 
 %Option B.2 (dB):
-% figure
-% stem(delays,h_mean_abs_DB,'b') %% Average Power delay profile
-% hold on
-% plot(delays,power_DB,'r')
-% xlabel('Delay(us)');
-% ylabel('Power(dB)');
-% legend('Realizations','GSM (Urban)');
-% title('Ex B: Power Delay Profile');
+figure
+stem(delays,h_mean_abs_DB,'b') %% Average Power delay profile
+hold on
+plot(delays,power_DB,'r')
+xlabel('Delay(us)');
+ylabel('Power(dB)');
+legend('Realizations','GSM (Urban)');
+title('Ex B: Power Delay Profile');
 
 
 delay_spread_h = spread(delays,h_mean_abs);
@@ -144,14 +144,19 @@ title('Ex C: Power Delay Profile');
 
 
 % Option DB
-% figure
-% plot(tr_axis,pdp_y_DB);
-% xlabel('Delay(us)');
-% ylabel('Power(dB)');
-% legend('Average Realizations');
-% title('Ex C: Power Delay Profile');
+figure
+plot(tr_axis,pdp_y_DB);
+xlabel('Delay(us)');
+ylabel('Power(dB)');
+legend('Average Realizations');
+title('Ex C: Power Delay Profile');
 
-
+figure 
+plot(tr_axis,10.*log(pdp_y_n),'g'); 
+xlabel('Delay(us)');
+ylabel('Power(dB)');
+legend('Average Realizations (Normalized)');
+title('Ex C: Power Delay Profile');
 
 % Plotting real and imag part separately
 
@@ -241,12 +246,12 @@ figure
 plot(tr_axis_MISO,abs(y_MISO(1,:)))
 xlabel('Delay(us)');
 ylabel('Power(W)');
-
+title('PDP MISO (Time Reversal)');
 
 %Option DB
 % figure
 % plot(tr_axis_MISO,10*log(abs(y_MISO(1,:))));
 % xlabel('Delay(us)');
 % ylabel('Power(DB)');
-
+% title('PDP MISO (Time Reversal)');
 
