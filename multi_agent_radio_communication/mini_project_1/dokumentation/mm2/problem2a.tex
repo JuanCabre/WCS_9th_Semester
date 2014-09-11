@@ -1,10 +1,19 @@
-\section{multiplexing}
-Problem 1: For those who do not work with matlab
+\section{Multiplexing question 1}
+\textit{From the expression of the MIMO channel capacity in terms of the normalized channel transfer matrix H, derive the expression of the capacity in terms of the singular values l of H.
+Hint : remember how H is decomposed - expand}
 
-From the expression of the MIMO channel capacity in terms of the normalized channel transfer matrix H
 
-,
-
-derive the expression of the capacity in terms of the singular values l of H.
-
-Hint : remember how H is decomposed - expand
+\begin{flalign}
+ && C =& log_{2}\left(det\left(I + \frac{\rho}{M}HH^{H}\right) \right) & \\
+ &&  =& log_{2}\left(det\left(I + \frac{\rho}{M}SUV^{H}VU^{H}S^{H}\right) \right) & \\
+ &&  =& log_{2}\left(det\left(I + \frac{\rho}{M}SUU^{H}S^{H}\right) \right) & \\
+ &&  =& log_{2}\left(det\left[SS^{H}\left(I + \frac{\rho}{M}UU^{H}\right)SS^{H}\right] \right) & \\
+ &&  =& log_{2}\left(det\left[S\left(I + \frac{\rho}{M}UU^{H}\right)S^{H}\right] \right) & \\
+ &&  =& log_{2}\left(det\left(S\right)det\left(I + \frac{\rho}{M}UU^{H}\right)det\left(S^{H}\right) \right) & \\
+ &&  =& log_{2}\left(det\left(SS^{H}\right)det\left(I + \frac{\rho}{M}UU^{H}\right) \right) & \\
+ &&  =& log_{2}\left(det\left(I + \frac{\rho}{M}UU^{H}\right) \right) & \\
+ &&  =& log_{2}\left(det\left(I + \frac{\rho}{M}diag\left(\lambda^{2}_{i}\right)\right) \right) & \\
+ &&  =& log_{2}\left(diag\left(1 + \frac{\rho}{M}\lambda^{2}_{i}\right)\right) & \\
+ && =& log_{2}\left(\prod_{i = 0}^{k}\left(1 + \frac{\rho}{M}\lambda^{2}_{i}\right)\right) & \\
+ && =& \sum_{i = 0}^{k}log_{2}\left(1 + \frac{\rho}{M}\lambda^{2}_{i}\right) &
+\end{flalign}
