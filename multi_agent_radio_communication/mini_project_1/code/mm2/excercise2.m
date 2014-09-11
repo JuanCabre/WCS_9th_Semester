@@ -14,7 +14,7 @@ end
 c = get(gca,'colororder');  % get color vector
 c(8,:) = [1,1,1];           % get color vector
 
-figure()        % plot the envelope of the channels
+% plot the envelope of the channels
 for k = 1:nr_channels
 plot(abs(channel(k,:)),'color',c(k,:)); hold on; grid on;
 end
@@ -24,7 +24,7 @@ xlabel('sample number');
 ylabel('amplitude');
 
 
-%% excercise 2 a
+%% excercise 1.2 a
 
 % correlated channels
 p = 0;             % correlation coeffiecient
