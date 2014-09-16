@@ -7,11 +7,24 @@
 \subsection{a}
 \textit{Find the maximum power density (in watts per square meter) at a distance of \SI{1000}{\meter} (assume far field distance). Specify the angle where this occurs.}
 
-
+\begin{flalign}
+P_{rad} = \SI{10}{\watt} = \oint_S \! W_{rad} \, \mathrm{d}S \\
+= \oint_S \! \dfrac{U}{r^2} \, \mathrm{d}S \\
+= \oint_S \! \dfrac{B_0 \cos^3\left(\theta\right)}{r^2} \, \mathrm{d}S \\
+= \int_0^{2\pi} \int_0^{\dfrac{\pi}{2}} \! \dfrac{B_0 \cos^3\left(\theta\right)}{r^2} r^2 \sin\left(\theta\right) \, \mathrm{d}\theta \mathrm{d}\phi \\
+= B_0 \int_0^{2\pi} \int_0^{\dfrac{\pi}{2}} \!  \cos^3\left(\theta\right) \sin\left(\theta\right) \, \mathrm{d}\theta \mathrm{d}\phi \\
+= 2 \pi B_0 \int_0^{\dfrac{\pi}{2}} \!  \cos^3\left(\theta\right) \sin\left(\theta\right) \, \mathrm{d}\theta \\
+= \dfrac{\pi B_0}{2} \\
+\Leftrightarrow B_0 = \dfrac{20}{\pi}\SI{}{\watt} 
+\Rightarrow W_{rad,max}=\left\vert W_rad \right\vert_{\theta = 0\deg , 180\deg} = \dfrac{B_0}{r^2} = \SI{6,37}{\micro\watt\per\square\meter}
+\end{flalign}
 
 \subsection{b}
 \textit{Find the directive of the antenna (dimensionless and in dB)}
 
+\begin{flalign}
+
+\end{flalign}
 
 \subsection{c}
 \textit{Find the gain of the antenna (dimensionless and in dB)}
