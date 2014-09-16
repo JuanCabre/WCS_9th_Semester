@@ -1,1 +1,108 @@
 \section{Problem A}
+\textit{Find the half-power beamwidth (HPBW) and first-null beamwidth (FNBW), in radians and degrees, for the following normalized radiation intensities:\\
+\begin{flalign}
+&& a) U(\theta)=& cos(\theta) &\\ 
+&& b) U(\theta)=& cos^2(\theta)& \\
+&& c) U(\theta)=& cos(2\theta)& \\
+&& d) U(\theta)=& cos^2(2\theta)& \\
+&& e) U(\theta)=& cos(3\theta)&\\
+&& f) U(\theta)=& cos^2(3\theta)
+\end{flalign}}
+
+By using the definition of HPBW ("In a plane containing the direction of the maximum of a beam, the angle between the two directions in which the radiation intensity is one-half value of the beam") is possible calculate the value of HPBW according to the different radiation intensity.\\
+
+\subsection{a)}
+ Let's start by finding $\theta$ which is the angle beetween the center of the pattern and the its edge. 
+\begin{flalign}
+&& U(\theta_{h})=& cos(\theta_{h}) = 0.5 & \\
+&& \theta_{h} =& cos^{-1}(0.5) = 60^o = \dfrac{\pi}{3} rad &
+\end{flalign}
+The HPBW is given by taking the double of $\theta_{h}$, since the pattern is symmetric.
+\begin{flalign}
+&& HPBW=& 2\cdot \theta_{h} = 120^o =\dfrac{2\pi}{3} rad  &
+\end{flalign}
+The same method is used to find the FNBW but in this case the radiation intensity has to be equal to zero. This is because the FNBW is the angular separation between the first nulls of the pattern.
+\begin{flalign}
+&& U(\theta_{h})=& cos(\theta_{h}) = o & \\
+&& \theta_{h} =& cos^{-1}(0) = 90^o = \dfrac{\pi}{2} rad &
+\end{flalign}
+As before, the FNBW is obtain by taking the double of $\theta_{h}$:
+\begin{flalign}
+&& FNBW=& 2\cdot \theta_{h} = 180^o =\pi rad  &
+\end{flalign}
+The following exercises will be process without any comments since the above method is the same for all of them.
+
+\subsection{b)}
+Calculation for HPBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos^2(\theta) = 0.5 & \\
+&& \theta_{h} =& cos^{-1}(0.707) = 45^o = \dfrac{\pi}{3} rad &\\
+&& HPBW=& 2\cdot \theta_{h} = 90^o =\dfrac{\pi}{2} rad  &
+\end{flalign}
+
+Calculation for FNBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos^2(\theta) = 0 & \\
+&& \theta_{h} =& cos^{-1}(0) = 90^o = \dfrac{\pi}{2} rad &\\
+&& FNBW=& 2\cdot \theta_{h} = 180^o =\pi rad  &
+\end{flalign}
+
+\subsection{c)}
+Calculation for HPBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos(2\theta_h) = 0.5 & \\
+&& \theta_{h} =& 0.5 cos^{-1}(0.5) = 30^o = \dfrac{\pi}{6} rad &\\
+&& HPBW=& 2\cdot \theta_{h} = 60^o =\dfrac{\pi}{3} rad  &
+\end{flalign}
+
+Calculation for FNBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos(2\theta_h) = 0 & \\
+&& \theta_{h} =& cos^{-1}(0) = 45^o = \dfrac{\pi}{4} rad &\\
+&& FNBW=& 2\cdot \theta_{h} = 90^o =\dfrac{\pi}{2} rad  &
+\end{flalign}
+
+\subsection{d)}
+Calculation for HPBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos^2(2\theta_h) & = 0.5 & \\
+&& \theta_{h} =& 0.5 cos^{-1}(0.707) = 22.5^o = \dfrac{\pi}{8} rad &\\
+&& HPBW=& 2\cdot \theta_{h} = 45^o =\dfrac{\pi}{4} rad  &
+\end{flalign}
+
+Calculation for FNBW:
+\begin{flalign}
+&& U(\theta_{h})=&cos^2(2\theta_h)& = 0 & \\
+&& \theta_{h} =& 0.5 cos^{-1}(0) = 45^o = \dfrac{\pi}{4} rad &\\
+&& FNBW=& 2\cdot \theta_{h} = 90^o =\dfrac{\pi}{2} rad  &
+\end{flalign}
+
+\subsection{e)}
+Calculation for HPBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos(3\theta_h) & = 0.5 & \\
+&& \theta_{h} =&\dfrac{1}{3} cos^{-1}(0.5) = 20^o = \dfrac{\pi}{9} rad &\\
+&& HPBW=& 2\cdot \theta_{h} = 40^o =\dfrac{2\pi}{9} rad  &
+\end{flalign}
+
+Calculation for FNBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos(3\theta_h))& = 0 & \\
+&& \theta_{h} =& \dfrac{1}{3} cos^{-1}(0) = 30^o = \dfrac{\pi}{6} rad &\\
+&& FNBW=& 2\cdot \theta_{h} = 60^o =\dfrac{\pi}{3} rad  &
+\end{flalign}
+
+\subsection{f)}
+Calculation for HPBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos^2(3\theta_h) & = 0.5 & \\
+&& \theta_{h} =&\dfrac{1}{3} cos^{-1}(0.707) = 15^o = \dfrac{\pi}{12} rad &\\
+&& HPBW=& 2\cdot \theta_{h} = 30^o =\dfrac{\pi}{6} rad  &
+\end{flalign}
+
+Calculation for FNBW:
+\begin{flalign}
+&& U(\theta_{h})=& cos^2(3\theta_h))& = 0 & \\
+&& \theta_{h} =& \dfrac{1}{3} cos^{-1}(0) = 30^o = \dfrac{\pi}{6} rad &\\
+&& FNBW=& 2\cdot \theta_{h} = 60^o =\dfrac{\pi}{3} rad  &
+\end{flalign}
