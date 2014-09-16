@@ -1,0 +1,45 @@
+
+\input{setup/preamble.tex}
+
+\begin{document}
+    \pagenumbering{Roman}
+    \singlespacing
+    \pagestyle{empty}	
+	\input{setup/frontpage}
+	\cleardoublepage
+	\input{setup/titlepage}
+	%\cleardoublepage
+	\pagestyle{plain}
+		
+%%%%% Table of content %%%%%
+	\tableofcontents 
+	\onehalfspacing
+	\pagestyle{fancy} % Normal pagesetup with page numbering (change to plain to remove header)
+	\pagenumbering{arabic} 
+    \setcounter{page}{0} % Sætter sidetal til 1
+%%%%% START OF DOCUMENT  %%%%%	
+
+\part{Exercises}
+
+\chapter{MM1 - Title for MM1}
+\input{dokumentation/mm1/Introduction.tex}
+\input{dokumentation/mm1/PbA.tex}
+\input{dokumentation/mm1/PbB.tex}
+
+\chapter{MM2 - Title for MM2}
+\input{dokumentation/mm2/Introduction.tex}
+
+
+
+
+
+
+%%%%% REFERENCES %%%%%%
+\part{References}
+\input{setup/references.tex}
+
+
+%%%%% NOTES %%%%%
+\input{NOTES.tex}
+
+\end{document}
