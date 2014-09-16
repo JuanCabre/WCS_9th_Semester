@@ -1,1 +1,19 @@
 \section{Problem B}
+\textit{In a communication system operating at $\SI{9}{\giga\hertz}$, the transmitted and receiving antennas are 
+identical and separated by $\SI{10}{\kilo\meter}$. To meet the signal to noise ratio of the receiver the received 
+power must be at least $\SI{10}{\micro\watt}$. Assume the antennas are aligned for maximum reception to 
+each other including polarization and impedance matching. What should the gains of the antennas 
+be when the power to the transmitting antenna is $\SI{10}{\watt}$?}\\
+
+To solve this problem, we consider only the antenna gains and free space losses. The free space loss is dependant on the distance and the wavelength (thus the frequency), while the gains of the transmitting and receiving antenna are the same. Then, we can apply \textit{Friis Formula} for transmission and calculate the gains of the antennas.
+
+\begin{flalign}
+&& \lambda &= \dfrac{c}{f}= \dfrac{1}{30} \\
+&& \dfrac{P_{Rx}}{P_{Tx}} &= G_{Tx} G_{Rx} \left(\dfrac{\lambda}{4 \pi d}\right)^2 \\
+\end{flalign}
+with $G_{Tx} = G_{Rx}=:G$ and $\lambda = \dfrac{c}{f}= \dfrac{1}{30} \SI{}{\meter}$
+\begin{flalign}
+&& G &= \sqrt{\dfrac{P_{Rx}}{P_{Tx}}} \left(\dfrac{\lambda}{4 \pi d}\right) \\
+&& &= 1200\pi \\
+&&  &\approx \SI{35,8}{\decibel}
+\end{flalign}
