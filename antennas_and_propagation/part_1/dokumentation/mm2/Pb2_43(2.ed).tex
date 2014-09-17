@@ -7,11 +7,19 @@ The input reactance of an infinitesimal linear dipole of length $\frac{\lambda}{
 Assuming the wire of the dipole is copper with a conductivity of $5.7E7 [S/m]$ determined at f = 1 GHz the 
 
 \subsection{(a) loss resistance}
-
+\begin{flalign}
+&& R_{loss} =& \frac{\ell}{P}\sqrt{\frac{\omega\mu_{0}}{26}} = \frac{10}{6\pi} \sqrt{\frac{2\pi f \mu_{0}}{26}} = 4.442*10^{-3} \Omega &
+\end{flalign}
 \subsection{(b) radiation resistance}
-
+\begin{flalign}
+&& R_{rad} =& 80 \pi ^2 \frac{\ell}{\lambda}^2 =  80 \pi ^2 \frac{\lambda}{60 \lambda}^2 = \frac{80 \pi ^2}{60^2} = 0.219 \Omega &
+\end{flalign}
 \subsection{(c) radiation efficiency}
-
+\begin{flalign}
+&& Z_{in} =& jX_{in} + R_{rad} + R_{loss} = 0.2234 - j232.88 \Omega &\\
+&& \Gamma =& \frac{Z_{in}+Z_0}{Z_{in}-Z_0} = 0.9115-j0.41 &\\
+&& VSWR =& \frac{1+|\Gamma|}{1-|\Gamma|} = 5078 &
+\end{flalign}
 \subsection{(d) VSWR when the antenna is connected to a 50-ohm line}
 
 \subsection{(e) Match the antenna impedance to 50 Ohm}
