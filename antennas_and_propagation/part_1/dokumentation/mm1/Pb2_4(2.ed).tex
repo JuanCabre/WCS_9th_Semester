@@ -1,2 +1,51 @@
 \section{Problem 2.4 (2.ed)}
-\textit{The power radiated by a lossless antenna is \SI{10}{\watt}}
+\textit{The power radiated by a lossless antenna is \SI{10}{\watt}. The directional characteristics of the antenna are represented by the radiation intensity of:}\\
+\begin{flalign}
+& & U = B_0\,cos^3(\theta) & & (W/unit\, solid\, angle ) & & 0 \leq \theta \leq \dfrac{\pi}{2},\, 0 \leq \phi \leq 2\pi &
+\end{flalign}
+
+\subsection{a}
+\textit{Find the maximum power density (in watts per square meter) at a distance of \SI{1000}{\meter} (assume far field distance). Specify the angle where this occurs.}\\
+
+First we would like to find the total radiated power ($P_{rad}$) as a function of the $B_0$ which is the maximum value of the radiation intensity. The power is given as \SI{10}{\watt} which is inserted in the power equation:
+\begin{flalign}
+&& P_{rad} &= \SI{10}{\watt} = \oint_S \! W_{rad} \, \mathrm{d}S &\\
+&& &= \oint_S \! \dfrac{U}{r^2} \, \mathrm{d}S &\\
+&& &= \oint_S \! \dfrac{B_0 \cos^3\left(\theta\right)}{r^2} \, \mathrm{d}S &\\
+&& &= \int_0^{2\pi} \int_0^{\dfrac{\pi}{2}} \! \dfrac{B_0 \cos^3\left(\theta\right)}{r^2} r^2 \sin\left(\theta\right) \, \mathrm{d}\theta \mathrm{d}\phi &\\
+&& &= B_0 \int_0^{2\pi} \int_0^{\dfrac{\pi}{2}} \!  \cos^3\left(\theta\right) \sin\left(\theta\right) \, \mathrm{d}\theta \mathrm{d}\phi &\\
+&& &= 2 \pi B_0 \int_0^{\dfrac{\pi}{2}} \!  \cos^3\left(\theta\right) \sin\left(\theta\right) \, \mathrm{d}\theta &\\
+&& &= \dfrac{\pi B_0}{2} & \label{eq:bstuff}
+\end{flalign}
+From \equref{eq:bstuff} $B_0$ can be found as follows:
+\begin{flalign}
+&& B_0 &= \dfrac{20}{\pi}\SI{}{\watt} &
+\end{flalign}
+Using $B_0$ it is possible to express the maximum radiated power density $W_{rad,max}$.  
+\begin{flalign}
+&& W_{rad,max} &= \left\vert W_{rad} \right\vert_{\theta = \SI{0}{\degree} , \SI{180}{\degree}} &\\
+&& &= \dfrac{B_0}{r^2} &\\
+&& &= \SI{6,37}{\micro\watt\per\square\meter} &
+\end{flalign}
+As seen this is given in power over unit area. 
+
+\subsection{b}
+\textit{Find the directive of the antenna (dimensionless and in dB)}\\
+
+If we are told to find the directivity ($D_{0}$) and it is not specified in which direction we will use the maximum value ($D_{max}$). 
+\begin{flalign}
+&& D_0 &= D_{max} &
+\end{flalign}
+ To find the maximum directivity we divide the maximum power ($U_{max}$) by the worst possible case ($U_0$).
+\begin{flalign}
+&& D_{max} &=\dfrac{U_{max}}{U_0} &\\
+&& &=\dfrac{4\pi U_{max}}{P_{rad}} &\\
+&& &= \dfrac{4\pi B_0}{P_{rad}} &\\
+&& &= 8 &
+\end{flalign}
+This can be expressed in dB which will result in a  maximum directivity of \SI{9}{\decibel}.
+
+\subsection{c}
+\textit{Find the gain of the antenna (dimensionless and in dB)}\\
+
+Since the antenna is lossless, the antenna efficiency is $e=1$, such that $G_0=D_0=8\approx \SI{9}{\decibel}$.

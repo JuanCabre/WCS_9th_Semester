@@ -1,0 +1,83 @@
+\section{Problem 2.43 (2. ed, 2.51 3. ed)}
+
+The input reactance of an infinitesimal linear dipole of length $\frac{\lambda}{60}$ and radius $a = \frac{\lambda}{200}$ is given by
+\begin{flalign}
+&& X_{in} \simeq& -120 \frac{\left[ln(\ell/2a) - 1\right]}{tan(k\ell/2)}& 
+\end{flalign}
+Assuming the wire of the dipole is copper with a conductivity of $\sigma \:=\: 5.7 \: E7 \: [S/m]$ determined at f = 1 GHz the 
+
+\subsection{(a)}
+\textit{Find the loss resistance}\\
+
+Here we apply the formula stated in equation 2.90b in Balanis 3.ed at page 86. Since the antenna is electrical small we can assume that the current distribution along the antennas length is constant.  
+\begin{flalign}
+&& R_{loss} =& \frac{\ell}{P}\sqrt{\frac{\omega\mu_{0}}{2\sigma}} = \frac{10}{6\pi} \sqrt{\frac{2\pi f \mu_{0}}{2\sigma}} = 4.442 \cdot 10^{-3} \Omega &
+\end{flalign}
+Note: $\mu_{0}$ is the vacuum permeability given as $4\pi \cdot 10^-7 \: [Vs/(Am)]$
+
+\subsection{(b)}
+\textit{Find the radiation resistance}\\
+
+Here we apply the formula stated in equation 4.19 in Balanis 3.ed at page 155.
+\begin{flalign}
+&& R_{rad} =& 80 \pi ^2 \frac{\ell}{\lambda}^2 =  80 \pi ^2 \frac{\lambda}{60 \lambda}^2 = \frac{80 \pi ^2}{60^2} = 0.219 \Omega &
+\end{flalign}
+
+
+\subsection{(c)}
+\textit{Find the radiation efficiency}\\
+
+The radiation efficiency is found using the radiation resistance from ex.b and the loss resistance from ex.a. Here we apply the formula stated in equation 2.90 in Balanis 3.ed at page 86. 
+\begin{flalign}
+&& e_{cd} =& \frac{R_{rad}}{R_{loss}+R_{rad}}& \\
+&&  =& 0.98&
+\end{flalign}
+This means that the radiation efficiency is 98\%.
+
+\subsection{(d)}
+\textit{Find the VSWR when the antenna is connected to a 50-ohm line}\\
+
+Here we apply the equations stated in Balanis 3.ed at page 65. This for the voltage standing wave ratio (VSWR) and the voltage reflection coefficient ($\Gamma$). 
+\begin{flalign}
+&& Z_{in} =& jX_{in} + R_{rad} + R_{loss} = (0.2234 - j232.88) \: \Omega &\\
+&& \Gamma =& \frac{Z_{in}+Z_0}{Z_{in}-Z_0} = 0.9115-j0.41 &\\
+&& VSWR =& \frac{1+|\Gamma|}{1-|\Gamma|} = 5078 &
+\end{flalign}
+
+\subsection{(e)}
+\textit{Match the antenna impedance to $Z_L$ = 50 Ohm}\\
+
+We are using the "cook book" from Pozar 4.ed page 229-231. The problem can be depicted in \figref{fig:LsectionMatching} since $R_{in}<Z_0$.
+\fig[keepaspectratio=true,width=6cm]{LsectionMatching.eps}{L-section matching networks. Network
+for $Z_L$ outside the $1 + jx$ circle.}{fig:LsectionMatching}
+This selection can be expressed by the following:
+\begin{flalign}
+&& Z_{in} =& (0.2234 - j232.88) \: \Omega &\\
+&& Z_{in} =& R_{in}+jX_{in} &\\
+&& Z_{0}=50 \: \Omega >& 0.2234 \: \Omega = R_{in}&
+\end{flalign}
+
+Using the "cook book" we can find $B$ which is expressed by a quadratic equation (eq. 5.6b Pozar 4.ed page 231).
+\begin{flalign}
+&& B =& \pm \frac{\sqrt{\frac{Z_0-R_{in}}{R_{in}}}}{Z_0} &\\
+&&   =& \pm 0.2985 &\\
+\end{flalign}
+
+Likewise we can find $X$ using a quadratic equation (eq. 5.6a Pozar 4.ed page 231).
+\begin{flalign}
+&& X =& \pm \sqrt{R_{in}(Z_0-R_{in})}-X_{in} &\\
+&&   =& \pm 236.21 &
+\end{flalign}
+
+Using these we have the four possible solutions for the matching. 
+
+\subsection{(f)}
+\textit{Plot the SWR for the frequency, 500 MHz to 2 GHz assuming the impedance of the antenna does not
+change from the impedance at 1 GHz.}\\
+
+See excercise g
+
+\subsection{(g)}
+\textit{Plot the SWR for the frequency, 500 MHz to 2 GHz, with the impedance of the antenna as it changes
+according to the formulas}\\
+\fig[keepaspectratio=true,width=15cm]{VSWR.eps}{SWR for constant and frequency dependant impedance}{fig:SWR}
