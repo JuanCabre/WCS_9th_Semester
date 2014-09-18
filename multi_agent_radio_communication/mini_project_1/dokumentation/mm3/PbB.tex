@@ -2,21 +2,26 @@
 
 \textit{MINIMISING RADIATED POWER. For the same given coverage area, compare the radiated power (interference) of a single antenna system, $P_{tx}^1$, to the total radiated power of an M-antenna distributed system, $P_{tx}^M$, for both the network (downlink) and the portable side (uplink). State the implications of the relation.}
 
-In the "lemma" we need to consider these two cases:
+In the "lemma" we need to consider these two cases: Single Antenna System and M Antenna System.
+For the case of Single Antenna System, as there is only one antenna, the total area covered ($A_{c}$) is the area covered for the antenna.
 
-\textbf{Single Antenna System}
-
-As there is only one antenna, the total area covered ($A_{T}$) is the area covered for the antenna.
-
-\begin{equation}
-A_{T} = \pi \cdot d_{c1}^{2}
-\end{equation}
+\begin{flalign}
+&& A_{c} =& \pi \cdot d_{c}^{2} &
+\end{flalign}
 
 For that area the path loss has the expression:
 
-%\begin{flalign}
-%&& PL_{max} &= \frac{P_{R}}{P_{d_{C}}} &
-%\end{flalign}
+\begin{flalign}
+&& PL_{max} =& \dfrac{P_{R}}{P_{d_{c}}}=c\left(\dfrac{A_c}{\pi}\right)  ^{\frac{\varphi}{2}}  &
+\end{flalign}
 
-
- 
+In order to compute the tranmitted power let's take in account the espression of the cover area for the M Antenna System:
+\begin{flalign}
+&& A_{c_m} =& M \cdot \pi \cdot d_{c_m}^{2} &
+\end{flalign}
+Where M is the number of the antenna and $d_{c_m}$ is the ray for each of Mth antenna.
+By comparing $A_{c}$ and $ A_{c_m}$  it can be find the relationship between the ray for a Single Antenna System $d_{c}$ and M Antenna System $d_{c_m}$. 
+\begin{flalign}
+&& A_{c}=& A_{c_m} &\\
+&& \pi\cdot d_{c}=& M \cdot \pi \cdot d_{c_m} &
+\end{flalign}
