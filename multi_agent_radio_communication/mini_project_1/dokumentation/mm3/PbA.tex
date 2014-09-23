@@ -1,14 +1,21 @@
-\section{Problem A}
+\section{Problem A} \label{sec:mm3_PbA}
+\textit{MAXIMISING COVERAGE AREA. For a given radiated power, compare the coverage area of a single antenna system, $Ac^1$, to the coverage area of an M-antenna distributed antenna system, $Ac^M$. State the implications of the relation.}\\
 
-\textit{MAXIMISING COVERAGE AREA. For a given radiated power, compare the coverage area of a single antenna system, $Ac^1$, to the coverage area of an M-antenna distributed antenna system, $Ac^M$. State the implications of the relation.}
-
-We assume, that the minimum acceptable downlink power remains the same for both the single antenna system and the M-antenna system. Also, the total radiated power is constant, so it is divided onto the M antennas.
+We assume, that the minimum acceptable downlink power remains the same for both the single antenna system and the M-antenna system. Also, the total radiated power is constant, so it is divided onto the M antennas. The addition of an index M denotes the belonging to the M-antenna system, so for example $A_c$ is the coverage area of the single antenna system, while $A_cM$ is the M-antenna system cell coverage area. 
 
 \begin{flalign}
 P_{dc}=P_{dc,M}=const.\\
 \frac{PL}{P_R}=M \cdot \frac{PL_M}{P_R} \\
-PL=M\cdot PL_M\\
-\left(\frac{A_c}{\pi}\right)^{\frac{\gamma}{2}}=M\cdot\left(\frac{A_{cM}\cdot M}{\pi}\right)^{\frac{\gamma}{2}}\\
-A_c^{\frac{\gamma}{2}}=M\cdot (A_{cM}\cdot M)^{\frac{\gamma}{2}}\\
-A_c=M^{\frac{-\gamma}{2}-1}\cdot A_{cM} 
+PL=M\cdot PL_M
 \end{flalign}
+
+We now insert the given formulas for the path losses. 
+
+\begin{flalign}
+\left(\frac{A_c}{\pi}\right)^{\frac{\gamma}{2}}=M\cdot\left(\frac{A_{cM}}{\pi}\right)^{\frac{\gamma}{2}}\\
+A_c^{\frac{\gamma}{2}}=M\cdot (A_{cM})^{\frac{\gamma}{2}}\\
+A_c=M^{\frac{2}{\gamma}}\cdot A_{cM} \\
+\frac{A_{cM}}{A_{c}} =M^{-\frac{2}{\gamma}} \label{eq:ExpressionForAcWithM} \\
+\frac{A_{cM,total}}{A_{c}} =\frac{A_{cM}\cdot M}{A_{c}}=M^{-\frac{2}{\gamma}+1}
+\end{flalign}
+
