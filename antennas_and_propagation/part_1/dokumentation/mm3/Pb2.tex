@@ -1,2 +1,29 @@
 \section{Problem 2}
-\textit{--}
+\textit{a) Find the MEG for a vertically mounted half wave dipole, $Gain(\theta, \Phi) = 1.5 \cdot \sin(\theta)$, for an 
+environment where all power is coming from the azimuthal plane (xy-plane) and in theta polarization only.}
+
+For a vertically mounted half wave dipole, we can assume, that the $XPR$ (cross polarization power ratio) is infinite. In addition, we can make the following assumptions for the $\phi$ and $\theta$ components of the angular density functions of the incoming waves
+
+\begin{flalign}
+&& P_\phi &= 0 &\\
+&& P_\theta &= \frac{ \delta(\theta-\SI{90}{\degree}) }{sin(\SI{90}{\degree})} &\\
+&& &= \delta(\theta-\SI{90}{\degree}) &
+\end{flalign}
+
+with the Delta-Dirac-Distribution $\delta$. Using this, we can calculate the MEG.
+
+\begin{flalign}
+&& G_e &= \int_0^{2\pi} \int_0^\pi \frac{XPR}{1+XPR} G_\theta P_\theta \sin{\theta} d\theta d\phi &\\
+&& &= \int_0^{2\pi} \int_0^\pi 1.5 \sin^2{\theta} \delta(\theta-\SI{90}{\degree})  d\theta d\phi &\\
+&& &= 2\pi \int_0^\pi 1.5 \sin^2{\theta} \delta(\theta-\SI{90}{\degree})  d\theta &\\
+&& &= 3\pi \cdot \sin^2(\SI{90}{\degree}) &\\
+&& &= 3\pi. &
+\end{flalign}
+
+\textit{b) Now, the dipole is rotated 90 degrees (along the X axis), what is the MEG?}
+
+Since now due to the horizontally aligned half wave dipole, we can assume $XPR=0$. This way, the integrand reduces to zero, so
+
+\begin{flalign}
+G_e=   0.
+\end{flalign}
