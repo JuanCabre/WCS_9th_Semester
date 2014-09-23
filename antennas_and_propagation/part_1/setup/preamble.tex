@@ -570,10 +570,12 @@
 }
 \usepackage[square]{natbib}
 
-
-% This should make latex try to avoid orphans more... Max is 10000 but will probably fuck up latex :P
-%\widowpenalty=300
-%\clubpenalty=300
+%%% Stops figures and stuff to float to next section %%%
+\usepackage[section]{placeins}
+\let\OLDsubsection=\subsection
+\renewcommand{\subsection}[1]{\FloatBarrier\OLDsubsection{#1}}
+\let\OLDsubsubsection=\subsubsection
+\renewcommand{\subsubsection}[1]{\FloatBarrier\OLDsubsubsection{#1}}
 
 % Glossaries
 \usepackage[acronym,xindy]{glossaries}
