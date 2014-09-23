@@ -34,6 +34,8 @@
 
 # compiled documentation
 *.temp
+*.bbl
+*.blg
 
 #Eclipse ignore
 .cproject
@@ -92,5 +94,3 @@ VSProjects
 ehthumbs.db
 Thumbs.db
 *.bak
-multi_agent_radio_communication/mini_project_1/master.bbl
-multi_agent_radio_communication/mini_project_1/master.blg
