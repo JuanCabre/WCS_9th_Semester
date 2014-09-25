@@ -4,7 +4,7 @@
 % This copyright notice may NOT be removed from the program
 % and must accompany any part of the program being copied .
 %==============================================================================
-clear;
+clear all;
 clf;
 close all
 
@@ -45,10 +45,63 @@ a_dB=10.*log10(a + 0.001);
 a_dB_polar=[ transpose(rad) transpose(a_dB+Tx_power*ones(size(a_dB,1),size(a_dB,2)))];
 
 
-plot(rad,a_dB);
+%plot(rad,a_dB);
 figure
 polar(a_dB_polar(:,1),a_dB_polar(:,2)) % what should arguments be?
 % axis([0 2*pi -60 0])
+
+%% 
+
+dirac90=zeros(size(rad));
+dirac60=zeros(size(rad));
+dirac90(90)=1;
+dirac60(60)=3/4;
+
+rect1=zeros(size(rad));
+rect1(80:100)=1;
+
+rect2=zeros(size(rad));
+rect2(54:67)=3/4;
+
+Rect1=fft(rect1);
+Rect2=fft(rect2);
+
+Dirac= fft(dirac90);
+Dirac2= fft(dirac60);
+
+
+A=fft(a);
+RESULT=ifft((A).*Dirac);
+RESULT2=ifft((A).*Dirac2);
+RESULT_dB=10.*log10(RESULT + 0.001);
+RESULT2_dB=10.*log10(RESULT2 + 0.001);
+
+
+RESULT3=ifft((A).*Rect1);
+RESULT4=ifft((A).*Rect2);
+RESULT3_dB=10.*log10(RESULT3 + 0.001);
+RESULT4_dB=10.*log10(RESULT4 + 0.001);
+
+RESULT_dB_polar=[ transpose(rad) transpose(RESULT_dB+Tx_power*ones(size(RESULT_dB,1),size(RESULT_dB,2)))];
+RESULT2_dB_polar=[ transpose(rad) transpose(RESULT2_dB+Tx_power*ones(size(RESULT2_dB,1),size(RESULT2_dB,2)))];
+
+figure
+polar(RESULT_dB_polar(:,1),RESULT_dB_polar(:,2))
+hold on
+polar(RESULT2_dB_polar(:,1),RESULT2_dB_polar(:,2),'r')
+hold off
+
+
+RESULT3_dB_polar=[ transpose(rad) transpose(RESULT3_dB+Tx_power*ones(size(RESULT_dB,1),size(RESULT_dB,2)))];
+RESULT4_dB_polar=[ transpose(rad) transpose(RESULT4_dB+Tx_power*ones(size(RESULT2_dB,1),size(RESULT2_dB,2)))];
+figure
+
+polar(RESULT3_dB_polar(:,1),RESULT3_dB_polar(:,2))
+hold on
+polar(RESULT4_dB_polar(:,1),RESULT4_dB_polar(:,2),'r')
+hold off
+
+
 
 %-------------- question 1  ---------------------
 %calculate C0/I0
