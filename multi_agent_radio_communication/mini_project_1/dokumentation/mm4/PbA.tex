@@ -1,11 +1,17 @@
 \section{Problem A - Uni directional : invariance1} \label{sec:mm4_PbA}
 
 \subsection{Question 1}
-\textit{Consider an antenna with power pattern $a=a1+a2$ with $a1=sin(\Phi).^{30}$ from 53 to 128 deg. and $a2=0.25*cos(\Phi - \frac{\pi}{4}).^{80}$ from 24 to 66 deg, zero else where}
+\textit{Consider an antenna with power pattern $a=a1+a2$ with $a1=sin(\Phi)^{30}$ from 53 to 128 deg. and $a2=0.25*cos(\Phi - \frac{\pi}{4})^{80}$ from 24 to 66 deg, zero else where (\figref{fig:antenna_power_pattern})}.
+\fig[keepaspectratio=true,width=10cm]{antenna_power_pattern.eps}{Antenna Power Pattern}{fig:antenna_power_pattern}
+
+In \figref{fig:antenna_power_pattern} the antenna power is set to 30 dB.
 
 \subsubsection{a) what is the approx. peak to null depth compared to main and side lobe}
 
+Compared to the main and side lobe, from \figref{fig:antenna_power_pattern} it can be noticed that the peak to null depth is around 60 degrees at 15 dB.
 
 \subsubsection{b) Now an user Co is positioned at 90 deg with 0dB and an interfere Io at 60 deg with -6dB. What is the approx. Co/Io?}
 
+Relating to \figref{fig:antenna_power_pattern}, the position of the user at 90 deg with 0 dB indicates that the user's transmit power is 30 dB, the same as for the interfere. Therefore, when calculating the SIR these two will cancel out.\\
 
+By positioning the interfere at 60 deg with -6 dB will exceed in an SIR given by the peak to null depth value found in subsection a (15 dB), to which the interfere is added. The resulting SIR will be given by $15 + 6$ = $21$ dB.
