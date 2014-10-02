@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient4409"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#28f307;stop-opacity:1;"
+         offset="0"
+         id="stop4411" />
+    </linearGradient>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3766"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="210.00255"
+     inkscape:cy="487.78404"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="721"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2985" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0;marker-end:url(#Arrow1Lend)"
+       d="m 195,572.36218 0,-90"
+       id="path2987"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.03179585999999990px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 300,572.88572 0,-90.49124"
+       id="path2989"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="179.30208"
+       y="450.81635"
+       id="text4385"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4387"
+         x="179.30208"
+         y="450.81635">Thresholds power (dB)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="100"
+       y="507.36218"
+       id="text4389"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4391"
+         x="100"
+         y="507.36218">Up in </tspan><tspan
+         sodipodi:role="line"
+         x="100"
+         y="522.36218"
+         id="tspan4393">modulation</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="315"
+       y="512.36218"
+       id="text4395"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4397"
+         x="315"
+         y="512.36218">Down in</tspan><tspan
+         sodipodi:role="line"
+         x="315"
+         y="527.36218"
+         id="tspan4399">modulation</tspan></text>
+    <rect
+       style="fill:#1cc100;fill-opacity:1;stroke:none;stroke-width:5.59999990000000025;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4401"
+       width="65"
+       height="25"
+       x="110"
+       y="582.36218" />
+    <rect
+       style="fill:#ec2400;fill-opacity:1;stroke:#ff0707;stroke-width:5.59999990000000025;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4403"
+       width="265"
+       height="35"
+       x="110"
+       y="617.36218" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="120"
+       y="592.36218"
+       id="text4415"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="120"
+         y="592.36218"
+         id="tspan4419"
+         style="font-size:10px">short</tspan><tspan
+         sodipodi:role="line"
+         x="120"
+         y="604.86218"
+         id="tspan4423"
+         style="font-size:10px">packet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="205"
+       y="637.36218"
+       id="text4425"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4427"
+         x="205"
+         y="637.36218">long packet</tspan></text>
+    <path
+       style="fill:none;stroke:#00bf28;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 180,542.36218 25,0"
+       id="path4431"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#ff0000;stroke:#df0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 180,527.36218 25,0"
+       id="path4433"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#00e10c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 285,527.36218 25,0"
+       id="path4435"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#fc0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 285,542.36218 25,0"
+       id="path4437"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
