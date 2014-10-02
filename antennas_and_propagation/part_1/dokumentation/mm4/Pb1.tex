@@ -1,2 +1,18 @@
 \section{Problem 1}
-\textit{We have seen how to measure and calculate the Mean Effective Gain, MEG, but only how to calculate the correlation and the question is how can the correlation between two antennas be measured?}
+\textit{We have seen how to measure and calculate the Mean Effective Gain, MEG, but only how to calculate the correlation and the question is how can the correlation between two antennas be measured?}\\
+
+When talking about correlation we need to define which kind of correlation we want to investigate. Normally when talking about the correlation between two signals at the antenna level it is the power of the signal which is meant but it could also be the polarization known as the XPD/XPR. But here we will stick to the power.\\
+
+The correlation of the signals power could be investigated directly or based on the envelope power. The cross-correlation between two signals is in the discrete domain defined as:
+\begin{flalign}
+&& (f \ast g)[n] \eqdef & \sum\limits_{m=-\infty}^\infty f^*[m] \quad g[m+n]  &
+\end{flalign}
+
+There are other ways of calculating the correlation which can be shown by \figref{fig:correlation}:
+\fig[keepaspectratio=true,width=8cm]{correlation.eps}{Comparison of the different correlation approaches}{fig:correlation}
+
+\FloatBarrier 
+If one where to use a more direct way of measuring instead of calculating an approach as shown in \figref{fig:AnalogCorrelation} can be used.
+\fig[keepaspectratio=true,width=10cm]{AnalogCorrelation.eps}{Comparison of the different correlation approaches}{fig:AnalogCorrelation}
+
+For \figref{fig:AnalogCorrelation} it should be noted that it is a conceptual drawing and not implementable directly.
