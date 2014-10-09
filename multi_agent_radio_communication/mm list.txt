@@ -1,0 +1,13 @@
+MM1 TR/PE - 4/11
+MM2 Multiplex ST coding /PE - 11/11
+MM3 DAS / TBS - 18/11
+MM4 SDMA /PE - 25/11
+MM5 xlayer/PP - 2/10
+MM6 Cognitive radio and dynamics spectrum sharing/PP - 9/10 no lecture - 16/10
+MM7 OFDM/PP - 23/10
+MM8 CDMA/PP - 30/10
+MM9 Netw coding/DEL - 6/11
+MM10 Coop coms/DEL - 13/11
+MM11 Coop vs energy (device perspective)/DEL - 20/11
+MM12 energy-cost-performance balancing/TBS - 27/11
+MM13 Passive coms (UHF RFID)/PE - 4/12
