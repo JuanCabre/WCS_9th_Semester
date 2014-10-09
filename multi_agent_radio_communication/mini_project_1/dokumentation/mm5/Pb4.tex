@@ -1,0 +1,96 @@
+\section{Problem 4}
+\textit{a) A Base station (BS) is serving K users. The BS communicates to the users by using a slotted channel. Assume that in each new slot the BS knows immediately the instantaneous SNR  $\gamma_k$ of each user $k$, $1 \leq k \leq K$. The BS picks the user with maximal SNR $\gamma_m$ and transmits to that user by using a data rate $\log(0.5 + \gamma_m)$ (the bandwidth is normalized). Assume that the SNR of each user has a probability density distribution:
+$\rho(\gamma)=\frac{1}{\gamma_0} \exp\left(-\frac{\gamma}{\gamma_0}\right)$
+At each new slot the SNR of each user is picked randomly from the above distribution and independently of the other users. } \\
+
+We are searching for the probability density function of the maximum of all individual SNR $\gamma_m$.
+
+\begin{flalign}
+&& \gamma_m &=\max(\gamma_1,\gamma_2,\cdots,\gamma_K) & 
+\end{flalign}
+
+We know, that the individual SNR $\gamma$ are equally distributed with $\rho(\gamma)$ and independent. To derive an expression for $\gamma_m$, the cumulative probability function $F(\gamma)$ is useful, which again describes the probability for all independent random variables.
+
+\begin{flalign}
+&& F(\gamma) &= \int_{-\infty}^\gamma \! \rho(x) \mathrm{d}x & \\
+&&  &= \int_{0}^\gamma \! \frac{1}{\gamma_0} \exp\left(-\frac{x}{\gamma_0}\right)  \mathrm{d}x & \\
+&&  &= \left[ \exp\left(-\frac{x}{\gamma_0}\right) \right]_0^{\gamma} & \\
+&& &=1-\exp\left(-\frac{\gamma}{\gamma_0}\right) &
+\end{flalign}
+
+From the definition of the cumulative probability
+
+\begin{flalign}
+&& F(\gamma) &= P(\gamma_i \leq \gamma) \, \, \forall \, \, i\in [1;K] & 
+\end{flalign}
+
+it follows
+
+\begin{flalign}
+&& F_m(\gamma) &= P(\max_i{\gamma_i} \leq \gamma) & \\
+&& &= P(\gamma_1 \leq \gamma, \gamma_2 \leq \gamma, \gamma_3 \leq \gamma, ... \gamma_K \leq \gamma). & 
+\end{flalign}
+
+Since the random variables are all independent, we can split this probability function into separate factors.
+
+\begin{flalign}
+&& &= P(\gamma_1 \leq \gamma) \cdot P(\gamma_2 \leq \gamma ) \cdot P(\gamma_3 \leq \gamma) \cdots \cdot P(\gamma_K \leq \gamma) & \\
+&& &= (F(\gamma))^K & \\
+&& &= \left( 1-\exp\left(-\frac{\gamma}{\gamma_0}\right) \right)^K & 
+\end{flalign}
+
+From this expression, we can return into the probability density domain with
+
+\begin{flalign}
+&& \rho_m(\gamma)&= \frac{\mathrm{d}}{\mathrm{d} \gamma} F_m(\gamma) & \\
+&&  &=   \frac{K}{\gamma_0} \exp\left(-\frac{\gamma}{\gamma_0}\right) \left( 1-\exp\left(-\frac{\gamma}{\gamma_0}\right) \right)^{K-1}.   &
+\end{flalign}
+
+
+\textit{b) Write the expression to calculate the average throughput of this system.} \\
+
+The average throughput of the system is calculated by a transformation from the random variable $\gamma_m$ (distributed with $F_m(\gamma)$ to the random variable $R$ (distributed with $F_R(r)$, which are connected by 
+
+\begin{flalign}
+R=\log_2(1+\gamma_m).
+\end{flalign}
+
+With this, the probability density function for the data rate can be calculated (again in the cumulative probability domain)
+
+\begin{flalign}
+&& F_R(r) &=P(\log_2(1+\gamma) \leq r) & \\
+&& &= P(1+\gamma \leq 2^r) & \\
+&& &= P(\gamma \leq 2^r-1) & \\
+&& &= F_m(2^r-1) & \\
+&& &= \left( 1-\exp\left(-\frac{2^r-1 }{\gamma_0}\right) \right)^K &
+\end{flalign}
+
+The probability density function then is
+
+\begin{flalign}
+&& \rho_R(r) &= \frac{\mathrm{d}}{\mathrm{d} r} F_R(r)=K \ln(2) 2^r \exp\left(-\frac{2^r-1 }{\gamma_0}\right) \left( 1-\exp\left(-\frac{2^r-1 }{\gamma_0}\right) \right)^{K-1}. & 
+\end{flalign}
+
+The average throughput is the mean value of the random variable $R$, which corresponds to the first moment
+
+\begin{flalign}
+&& E\{R\}&=\int_0^\infty r \cdot \rho_R(r) \mathrm{d}r. &\label{eq:expectation_R}
+\end{flalign}
+
+\textit{Alternative solution:}\\
+The above result can also be achieved by using the law of the unconscious statistician that states, that the expectation value of a random variable $R$ with $R=g(\gamma_m)$ can be calculated by the inner (function) product of $g$ and the probability density function of the random variable $\gamma_m$.
+
+\begin{flalign}
+&& E\{R\}&=\int_0^\infty g(\gamma) \cdot \rho(\gamma) \mathrm{d}\gamma. & \label{eq:expectation_gamma}
+\end{flalign}
+
+A substitution of $r$ in \eqref{eq:expectation_R} by $r=\log_2(1+\gamma)$ also yields the same expression as \eqref{eq:expectation_gamma}. \\
+
+
+\textit{c) What is the average throughput achieved by the user $k$?} \\
+
+Since the probability, that user $k$ has the highest SNR is the same for all $K$ users, the average throughput $R_k$ achieved by user $k$ is
+
+\begin{flalign}
+&& E\{R_k\}&= \frac{1}{K} \cdot E\{R\}. & 
+\end{flalign}
