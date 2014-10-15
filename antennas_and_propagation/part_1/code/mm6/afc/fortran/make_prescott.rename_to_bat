@@ -1,0 +1,1 @@
+g95 -O3 -march=prescott -msse -msse2 -msse3 -mfpmath=sse -ftree-vectorize -o fdtd.exe fdtd.f03
