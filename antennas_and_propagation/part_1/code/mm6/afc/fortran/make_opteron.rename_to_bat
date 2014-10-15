@@ -1,0 +1,1 @@
+g95 -O3 -march=opteron -msse -msse2 -msse3 -m3dnow -mfpmath=sse -m64 -ftree-vectorize -o fdtd.exe fdtd.f03
