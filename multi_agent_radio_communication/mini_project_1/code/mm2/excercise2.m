@@ -5,16 +5,20 @@ close all
 % excercise 1.2 a
 
 % correlated channels
-p = 0.9;             % correlation coeffiecient
+p = .5;             % correlation coeffiecient
 x = randn(1,1000) ;     % random channel 1 (in-phase part)
 y = randn(1,1000) ;     % random channel 2 (in-phase part)
+x1 = randn(1,1000) ;
+y1 = randn(1,1000) ;
 
 a = x;      % channel 1
+a1 = x1;
 for i = 1:1000
     b(i) = (sqrt(1-p^2))*y(i)+p*x(i);   % channel 2, with correlation p to channel 1
+    b1(i) = (sqrt(1-p^2))*y1(i)+p*x1(i);
 end
-u = a .* exp(-j*randn(1,1000));
-v = b .* exp(-j*randn(1,1000));
+u = a .* exp(-j*a1);
+v = b .* exp(-j*b1);
 
 % check correlation coefficient, can use both functions for same result,
 % corrcoeff best for matrix coefficient
