@@ -38,12 +38,12 @@ delay_spread = spread(delays,linear);
 %         h(i,k) = (randn() + j*randn()) * 10.^(power_DB(k)/10);
 %     end
 % end
+
+% Or in a more efficient way: Not using a for loop but building a matrix
+% using the rand function. Note that linear = 10.^(power_DB./10)
 Nr = 1000;
 Nd = length(delays);
-h = (randn(Nr,Nd) + j*randn(Nr,Nd)) .* repmat(linear,[1000,1]);
-
-%     stem(delays,abs(h(1,:)))
-%     plot(delays,10.^(power_DB./10))
+h = (randn(Nr,Nd) + j*randn(Nr,Nd)) .* repmat(linear,[Nr,1]);
 
 h_mean_abs = mean(abs(h));
 h_mean_abs_DB = 10.*log(h_mean_abs);
@@ -52,20 +52,20 @@ h_mean_abs_DB = 10.*log(h_mean_abs);
 stem(delays,h_mean_abs,'b') %% Average Power delay profile
 hold on
 plot(delays,linear,'r')
-xlabel('Delay(us)');
-ylabel('Power(W)');
-legend('Realizations','GSM (Urban)');
-title('Ex B: Power Delay Profile');
+xlabel('Delay(us)','FontSize',15);
+ylabel('Power(W)','FontSize',15);
+legend('Realizations','GSM (Urban)','FontSize',15);
+title('Ex B: Power Delay Profile','FontSize',15);
 
 %Option B.2 (dB):
 figure
 stem(delays,h_mean_abs_DB,'b') %% Average Power delay profile
 hold on
 plot(delays,power_DB,'r')
-xlabel('Delay(us)');
-ylabel('Power(dB)');
-legend('Realizations','GSM (Urban)');
-title('Ex B: Power Delay Profile');
+xlabel('Delay(us)','FontSize',15);
+ylabel('Power(dB)','FontSize',15);
+legend('Realizations','GSM (Urban)','FontSize',15);
+title('Ex B: Power Delay Profile','FontSize',15);
 
 
 delay_spread_h = spread(delays,h_mean_abs);
@@ -133,33 +133,33 @@ delay_spread_y= spread(tr_axis,pdp_y);
 % Option Linear
 figure
 plot(tr_axis,pdp_y);
-xlabel('Delay(us)');
-ylabel('Power(W)');
-legend('Average Realizations');
-title('Ex C: Power Delay Profile');
+xlabel('Delay(us)','FontSize',15);
+ylabel('Power(W)','FontSize',15);
+legend('Average Realizations','FontSize',15);
+title('Ex C: Power Delay Profile','FontSize',15);
 
 figure 
 plot(tr_axis,pdp_y_n); 
-xlabel('Delay(us)');
-ylabel('Power(W)');
-legend('Average Realizations (Normalized)');
-title('Ex C: Power Delay Profile');
+xlabel('Delay(us)','FontSize',15);
+ylabel('Power(W)','FontSize',15);
+legend('Average Realizations (Normalized)','FontSize',15);
+title('Ex C: Power Delay Profile','FontSize',15);
 
 
 % Option DB
 figure
 plot(tr_axis,pdp_y_DB);
-xlabel('Delay(us)');
-ylabel('Power(dB)');
-legend('Average Realizations');
-title('Ex C: Power Delay Profile');
+xlabel('Delay(us)','FontSize',15);
+ylabel('Power(dB)','FontSize',15);
+legend('Average Realizations','FontSize',15);
+title('Ex C: Power Delay Profile','FontSize',15);
 
 figure 
 plot(tr_axis,10.*log(pdp_y_n)); 
-xlabel('Delay(us)');
-ylabel('Power(dB)');
-legend('Average Realizations (Normalized)');
-title('Ex C: Power Delay Profile');
+xlabel('Delay(us)','FontSize',15);
+ylabel('Power(dB)','FontSize',15);
+legend('Average Realizations (Normalized)','FontSize',15);
+title('Ex C: Power Delay Profile','FontSize',15);
 
 % Plotting real and imag part separately
 
@@ -187,8 +187,6 @@ for i=1:1000
 end
 
 %% Exercise E
-
-
 % So, now, what does it means to apply time reversal in a MISO fashion? it
 % means to sum the autocorrelation functions (convolutions) of each of the
 % received antenas (see last slide in page 4 of mm1)
@@ -209,9 +207,9 @@ delay_spread_y_MISO = spread(tr_axis_MISO,pdp_y_MISO);
 %Option Linear
 figure
 plot(tr_axis_MISO,abs(y_MISO(1,:)))
-xlabel('Delay(us)');
-ylabel('Power(W)');
-title('MISO (Time Reversal)');
+xlabel('Delay(us)','FontSize',15);
+ylabel('Power(W)','FontSize',15);
+title('Ex E: MISO (Time Reversal)','FontSize',15);
 
 %Option DB
 % figure
@@ -247,9 +245,9 @@ delay_spread_y_MISO_multiple = spread(tr_axis_MISO,pdp_y_MISO_multiple);
 % Option Linear
 figure
 plot(tr_axis_MISO,abs(y_MISO(1,:)))
-xlabel('Delay(us)');
-ylabel('Power(W)');
-title('PDP MISO (Time Reversal)');
+xlabel('Delay(us)','FontSize',15);
+ylabel('Power(W)','FontSize',15);
+title('PDP MISO (Time Reversal) 16 antennas','FontSize',15);
 
 %Option DB
 % figure
