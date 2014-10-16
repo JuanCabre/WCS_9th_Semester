@@ -5,20 +5,23 @@ close all
 % excercise 1.2 a
 N = 1000;
 % correlated channels
-p = .8;             % correlation coeffiecient
+p = [.7 .8 .9];             % correlation coeffiecient
+p = 0.4
 x = randn(1,N);     % random channel 1 (in-phase part)
 y = randn(1,N);     % random channel 2 (in-phase part)
-x1 = randn(1,N);
-y1 = randn(1,N);
+x1 = rand(1,N);     % random channel 1 (quadrature)
+y1 = rand(1,N);
 
 a = x;      % channel 1
 a1 = x1;
-for i = 1:N
-    b(i) = (sqrt(1-p^2))*y(i)+p*x(i);   % channel 2, with correlation p to channel 1
-    b1(i) = (sqrt(1-p^2))*y1(i)+p*x1(i);
+for k = 1:length(p)
+    for i = 1:N
+        b(k,i) = (sqrt(1-p(k)^2))*y(i)+p(k)*x(i);   % channel 2, with correlation p to channel 1
+        b1(k,i) = (sqrt(1-p(k)^2))*y1(i)+p(k)*x1(i);
+    end
+    u(k,:) = a .* exp(-j*a1);
+    v(k,:) = b(k,:) .* exp(-j*b1(k,:));
 end
-u = a .* exp(-j*a1);
-v = b .* exp(-j*b1);
 
 % check correlation coefficient, can use both functions for same result,
 % corrcoeff best for matrix coefficient
@@ -50,7 +53,7 @@ semilogy(H2,Percent_Axis,'r');
 xlabel('Power [dB]')
 ylabel('Log (%)')
 title('CDF data plot')
-legend('channel 1','channel 2')
+legend('channel 1','channel 2','Location','East')
 
 
 % excercise 1.2 b
@@ -72,9 +75,9 @@ Percent_Axis = linspace (0 ,100 , N);
 semilogy(H1,Percent_Axis,'b'); hold on; grid on;
 semilogy(H2,Percent_Axis,'r');
 semilogy(Max_ratio_sort,Percent_Axis,'g');
-text(-55,50,corr_value);
+text(-40,20,corr_value);
 xlabel('Power [dB]')
 ylabel('Log (%)')
 title('CDF data plot')
-legend('channel 1','channel 2','MRC combinig')
+legend('channel 1','channel 2','MRC combinig','Location','West')
 
