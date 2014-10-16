@@ -14,4 +14,44 @@ As an example can be used \figref{fig:TimeSlots} where there is unused time in b
   \label{fig:TimeSlots}
 \end{figure}
 
-However this is as mentioned not the best way of managing the spectrum as the burst of transmission from the primary transmitter could not be periodic or in varying length. If this is the case and the secondary transmitter transmit while the primary transmitter is also transmitting then interference will occur. Due to this a balance of what interference can be allowed have to be made. 
+However this is as mentioned not the best way of managing the spectrum as the burst of transmission from the primary transmitter could not be periodic or in varying length. If this is the case and the secondary transmitter transmit while the primary transmitter is also transmitting then interference will occur. Due to this a balance of what interference can be allowed have to be made. This can be illustrated by the following:
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=8cm]{InterferenceFun.eps}
+  \caption{Illustration of interference}
+  \label{fig:InterferenceFun}
+\end{figure}
+
+In \figref{fig:InterferenceFun} $A$ and $B$ is the receiving nodes. $P_T$ is the primary transmitter and $P_S$ is the secondary transmitter. $\gamma$ and $\gamma_b$ is the attenuation (path-loss) from the transmitters to the receiving nodes. $I_S$ and $I_b$ is respectively the interference from the two transmitters. \\
+
+The signal to noise ratio (SNR) is as know the ration between the intended signal and the interference, also marked at \figref{fig:InterferenceFun} with $S$ and $N$, note that $N$ is the noise inherent in the system. Without interference then $P_T$ can be related to a signal intended at $A$ which can be described as:
+\begin{flalign}
+ && \frac{S}{N} =& \gamma & \label{eq:SNRsimple}
+\end{flalign} 
+
+Knowing the path-loss ($\gamma$) also enables us to find the maximum (full) capacity of the channel using Shannon as follows:
+\begin{flalign}
+ && C_{full} =& \log_2(1+\gamma) & \label{eq:ShannonLimit}
+\end{flalign} 
+
+When we introduce the interference as shown in \figref{fig:InterferenceFun} instead of the SNR we will have to use the signal to interference ration (SINR). Which can be described as:
+\begin{flalign}
+ && SINR =& \frac{S}{I_S+N} & \label{eq:SINRsimple}
+\end{flalign} 
+
+If we then where to omit the noise ($N$) as this is something we cant do anything about in contrary to the interference ($I_S$) we could scale the expression \ref{eq:SINRsimple} with the noise as follows: 
+\begin{flalign}
+ && SINR =& \frac{S}{\frac{I_S}{N}+N} & 
+\end{flalign}
+
+Then remembering \equref{eq:SNRsimple} and introducing that $\beta = \frac{I_S}{N}$ we can write:
+\begin{flalign}
+ && SINR =& \frac{\gamma}{\beta+1} & \label{eq:SINRwithBeta}
+\end{flalign}
+
+With this we could again use Shannon to write up the capacity of the channel as follows:
+\begin{flalign}
+ && C_{interfered} =& \log_2\left(1+\frac{\gamma}{\beta+1}\right) & \label{eq:ShannonLimitSINR}
+\end{flalign} 
+
+The rate the system can operate at is determined by the capacity giving...
