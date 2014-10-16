@@ -11,7 +11,7 @@ Assuming the wire of the dipole is copper with a conductivity of $\sigma \:=\: 5
 
 Here we apply the formula stated in equation 2.90b in Balanis 3.ed at page 86. Since the antenna is electrical small we can assume that the current distribution along the antennas length is constant.  
 \begin{flalign}
-&& R_{loss} =& \frac{\ell}{P}\sqrt{\frac{\omega\mu_{0}}{2\sigma}} = \frac{10}{6\pi} \sqrt{\frac{2\pi f \mu_{0}}{2\sigma}} = 4.442 \cdot 10^{-3} \Omega &
+&& R_{loss} =& \frac{\ell}{P}\sqrt{\frac{\omega\mu_{0}}{2\sigma}} = \frac{10}{6\pi} \sqrt{\frac{2\pi f \mu_{0}}{2\sigma}} = 4.442 \cdot 10^{-3} \Omega & \label{eq:R_loss}
 \end{flalign}
 Note: $\mu_{0}$ is the vacuum permeability given as $4\pi \cdot 10^-7 \: [Vs/(Am)]$
 
@@ -41,7 +41,7 @@ Here we apply the equations stated in Balanis 3.ed at page 65. This for the volt
 \begin{flalign}
 && Z_{in} =& jX_{in} + R_{rad} + R_{loss} = (0.2234 - j232.88) \: \Omega &\\
 && \Gamma =& \frac{Z_{in}+Z_0}{Z_{in}-Z_0} = 0.9115-j0.41 &\\
-&& VSWR =& \frac{1+|\Gamma|}{1-|\Gamma|} = 5078 &
+&& VSWR =& \frac{1+|\Gamma|}{1-|\Gamma|} = 5078 & \label{eq:vswr}
 \end{flalign}
 
 \subsection{(e)}
@@ -75,9 +75,12 @@ Using these we have the four possible solutions for the matching.
 \textit{Plot the SWR for the frequency, 500 MHz to 2 GHz assuming the impedance of the antenna does not
 change from the impedance at 1 GHz.}\\
 
-See excercise g
+Using matlab to solve the previous equations leading up to VSWR in \eqref{eq:vswr} as a function of frequency, $R_{loss}$ from \eqref{eq:R_loss} is kept constant as calculated for \SI{1}{\giga\hertz}. Then plot the following results as:
+\fig[keepaspectratio=true,width=15cm]{VSWR1.eps}{SWR for constant impedance calculated at \SI{1}{\giga\hertz}}{fig:SWR}
 
 \subsection{(g)}
 \textit{Plot the SWR for the frequency, 500 MHz to 2 GHz, with the impedance of the antenna as it changes
 according to the formulas}\\
+
+Using matlab to solve the formulas in the samme manner as problem f, but this time $R_{loss}$ from \eqref{eq:R_loss} is calculated for the entire frequency range. Then plot the results as:
 \fig[keepaspectratio=true,width=15cm]{VSWR.eps}{SWR for constant and frequency dependant impedance}{fig:SWR}

@@ -22,7 +22,7 @@ v = b .* exp(-j*b1);
 
 % check correlation coefficient, can use both functions for same result,
 % corrcoeff best for matrix coefficient
-check_correlation = (corr(abs(u'),abs(v')))          
+check_correlation = (corr((u'),(v')))          
 abs(corrcoef(u',v'))
 
 corr_value = char(sprintf('Correlation coefficient %.3f',check_correlation));
