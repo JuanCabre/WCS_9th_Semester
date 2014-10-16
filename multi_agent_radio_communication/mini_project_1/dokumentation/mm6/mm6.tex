@@ -54,4 +54,22 @@ With this we could again use Shannon to write up the capacity of the channel as 
  && C_{interfered} =& \log_2\left(1+\frac{\gamma}{\beta+1}\right) & \label{eq:ShannonLimitSINR}
 \end{flalign} 
 
-The rate the system can operate at is determined by the capacity giving...
+The rate the system can operate at is determined by the capacity giving that at the rate for the primary transmitter under interference from secondary transmitter can be expresses as follows:
+\begin{flalign}
+ && R_{P} =& C_{interfered} = C_{full} \, - \, \Delta& \label{eq:RatePrime}
+\end{flalign} 
+where $\Delta$ is the rate the primary transmitter sacrifices in order to let the secondary transmitter also use the spectrum.\\
+
+The sacrifices ($\Delta$) can be found using the following:
+\begin{flalign}
+ && \Delta =& \log_2(1+\gamma)- \log_2\left(1+\frac{\gamma}{\beta+1}\right)  & \\
+ && 	   =& \log_2\left(1+\frac{\gamma\beta}{1+\gamma+\beta}\right)  &\label{eq:DeltaOne}
+\end{flalign} 
+
+The rate for the secondary transmitter can be found as follows:
+\begin{flalign}
+ && R_{S} =& \log_2\left(1+\frac{\gamma_S}{1+\beta_P}\right) & \label{eq:ShannonLimitSINR}
+\end{flalign}
+where $\beta_P=\frac{I_P}{N}$\\
+
+It should be noted that $C_{interfered}$ is always smaller than $C_{full}$ giving that a choice have to be made if the sacrifices in primary rate is counterbalanced by the introduction of a secondary transmitter. 

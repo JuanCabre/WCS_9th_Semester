@@ -1,0 +1,29 @@
+\section{Exercise 1 - Problem 2}
+\textit{MATLAB: Generate two channels that are independent, Rayleigh distributed and have equal average powers.}\\
+
+This is done using the following code:
+\code{language=Matlab,caption = Generation of Rayleigh distributed channels,label=cl:RayleighGeneration,linerange={5-23},firstnumber=5}{code/mm2/excercise2.m}
+
+\FloatBarrier % Stops figs fucking arround
+\subsection{a. Show the envelope distribution of the signals and the correlation coefficient.}
+\fig[keepaspectratio=true,width=10cm]{ST_rayleigh_envelope_cor0.eps}{Envelope of uncorrelated Rayleigh fading channels}{fig:ST_rayleigh_envelope_cor0}
+\fig[keepaspectratio=true,width=10cm]{ST_rayleigh_mrc_cor0.eps}{CDF of Rayleigh fading with MRC for uncorrelated channels}{fig:rayleigh_mrc_cor0}
+
+
+
+\FloatBarrier % Stops figs fucking arround
+\subsection{b. Implement the Alamouti scheme and find the resulting envelope distribution.}
+
+
+
+
+\FloatBarrier % Stops figs fucking arround
+\subsection{Repeat (a) and (b) for the case where the channels are correlated with $\rho=0.4$ }
+To do this the same code is used as for question (a) but here the correlation is set to approximating $\rho=0.4$ this is giving the following plots:
+\fig[keepaspectratio=true,width=10cm]{ST_rayleigh_envelope.eps}{Envelope of Rayleigh fading}{fig:ST_rayleigh_envelope}
+\fig[keepaspectratio=true,width=10cm]{ST_rayleigh.eps}{CDF of Rayleigh fading}{fig:ST_rayleigh}
+\fig[keepaspectratio=true,width=10cm]{ST_rayleigh_mrc.eps}{CDF of Rayleigh fading with MRC}{fig:ST_rayleigh_mrc}
+
+
+\FloatBarrier % Stops figs fucking arround
+\subsection{Repeat (a) and (b) for the case where the average power of the second channel is one half of the power of the first channel.}
