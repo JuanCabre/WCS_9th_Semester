@@ -2,3 +2,33 @@
 \textit{Prove using the equivalence theorem that an electric current source does not radiate when it 
 is tangential to a perfect electric conductor.}\\
 
+Greens Function and the vector potential functions can only be used in free space or a homogeneous medium. Since we now have to deal with a electric current source tangential to a perfect electric conductor, we cannot directly compute the fields with the above procedure. First we have to transform the problem to a free space problem. This can be done using the surface equivalence theorem, which yields an equivalent image or mirror source of the incident electric current as a replacement of the PEC wall as can be seen from \figref{fig:imagetheory}. 
+
+\begin{figure}[!h]
+  \centering
+  
+
+
+\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(0,-2.4200153)(4.18,2.4200153)
+\psline[linecolor=black, linewidth=0.04](0.72,2.4000154)(0.72,-2.3999848)(0.72,-2.3999848)(0.72,-2.3999848)(0.72,-1.9999847)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291666666666667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(0.32,-0.79998475)(0.32,0.8000153)
+\rput[bl](0.0,0.10001526){J}
+\psframe[linecolor=white, linewidth=0.04, fillstyle=vlines*, hatchwidth=0.028222222, hatchangle=45.0, hatchsep=0.1411111, dimen=outer](1.12,2.4000154)(0.72,-2.3999848)
+\psline[linecolor=black, linewidth=0.04, linestyle=dotted, dotsep=0.10583334cm](3.52,2.4000154)(3.52,-2.3999848)(3.52,-2.3999848)(3.52,-2.3999848)(3.52,-1.9999847)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291666666666667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.12,-0.79998475)(3.12,0.8000153)
+\rput[bl](2.8,0.10001526){J}
+\rput[bl](1.12,-1.9999847){PEC}
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.05291666666666667cm 2.0,arrowlength=1.4,arrowinset=0.0]{<-}(3.92,-0.79998475)(3.92,0.8000153)
+\rput[bl](4.0,0.10001526){J}
+\end{pspicture}
+}
+  \caption{Equivalent model for electric source near a perfect electric conductor (PEC).}
+  \label{fig:imagetheory}
+\end{figure}
+
+Since the image source which replaces the PEC wall is located in the same distance from the PEC boundary as the actual source but with reversed orientation we now can calculate the resulting fields as a superposition of the fields from the two sources in free space. Since the real source is located tangential to the PEC wall with a negligible distance from it, the two sources can be seen as in the same point and can be summarized to one source, which then of course is zero. From this we can easily conclude, that the electric current source tangential to a perfect electric conductor does not radiate. 
+
+
+

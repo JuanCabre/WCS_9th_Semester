@@ -23,7 +23,7 @@ for i = 1:length(freq_range)
     Gamma(i) = (Z_in(i) - Z_0) / (Z_in(i) + Z_0); 
     SWR_1(i) = (1+abs(Gamma(i))) / (1-abs(Gamma(i)));
 end
- 
+
  % impedance changes according to formula
  for i = 1:length(freq_range)
      R_rad(i) = 80*(pi^2)*(l(i)/lambda_range(i))^2;
@@ -40,4 +40,4 @@ end
  plot(freq_range,SWR_2);
  xlabel('Frequency (GHz)')
  ylabel('VSWR')
- legend('constant impedance (1GHz)','frequency dependant impedance');
+ legend('constant impedance (1GHz)');
