@@ -4,29 +4,27 @@ close all
 
 % excercise 1.2 a
 N = 1000;
-% correlated channels
-p = [.7 .8 .9];             % correlation coeffiecient
-p = 0.4
+% correlated channels             
+p = 0               % correlation coeffiecient
+
 x = randn(1,N);     % random channel 1 (in-phase part)
 y = randn(1,N);     % random channel 2 (in-phase part)
 x1 = rand(1,N);     % random channel 1 (quadrature)
-y1 = rand(1,N);
+y1 = rand(1,N);     % random channel 2 (quadrature)
 
-a = x;      % channel 1
+a = x;      
 a1 = x1;
-for k = 1:length(p)
-    for i = 1:N
-        b(k,i) = (sqrt(1-p(k)^2))*y(i)+p(k)*x(i);   % channel 2, with correlation p to channel 1
-        b1(k,i) = (sqrt(1-p(k)^2))*y1(i)+p(k)*x1(i);
-    end
-    u(k,:) = a .* exp(-j*a1);
-    v(k,:) = b(k,:) .* exp(-j*b1(k,:));
+for i = 1:N
+    b(i) = (sqrt(1-p^2))*y(i)+p*x(i);   % channel 2, with correlation p to channel 1
+    b1(i) = (sqrt(1-p^2))*y1(i)+p*x1(i);
 end
+u = a .* exp(-j*a1);
+v = b .* exp(-j*b1);
 
 % check correlation coefficient, can use both functions for same result,
 % corrcoeff best for matrix coefficient
 check_correlation = (corr((u'),(v')))          
-abs(corrcoef(u',v'))
+abs(corrcoef(u,v))
 
 corr_value = char(sprintf('Correlation coefficient %.3f',check_correlation));
 
