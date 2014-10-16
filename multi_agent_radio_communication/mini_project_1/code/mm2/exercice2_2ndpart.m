@@ -37,14 +37,14 @@ end
 
 H1 = sort(C_vec);
 H2 = sort(lambda_vec);
-figure()
+figure
 Percent_Axis = linspace (0 ,100 , 1000);
 plot(H1,Percent_Axis,'b')
 xlabel('Capacity [dB]')
 ylabel('CDF (%)')
 title('CDF data plot')
 
-figure()
+figure
 Percent_Axis = linspace (0 ,100 , 1000);
 plot(H2,Percent_Axis,'b')
 xlabel('\lambda^2 [dB]')
