@@ -1,0 +1,39 @@
+\section{Problem 3} \label{sec:mm5_Pb3}
+\textit{A terminal is applying the slotted ALOHA protocol in the following way:
+\begin{description}
+ \item [Step 1] If the terminal has a new packet for transmission, it immediately transmits it (i. e. at the next start of a new slot)
+ \item [Step 2] If the packet is in error, then the terminal 
+ \begin{itemize}
+  \item Transmits the packet with probability q in the next slot
+  \item Is quiet during the next slot with probability (1-q)
+ \end{itemize}
+ \item [Step 3] Repeats Step 2 until the packet is transmitted correctly
+ \item [Step 4] Gets a new packet
+ \end{description}
+Assume that the probability of packet error due to the noise is $P_{e}$. Assume that each packet has D bits and the packet duration is equal to the slot durations T. There is only one terminal in the system which communicates with a Base station, such that there are no collisions in the system and a packet can be lost only due to the noise. A new packet arrives to terminal whenever the previous packet has been transmitted correctly.}
+\subsection {a)}
+\textit{What is the maximal throughput that the terminal can achieve?}
+The probability of successful transmission is 
+\begin{flalign}
+&& P_{t} &= 1 - P_{e}& 
+\end{flalign}
+if an error occurs the retransmission probability is 
+\begin{flalign}
+&& P_{retransmission} &= q&
+\end{flalign}
+and if it waits it is 
+\begin{flalign}
+ && P_{wait} &= 1-q &
+\end{flalign}
+
+For the error part: 
+\begin{flalign}
+ P_{succes|fail} = (1-P_{e})P_{e}P_{retransmission}
+\end{flalign}
+
+
+
+
+
+\subsection {b)}
+\textit{What is the throughput that the terminal can achieve if it turns off the ALOHA protocol and retransmits the packet until successful transmission?} 

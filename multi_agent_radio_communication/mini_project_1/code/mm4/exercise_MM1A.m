@@ -1,4 +1,4 @@
-% templat exercise 1A
+% template exercise 1A
 %=============================================================================
 % Copyright (c) by Patrick Eggers 2008. All rigts reserved.
 % This copyright notice may NOT be removed from the program
@@ -39,18 +39,24 @@ a2=0.25*cos(rad-pi/4).^80; % 24 to 66 deg
 a(53:128)=a1(53:128);
 a(24:66)=a(24:66)+a2(24:66);
 
-% dB and plot
+%% dB and plot (polar and cartesian plot of the antenna pattern)
 a_dB=10.*log10(a + 0.001);
-
 a_dB_polar=[ transpose(rad) transpose(a_dB+Tx_power*ones(size(a_dB,1),size(a_dB,2)))];
 
-
-%plot(rad,a_dB);
 figure
-polar(a_dB_polar(:,1),a_dB_polar(:,2)) % what should arguments be?
-% axis([0 2*pi -60 0])
+plot(rad,a_dB);
+title('Antenna Pattern Cartesian Plot')
+xlabel('Angle [rad]')
+axis([0, pi, -30, 5])
+ylabel('Power [dB]')
+grid on
 
-%% 
+figure
+polar(a_dB_polar(:,1),a_dB_polar(:,2))  
+title('Antenna Pattern Polar Plot')
+
+
+%% Correlation with dirac and distribution by using the Fourier Transform
 
 dirac90=zeros(size(rad));
 dirac60=zeros(size(rad));
@@ -102,26 +108,264 @@ polar(RESULT4_dB_polar(:,1),RESULT4_dB_polar(:,2),'r')
 hold off
 
 
+%% SDMA Exercise: Same Antenna Pattern as before, now repeated multiple times with a certain offset angle
 
-%-------------- question 1  ---------------------
-%calculate C0/I0
+    a_SDMA=zeros(size(rad));
+    a_SDMA(53:128)=transpose(a1(53:128));
+    a_SDMA(24:66)=a_SDMA(24:66)+(a2(24:66));
 
-%CS/IS
+    a_SDMAdB=transpose(10.*log10(a_SDMA + 0.001));
+    
+    
+%% Plot of the antenna pattern, to see for which offset we reach which interference level
 
-%2)------------- question 2 ------------------------
-% make angular correlation/convolution of patterna and new environment
-% how ??? .. think of convolution --- vs frequency domain
-% NOTE dB is only for plotting/visualisation .. all manipulations are in liear power
-% (OR du you have an altrenativeto solving the question .. then do both)
+figure
+polar(a_dB_polar(:,1),a_dB_polar(:,2))  
+hold on
+h9=plot([0 cosd(24.5+90)*40],[0 sind(24.5+90)*40],'color',[0.85 0.33 0.1]);
+h10=plot([0 cosd(-24.5+90)*40],[0 sind(-24.5+90)*40],'color',[0.85 0.33 0.1]);
+h1=plot([0 cosd(29+90)*40],[0 sind(29+90)*40],'color',[0 0.45 0.74]);
+h2=plot([0 cosd(-29+90)*40],[0 sind(-29+90)*40],'color',[0 0.45 0.74]);
+h3=plot([0 cosd(52.8+90)*40],[0 sind(52.8+90)*40],'color',[0.49 0.18 0.56]);
+h4=plot([0 cosd(-52.8+90)*40],[0 sind(-52.8+90)*40],'color',[0.49 0.18 0.56]);
+h5=plot([0 cosd(56+90)*40],[0 sind(56+90)*40],'color',[0.47 0.67 0.19]);
+h6=plot([0 cosd(-56+90)*40],[0 sind(-56+90)*40],'color',[0.47 0.67 0.19]);
+h7=plot([0 cosd(58+90)*40],[0 sind(58+90)*40],'color',[0.64 0.08 0.18]);
+h8=plot([0 cosd(-58+90)*40],[0 sind(-58+90)*40],'color',[0.64 0.08 0.18]);
+h11=plot([0 cosd(60+90)*40],[0 sind(60+90)*40],'color',[0.3 0.75 0.93]);
+h12=plot([0 cosd(-60+90)*40],[0 sind(-60+90)*40],'color',[0.3 0.75 0.93]);
+hold off
 
-%initiate Cs and Is
+legend([h9,h1,h3,h5,h7,h9,h11],'24.5°',...
+    '29°',...
+    '52.8°',...
+    '56°',...
+    '58°',...
+    '60°')
+    
 
-% perform correlation of a and Cs
+title('Powers at different Offset-Angles')    
+   
 
-% perform correlation of a and Is
+%% SDMA plots with different offsets
+    %% offset 29°  -  target CIR: 9dB
+    
+    offset=29;
+    o1=offset;
+    o2=0;
+    o3=-offset;
+    o4=2*offset;
+    o5=-2*offset;
+    
+    figure
+    
 
-% plot result of correlations dBs _> polar plot, remeber offset and negative
-% value trunking .. why??
+    
+    a_SDMAdB_polar=[ transpose(rad+o1/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    hold on
+    
+    a_SDMAdB_polar=[ transpose(rad+o2/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o3/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o4/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o5/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
 
-% read out the values asked for in question .. how /where do you read and
-% compare??
+    title('Offset: 29°, CIR>9dB')
+    
+ %% offset 24.5°  -  target CIR: 9dB
+    
+    offset=24.5;
+    o1=offset;
+    o2=0;
+    o3=-offset;
+    o4=2*offset;
+    o5=-2*offset;
+    
+    figure
+    
+
+    
+    a_SDMAdB_polar=[ transpose(rad+o1/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    hold on
+    
+    a_SDMAdB_polar=[ transpose(rad+o2/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o3/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o4/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o5/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+
+    title('Offset: 24.5°, CIR<9dB')
+    
+    
+%% Offset 56°   -  target CIR: 9dB
+
+    offset=56;
+    o1=offset;
+    o2=0;
+    o3=-offset;
+    o4=2*offset;
+    o5=-2*offset;
+    
+    figure
+    
+
+    
+    a_SDMAdB_polar=[ transpose(rad+o1/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    hold on
+    
+    a_SDMAdB_polar=[ transpose(rad+o2/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o3/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o4/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o5/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+ 
+    title('Offset: 56°, CIR>9dB')
+    
+    
+%% Offset 52.76°   -  target CIR: 9dB
+
+    offset=52.76;
+    o1=offset;
+    o2=0;
+    o3=-offset;
+    o4=2*offset;
+    o5=-2*offset;
+    
+    figure
+    
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o1/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    hold on
+    
+    a_SDMAdB_polar=[ transpose(rad+o2/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o3/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o4/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o5/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    title('Offset: 52.8°, CIR>9dB')
+    
+    
+    %% Offset 60.09°   -  target CIR: 15dB
+
+    offset=60;
+    o1=offset;
+    o2=0;
+    o3=-offset;
+    o4=2*offset;
+    o5=-2*offset;
+    
+    figure
+    
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o1/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    hold on
+    
+    a_SDMAdB_polar=[ transpose(rad+o2/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o3/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o4/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o5/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2)) 
+    
+    
+    title('Offset: 60°, CIR>15dB')
+    
+    
+    %% Offset 58.09°   -  target CIR: 15dB
+
+    offset=58;
+    o1=offset;
+    o2=0;
+    o3=-offset;
+    o4=2*offset;
+    o5=-2*offset;
+    
+    figure
+    
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o1/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    hold on
+    
+    a_SDMAdB_polar=[ transpose(rad+o2/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o3/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o4/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o5/180*pi) (a_SDMAdB+Tx_power*ones(size(a_SDMAdB,1),size(a_SDMAdB,2)))];
+    polar(a_SDMAdB_polar(:,1),a_SDMAdB_polar(:,2)) 
+    
+    
+    title('Offset: 58°, CIR>15dB')
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    

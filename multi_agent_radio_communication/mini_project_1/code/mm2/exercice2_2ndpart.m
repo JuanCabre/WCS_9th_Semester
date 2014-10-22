@@ -2,7 +2,7 @@ clear all
 close all
 
 % make X number of uncorrelated channels
-nr_antennas = 1;                % dont use more than 8, error on plotting due to color function.
+nr_antennas = 8;                % dont use more than 8, error on plotting due to color function.
 nr_realizations = 1000;
 SNR=100;
 H=zeros(nr_antennas,nr_antennas,nr_realizations);
