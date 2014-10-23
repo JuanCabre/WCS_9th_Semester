@@ -1,0 +1,23 @@
+\section{Exercise 1-2} \label{sec:mm7_Ex2}
+\textit{Consider $K$ CDMA users that are transmitting to a base station (BS). The received SINR for k-th user is given by the following expression:}
+\begin{flalign}
+&& SINR_{k} =& \frac{G\,Q_k}{\sum\limits_{n\neq k}Q_n+N_0 W}  & \label{eq:SINRmm7EX2}
+\end{flalign} 
+
+\noindent\textit{where Qn is the received power of the n-th user at the BS, $N_0$ is the noise spectral density, $W$ is the total bandwidth used in the system and $G$ is the processing gain.}
+
+\subsection{a)}
+\textit{Assume that there are only $K=2$ users in the system. The received powers of the users are such that}
+\begin{flalign}
+&& \frac{Q_1}{N_0 W} =& 20 & [dB]  & \\
+&& \frac{Q_2}{N_0 W} =& 15 & [dB]  &
+\end{flalign} 
+\noindent\textit{The rate at which the user k can communicate is selected to be}
+\begin{flalign}
+&& r_{k} =& W \log_2(1+SINR_k) & [bps]  & 
+\end{flalign} 
+\noindent\textit{If $W=10$ MHz, find the rates at which each user can communicate with the BS. The processing gain is $G=10$.}
+
+\subsection{b)}
+\textit{Assuming that all parameters except the processing $G$ are fixed, arbitrary value of $K$, and the minimal required SINR by each user is equal to $\beta$, find the minimal $G$ that will enable each user to achieve the minimal required SINR.}
+
