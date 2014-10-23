@@ -1,0 +1,42 @@
+\section{Exercise 1-2} \label{sec:mm7_Ex2}
+\textit{Consider $K$ CDMA users that are transmitting to a base station (BS). The received SINR for k-th user is given by the following expression:}
+\begin{flalign}
+&& SINR_{k} =& \frac{G\,Q_k}{\sum\limits_{n\neq k}Q_n+N_0 W}  & \label{eq:SINRmm7EX2}
+\end{flalign} 
+
+\noindent\textit{where Qn is the received power of the n-th user at the BS, $N_0$ is the noise spectral density, $W$ is the total bandwidth used in the system and $G$ is the processing gain.}
+
+\subsection{a)}
+\textit{Assume that there are only $K=2$ users in the system. The received powers of the users are such that}
+\begin{flalign}
+&& \frac{Q_1}{N_0 W} =& 20 & [dB]  & \label{eq:Q1} \\
+&& \frac{Q_2}{N_0 W} =& 15 & [dB]  & \label{eq:Q2}
+\end{flalign} 
+\noindent\textit{The rate at which the user k can communicate is selected to be}
+\begin{flalign}
+&& r_{k} =& W \log_2(1+SINR_k) & [bps]  & 
+\label{eq:rate}
+\end{flalign} 
+\noindent\textit{If $W=10$ MHz, find the rates at which each user can communicate with the BS. The processing gain is $G=10$.} \\
+
+From equations \eqref{eq:Q1} and \eqref{eq:Q2} we get the received power for each user at the base station: $Q_{1}= 20[dB] \cdot N_{0}W$, which in linear would give $Q_{1}=100 \cdot N_{0}W$. Same for the second user's received power: $Q_{2}=31.6 \cdot N_{0}W$. \\
+
+By using \equref{eq:rate}, we can compute the rate at which each user can communicate. Therefore, the rates for the two users have been obtained from equations \eqref{eq:rate1} and \eqref{eq:rate2}.
+\begin{flalign}
+&& r_{1} =& 10 [MHz]log_{2}\left( 1+\frac{GQ_{1}}{Q_{2}+N_{0}W}\right)  & [Mbps]  & 
+\label{eq:rate1}\\
+&& r_{1} =& 10 [MHz]log_{2}\left( \frac{Q_{2}+N_{0}W+GQ_{1}}{Q_{2}+N_{0}W}\right)  & [Mbps]  & \\
+&& r_{1} =& 10 [MHz]log_{2}\left( \frac{31.6N_{0}W+N_{0}W+10 \cdot 100N_{0}W}{31.6N_{0}W+N_{0}W}\right)  & [Mbps]  & \\
+&& r_{1} =& 49.84  & [Mbps]  &
+\end{flalign} 
+\begin{flalign}
+&& r_{2} =& 10 [MHz]log_{2}\left( 1+\frac{GQ_{2}}{Q_{1}+N_{0}W}\right)  & [Mbps]  & 
+\label{eq:rate2}\\
+&& r_{2} =& 10 [MHz]log_{2}\left( \frac{Q_{1}+N_{0}W+GQ_{2}}{Q_{1}+N_{0}W}\right)  & [Mbps]  & \\
+&& r_{2} =& 10 [MHz]log_{2}\left( \frac{100N_{0}W+N_{0}W+10 \cdot 31.6N_{0}W}{100N_{0}W+N_{0}W}\right)  & [Mbps]  & \\
+&& r_{2} =& 20.465  & [Mbps]  &
+\end{flalign} 
+
+
+\subsection{b)}
+  \input{dokumentation/mm7/Ex2b.tex}
