@@ -19,16 +19,24 @@
 \end{flalign} 
 \noindent\textit{If $W=10$ MHz, find the rates at which each user can communicate with the BS. The processing gain is $G=10$.} \\
 
-From equations \eqref{eq:Q1} and \eqref{eq:Q2} we get the received power for each user at the base station: $Q_{1}= 20[dB]N_{0}W$, which in linear would give $Q_{1}=100N_{0}W$. Same for the second user's received power: $Q_{2}=31.6N_{0}W$. \\
+From equations \eqref{eq:Q1} and \eqref{eq:Q2} we get the received power for each user at the base station: $Q_{1}= 20[dB] \cdot N_{0}W$, which in linear would give $Q_{1}=100 \cdot N_{0}W$. Same for the second user's received power: $Q_{2}=31.6 \cdot N_{0}W$. \\
 
-By using \equref{eq:rate}, we can compute the rate at which each user can communicate. Therefore, the rates for the two users have been computed as in \equref{}.
+By using \equref{eq:rate}, we can compute the rate at which each user can communicate. Therefore, the rates for the two users have been obtained from equations \eqref{eq:rate1} and \eqref{eq:rate2}.
 \begin{flalign}
-&& r_{1} =& 10 [MHz]log_{2}1+\left( \frac{GQ_{1}}{Q_{2}+N_{0}W}\right)  & [dB]  & \label{eq:Q1} \\
-&& \frac{Q_2}{N_0 W} =& 15 & [dB]  & \label{eq:Q2}
+&& r_{1} =& 10 [MHz]log_{2}\left( 1+\frac{GQ_{1}}{Q_{2}+N_{0}W}\right)  & [Mbps]  & 
+\label{eq:rate1}\\
+&& r_{1} =& 10 [MHz]log_{2}\left( \frac{Q_{2}+N_{0}W+GQ_{1}}{Q_{2}+N_{0}W}\right)  & [Mbps]  & \\
+&& r_{1} =& 10 [MHz]log_{2}\left( \frac{31.6N_{0}W+N_{0}W+10 \cdot 100N_{0}W}{31.6N_{0}W+N_{0}W}\right)  & [Mbps]  & \\
+&& r_{1} =& 49.84  & [Mbps]  &
+\end{flalign} 
+\begin{flalign}
+&& r_{2} =& 10 [MHz]log_{2}\left( 1+\frac{GQ_{2}}{Q_{1}+N_{0}W}\right)  & [Mbps]  & 
+\label{eq:rate2}\\
+&& r_{2} =& 10 [MHz]log_{2}\left( \frac{Q_{1}+N_{0}W+GQ_{2}}{Q_{1}+N_{0}W}\right)  & [Mbps]  & \\
+&& r_{2} =& 10 [MHz]log_{2}\left( \frac{100N_{0}W+N_{0}W+10 \cdot 31.6N_{0}W}{100N_{0}W+N_{0}W}\right)  & [Mbps]  & \\
+&& r_{2} =& 20.465  & [Mbps]  &
 \end{flalign} 
 
 
 \subsection{b)}
-\textit{Assuming that all parameters except the processing $G$ are fixed, arbitrary value of $K$, and the minimal required SINR by each user is equal to $\beta$, find the minimal $G$ that will enable each user to achieve the minimal required SINR.}
-
-\input{dokumentation/mm7/Ex2b.tex}
+  \input{dokumentation/mm7/Ex2b.tex}
