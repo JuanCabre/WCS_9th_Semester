@@ -1,0 +1,49 @@
+=== BEGIN SESSION ==========================================================
+[19:40:22] Build: 64bit; Number: 20130322; ID: 2013.0 Release from 2013-03-22 (change 246519); Date: 2013-03-22
+[19:40:22] MeshMode: s
+[19:40:22] Operation: f
+[19:40:22] SrfMethod: g
+[19:40:22] VolMethod: d
+[19:40:22] FileFormat: i
+[19:40:23] Reading entity list
+[19:40:23] Surface meshing
+[19:40:23] - Preparing surface mesh
+[19:40:24] Problem class: High Frequency
+[19:40:24] - Reading information
+[19:40:24] - Storing model cells
+[19:40:24] - OK
+[19:40:24] Creating ModelDatabase
+[19:40:24] - Model stats: VERTICES = 24, EDGES = 32, FACES = 24, CELLS = 7
+[19:40:24] Warning: missing mesh size for wire UID 45
+[19:40:24] Warning: missing mesh size for wire UID 46
+[19:40:24] Warning: missing mesh size for wire UID 47
+[19:40:24] Warning: missing mesh size for UID 17
+[19:40:24] Warning: missing mesh size for UID 18
+[19:40:24] - Mesh sizes: global mesh size near to model = 5.77776
+              min requested = 2.99792
+              max requested = 5.77776
+[19:40:24] - OK
+[19:40:24] -- Building object info
+[19:40:24] -- OK
+[19:40:24] -- Setting mesh densities
+[19:40:24]            Mesh Densities:
+           Global mesh size     : 4.08549
+           Surface optimization : 1
+           Surface smoothing    : 3
+           Volume optimization  : 1
+           Volume smoothing     : 1
+           Min. curv. size      : 0.01[Rel.]
+           Anisotropic          : no
+           Curv. refinement     : 0.05
+           Propagation factor   : 0.5
+
+[19:40:24] Creating surface mesh
+[19:40:24] - Surface mesh stats: Nb nodes = 721, Nb edges = 2124, Nb faces = 1414
+[19:40:24] - Min/Max edge length after surface meshing: min = 0.10332, max = 0.876507
+[19:40:25] Checking for duplicate edges.
+[19:40:25] Done.
+[19:40:25] Checking for duplicate faces.
+[19:40:25] Done.
+[19:40:25] Writing surface mesh to slim mesh file
+[19:40:25] Done
+=== END SESSION ============================================================

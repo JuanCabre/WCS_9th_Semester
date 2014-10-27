@@ -1,0 +1,15 @@
+[Author]
+dsafi
+[Mesh Cells]
+930
+[Mesh Type]
+Surface
+[Last Problem Type]
+High Frequency
+[Last Solver Type]
+HF IntegralEq
+[Results]
+Frequency Domain: Integral Equation Solver
+[Modeler Unique ID]
+4:yagi_1dir.cst;a2853bb06ebebbd65b4102b46d24872b;16704:numberofparameters=8:port=1;mode=1;zre=0;zim=0:;;0#:d_de;d_re;l_d;l_e;l_r;r;f;lambda
+[Comment]
