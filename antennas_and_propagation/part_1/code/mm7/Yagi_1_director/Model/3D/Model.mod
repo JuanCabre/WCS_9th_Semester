@@ -1,9 +1,9 @@
-'# MWS Version: Version 2013.0 - Mar 22 2013 - ACIS 23.0.0 -
+'# MWS Version: Version 2013.6 - Jan 15 2014 - ACIS 23.0.0 -
 
 '# length = cm
 '# frequency = MHz
 '# time = ns
-'# frequency range: fmin = 700 fmax = 1000
+'# frequency range: fmin = 750 fmax = 950
 
 
 '@ use template: Antenna - Wire
@@ -364,7 +364,6 @@ With DiscretePort
      .Create 
 End With
 
-
 '@ define monitor: e-field (f=850)
 
 '[VERSION]2013.0|23.0.0|20130322[/VERSION]
@@ -683,7 +682,7 @@ With Mesh
      .MinimumStepNumberSrf "5" 
      .MeshType "Surface" 
      .MaterialRefinementTet "True" 
-End With 
+End With
 
 '@ set mesh properties
 
@@ -692,14 +691,12 @@ With MeshSettings
      .SetMeshType "Srf" 
      .Set "Version", 0%
 End With
-
 With Mesh 
      .StepsPerWavelengthSrf "3" 
      .MinimumStepNumberSrf "2" 
      .MeshType "Surface" 
      .MaterialRefinementTet "True" 
-End With 
-
+End With
 
 '@ set mesh properties
 
@@ -708,14 +705,12 @@ With MeshSettings
      .SetMeshType "Srf" 
      .Set "Version", 0%
 End With
-
 With Mesh 
      .StepsPerWavelengthSrf "5" 
      .MinimumStepNumberSrf "2" 
      .MeshType "Surface" 
      .MaterialRefinementTet "True" 
-End With 
-
+End With
 
 '@ farfield plot options
 
@@ -777,6 +772,632 @@ With FarfieldPlot
      .SetPhaseCenterPlane "both" 
      .ShowPhaseCenter "True" 
      .StoreSettings
-End With 
+End With
 
+'@ change solver type
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+ChangeSolverType "HF Time Domain"
+
+'@ define time domain solver parameters
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.SetCreator "High Frequency" 
+With Solver 
+     .Method "Hexahedral"
+     .CalculationType "TD-S"
+     .StimulationPort "All"
+     .StimulationMode "All"
+     .SteadyStateLimit "-30.0"
+     .MeshAdaption "False"
+     .AutoNormImpedance "False"
+     .NormingImpedance "50"
+     .CalculateModesOnly "False"
+     .SParaSymmetry "False"
+     .StoreTDResultsInCache  "False"
+     .FullDeembedding "False"
+     .SuperimposePLWExcitation "False"
+     .UseSensitivityAnalysis "False"
+End With
+
+'@ set pba mesh type
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.MeshType "PBA"
+
+'@ change solver type
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+ChangeSolverType "HF Frequency Domain"
+
+'@ define frequency range
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Solver.FrequencyRange "400", "1600"
+
+'@ define frequency domain solver parameters
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.SetCreator "High Frequency" 
+With FDSolver
+     .Reset 
+     .Method "Tetrahedral Mesh" 
+     .OrderTet "Second" 
+     .OrderHFMOR "2" 
+     .OrderSrf "First" 
+     .Stimulation "All", "1" 
+     .ResetExcitationList 
+     .AutoNormImpedance "True" 
+     .NormingImpedance "50" 
+     .ModesOnly "False" 
+     .ConsiderPortLossesTet "True" 
+     .SetShieldAllPorts "False" 
+     .AccuracyHex "1e-6" 
+     .AccuracyTet "1e-4" 
+     .AccuracySrf "1e-3" 
+     .LimitIterations "False" 
+     .MaxIterations "0" 
+     .SetCalculateExcitationsInParallel "True", "False", "" 
+     .StoreAllResults "False" 
+     .StoreResultsInCache "False" 
+     .UseHelmholtzEquation "True" 
+     .LowFrequencyStabilization "True" 
+     .Type "Auto" 
+     .MeshAdaptionHex "False" 
+     .MeshAdaptionTet "True" 
+     .AcceleratedRestart "True" 
+     .FreqDistAdaptMode "Distributed" 
+     .HexMORSettings "", "1001" 
+     .NewIterativeSolver "True" 
+     .TDCompatibleMaterials "False" 
+     .ExtrudeOpenBC "True" 
+     .SetOpenBCTypeHex "Default" 
+     .SetOpenBCTypeTet "Default" 
+     .AddMonitorSamples "True" 
+     .SParameterSweep "True" 
+     .CalcStatBField "False" 
+     .CalcPowerLoss "True" 
+     .CalcPowerLossPerComponent "False" 
+     .StoreSolutionCoefficients "True" 
+     .UseDoublePrecision "False" 
+     .UseDoublePrecision_ML "True" 
+     .MixedOrderSrf "False" 
+     .MixedOrderTet "False" 
+     .PreconditionerAccuracyIntEq "0.15" 
+     .MLFMMAccuracy "Default" 
+     .MinMLFMMBoxSize "0.20" 
+     .UseCFIEForCPECIntEq "true" 
+     .UseFastRCSSweepIntEq "true" 
+     .UseSensitivityAnalysis "False" 
+     .SweepErrorThreshold "True", "0.01" 
+     .SweepErrorChecks "2" 
+     .SweepMinimumSamples "3" 
+     .SweepConsiderAll "True" 
+     .SweepConsiderReset 
+     .InterpolationSamples "1001" 
+     .SweepWeightEvanescent "1.0" 
+     .AddSampleInterval "400", "1600", "1", "Automatic", "False" 
+     .MPIParallelization "False"
+     .UseDistributedComputing "False"
+     .NetworkComputingStrategy "RunRemote"
+     .NetworkComputingJobCount "3"
+     .LimitCPUs "True"
+     .MaxCPUs "48"
+End With
+With IESolver
+     .Reset 
+     .UseFastFrequencySweep "True" 
+     .UseIEGroundPlane "False" 
+     .PreconditionerType "Auto" 
+End With
+With IESolver
+     .SetFMMFFCalcStopLevel "0" 
+     .SetFMMFFCalcNumInterpPoints "6" 
+     .UseFMMFarfieldCalc "True" 
+     .SetCFIEAlpha "1.000000" 
+     .LowFrequencyStabilization "False" 
+     .LowFrequencyStabilizationML "True" 
+     .Multilayer "False" 
+     .SetiMoMACC_I "0.0001" 
+     .SetiMoMACC_M "0.0001" 
+     .DeembedExternalPorts "True" 
+     .SetOpenBC_XY "True" 
+     .OldRCSSweepDefintion "False" 
+End With
+
+'@ set tetrahedral mesh type
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.MeshType "Tetrahedral"
+
+'@ set mesh properties
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+With MeshSettings
+     .SetMeshType "Tet" 
+     .Set "Version", 0%
+End With
+With Mesh 
+     .StepsPerWavelengthTet "3" 
+     .MinimumStepNumberTet "10" 
+     .MeshType "Tetrahedral" 
+     .MeshAllRegions "False" 
+     .MaterialRefinementTet "True" 
+End With
+
+'@ set mesh properties
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+With MeshSettings
+     .SetMeshType "Tet" 
+     .Set "Version", 0%
+End With
+With Mesh 
+     .StepsPerWavelengthTet "4" 
+     .MinimumStepNumberTet "10" 
+     .MeshType "Tetrahedral" 
+     .MeshAllRegions "False" 
+     .MaterialRefinementTet "True" 
+End With
+
+'@ define frequency range
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Solver.FrequencyRange "600", "1000"
+
+'@ define frequency domain solver parameters
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.SetCreator "High Frequency" 
+With FDSolver
+     .Reset 
+     .Method "Tetrahedral Mesh" 
+     .OrderTet "Second" 
+     .OrderHFMOR "2" 
+     .OrderSrf "First" 
+     .Stimulation "All", "1" 
+     .ResetExcitationList 
+     .AutoNormImpedance "True" 
+     .NormingImpedance "50" 
+     .ModesOnly "False" 
+     .ConsiderPortLossesTet "True" 
+     .SetShieldAllPorts "False" 
+     .AccuracyHex "1e-6" 
+     .AccuracyTet "1e-4" 
+     .AccuracySrf "1e-3" 
+     .LimitIterations "False" 
+     .MaxIterations "0" 
+     .SetCalculateExcitationsInParallel "True", "False", "" 
+     .StoreAllResults "False" 
+     .StoreResultsInCache "False" 
+     .UseHelmholtzEquation "True" 
+     .LowFrequencyStabilization "True" 
+     .Type "Auto" 
+     .MeshAdaptionHex "False" 
+     .MeshAdaptionTet "True" 
+     .AcceleratedRestart "True" 
+     .FreqDistAdaptMode "Distributed" 
+     .HexMORSettings "", "1001" 
+     .NewIterativeSolver "True" 
+     .TDCompatibleMaterials "False" 
+     .ExtrudeOpenBC "True" 
+     .SetOpenBCTypeHex "Default" 
+     .SetOpenBCTypeTet "Default" 
+     .AddMonitorSamples "True" 
+     .SParameterSweep "True" 
+     .CalcStatBField "False" 
+     .CalcPowerLoss "True" 
+     .CalcPowerLossPerComponent "False" 
+     .StoreSolutionCoefficients "True" 
+     .UseDoublePrecision "False" 
+     .UseDoublePrecision_ML "True" 
+     .MixedOrderSrf "False" 
+     .MixedOrderTet "False" 
+     .PreconditionerAccuracyIntEq "0.15" 
+     .MLFMMAccuracy "Default" 
+     .MinMLFMMBoxSize "0.20" 
+     .UseCFIEForCPECIntEq "true" 
+     .UseFastRCSSweepIntEq "true" 
+     .UseSensitivityAnalysis "False" 
+     .SweepErrorThreshold "True", "0.01" 
+     .SweepErrorChecks "2" 
+     .SweepMinimumSamples "3" 
+     .SweepConsiderAll "True" 
+     .SweepConsiderReset 
+     .InterpolationSamples "1001" 
+     .SweepWeightEvanescent "1.0" 
+     .AddSampleInterval "600", "1000", "1", "Automatic", "True" 
+     .AddInactiveSampleInterval "", "", "", "Automatic", "False" 
+     .MPIParallelization "False"
+     .UseDistributedComputing "False"
+     .NetworkComputingStrategy "RunRemote"
+     .NetworkComputingJobCount "3"
+     .LimitCPUs "True"
+     .MaxCPUs "48"
+End With
+With IESolver
+     .Reset 
+     .UseFastFrequencySweep "True" 
+     .UseIEGroundPlane "False" 
+     .PreconditionerType "Auto" 
+End With
+With IESolver
+     .SetFMMFFCalcStopLevel "0" 
+     .SetFMMFFCalcNumInterpPoints "6" 
+     .UseFMMFarfieldCalc "True" 
+     .SetCFIEAlpha "1.000000" 
+     .LowFrequencyStabilization "False" 
+     .LowFrequencyStabilizationML "True" 
+     .Multilayer "False" 
+     .SetiMoMACC_I "0.0001" 
+     .SetiMoMACC_M "0.0001" 
+     .DeembedExternalPorts "True" 
+     .SetOpenBC_XY "True" 
+     .OldRCSSweepDefintion "False" 
+End With
+
+'@ define frequency range
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Solver.FrequencyRange "750", "950"
+
+'@ define frequency domain solver parameters
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.SetCreator "High Frequency" 
+With FDSolver
+     .Reset 
+     .Method "Tetrahedral Mesh" 
+     .OrderTet "Second" 
+     .OrderHFMOR "2" 
+     .OrderSrf "First" 
+     .Stimulation "All", "1" 
+     .ResetExcitationList 
+     .AutoNormImpedance "True" 
+     .NormingImpedance "50" 
+     .ModesOnly "False" 
+     .ConsiderPortLossesTet "True" 
+     .SetShieldAllPorts "False" 
+     .AccuracyHex "1e-6" 
+     .AccuracyTet "1e-4" 
+     .AccuracySrf "1e-3" 
+     .LimitIterations "False" 
+     .MaxIterations "0" 
+     .SetCalculateExcitationsInParallel "True", "False", "" 
+     .StoreAllResults "False" 
+     .StoreResultsInCache "False" 
+     .UseHelmholtzEquation "True" 
+     .LowFrequencyStabilization "True" 
+     .Type "Auto" 
+     .MeshAdaptionHex "False" 
+     .MeshAdaptionTet "True" 
+     .AcceleratedRestart "True" 
+     .FreqDistAdaptMode "Distributed" 
+     .HexMORSettings "", "1001" 
+     .NewIterativeSolver "True" 
+     .TDCompatibleMaterials "False" 
+     .ExtrudeOpenBC "True" 
+     .SetOpenBCTypeHex "Default" 
+     .SetOpenBCTypeTet "Default" 
+     .AddMonitorSamples "True" 
+     .SParameterSweep "True" 
+     .CalcStatBField "False" 
+     .CalcPowerLoss "True" 
+     .CalcPowerLossPerComponent "False" 
+     .StoreSolutionCoefficients "True" 
+     .UseDoublePrecision "False" 
+     .UseDoublePrecision_ML "True" 
+     .MixedOrderSrf "False" 
+     .MixedOrderTet "False" 
+     .PreconditionerAccuracyIntEq "0.15" 
+     .MLFMMAccuracy "Default" 
+     .MinMLFMMBoxSize "0.20" 
+     .UseCFIEForCPECIntEq "true" 
+     .UseFastRCSSweepIntEq "true" 
+     .UseSensitivityAnalysis "False" 
+     .SweepErrorThreshold "True", "0.01" 
+     .SweepErrorChecks "2" 
+     .SweepMinimumSamples "3" 
+     .SweepConsiderAll "True" 
+     .SweepConsiderReset 
+     .InterpolationSamples "1001" 
+     .SweepWeightEvanescent "1.0" 
+     .AddInactiveSampleInterval "750", "950", "1", "Automatic", "True" 
+     .AddInactiveSampleInterval "", "", "", "Automatic", "False" 
+     .MPIParallelization "False"
+     .UseDistributedComputing "False"
+     .NetworkComputingStrategy "RunRemote"
+     .NetworkComputingJobCount "3"
+     .LimitCPUs "True"
+     .MaxCPUs "48"
+End With
+With IESolver
+     .Reset 
+     .UseFastFrequencySweep "True" 
+     .UseIEGroundPlane "False" 
+     .PreconditionerType "Auto" 
+End With
+With IESolver
+     .SetFMMFFCalcStopLevel "0" 
+     .SetFMMFFCalcNumInterpPoints "6" 
+     .UseFMMFarfieldCalc "True" 
+     .SetCFIEAlpha "1.000000" 
+     .LowFrequencyStabilization "False" 
+     .LowFrequencyStabilizationML "True" 
+     .Multilayer "False" 
+     .SetiMoMACC_I "0.0001" 
+     .SetiMoMACC_M "0.0001" 
+     .DeembedExternalPorts "True" 
+     .SetOpenBC_XY "True" 
+     .OldRCSSweepDefintion "False" 
+End With
+
+'@ set mesh properties
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+With MeshSettings
+     .SetMeshType "Tet" 
+     .Set "Version", 0%
+End With
+With Mesh 
+     .StepsPerWavelengthTet "3" 
+     .MinimumStepNumberTet "8" 
+     .MeshType "Tetrahedral" 
+     .MeshAllRegions "False" 
+     .MaterialRefinementTet "True" 
+End With
+
+'@ define frequency range
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Solver.FrequencyRange "750", "950"
+
+'@ define frequency domain solver parameters
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.SetCreator "High Frequency" 
+With FDSolver
+     .Reset 
+     .Method "Tetrahedral Mesh" 
+     .OrderTet "Second" 
+     .OrderHFMOR "2" 
+     .OrderSrf "First" 
+     .Stimulation "All", "1" 
+     .ResetExcitationList 
+     .AutoNormImpedance "True" 
+     .NormingImpedance "50" 
+     .ModesOnly "False" 
+     .ConsiderPortLossesTet "True" 
+     .SetShieldAllPorts "False" 
+     .AccuracyHex "1e-6" 
+     .AccuracyTet "1e-4" 
+     .AccuracySrf "1e-3" 
+     .LimitIterations "False" 
+     .MaxIterations "0" 
+     .SetCalculateExcitationsInParallel "True", "False", "" 
+     .StoreAllResults "False" 
+     .StoreResultsInCache "False" 
+     .UseHelmholtzEquation "True" 
+     .LowFrequencyStabilization "True" 
+     .Type "Auto" 
+     .MeshAdaptionHex "False" 
+     .MeshAdaptionTet "True" 
+     .AcceleratedRestart "True" 
+     .FreqDistAdaptMode "Distributed" 
+     .HexMORSettings "", "1001" 
+     .NewIterativeSolver "True" 
+     .TDCompatibleMaterials "False" 
+     .ExtrudeOpenBC "True" 
+     .SetOpenBCTypeHex "Default" 
+     .SetOpenBCTypeTet "Default" 
+     .AddMonitorSamples "True" 
+     .SParameterSweep "False" 
+     .CalcStatBField "False" 
+     .CalcPowerLoss "True" 
+     .CalcPowerLossPerComponent "False" 
+     .StoreSolutionCoefficients "True" 
+     .UseDoublePrecision "False" 
+     .UseDoublePrecision_ML "True" 
+     .MixedOrderSrf "False" 
+     .MixedOrderTet "False" 
+     .PreconditionerAccuracyIntEq "0.15" 
+     .MLFMMAccuracy "Default" 
+     .MinMLFMMBoxSize "0.20" 
+     .UseCFIEForCPECIntEq "true" 
+     .UseFastRCSSweepIntEq "true" 
+     .UseSensitivityAnalysis "False" 
+     .SweepErrorThreshold "True", "0.01" 
+     .SweepErrorChecks "2" 
+     .SweepMinimumSamples "3" 
+     .SweepConsiderAll "True" 
+     .SweepConsiderReset 
+     .InterpolationSamples "1001" 
+     .SweepWeightEvanescent "1.0" 
+     .AddInactiveSampleInterval "750", "950", "1", "Automatic", "False" 
+     .AddInactiveSampleInterval "", "", "", "Automatic", "False" 
+     .MPIParallelization "False"
+     .UseDistributedComputing "False"
+     .NetworkComputingStrategy "RunRemote"
+     .NetworkComputingJobCount "3"
+     .LimitCPUs "True"
+     .MaxCPUs "48"
+End With
+With IESolver
+     .Reset 
+     .UseFastFrequencySweep "False" 
+     .UseIEGroundPlane "False" 
+     .PreconditionerType "Auto" 
+End With
+With IESolver
+     .SetFMMFFCalcStopLevel "0" 
+     .SetFMMFFCalcNumInterpPoints "6" 
+     .UseFMMFarfieldCalc "True" 
+     .SetCFIEAlpha "1.000000" 
+     .LowFrequencyStabilization "False" 
+     .LowFrequencyStabilizationML "True" 
+     .Multilayer "False" 
+     .SetiMoMACC_I "0.0001" 
+     .SetiMoMACC_M "0.0001" 
+     .DeembedExternalPorts "True" 
+     .SetOpenBC_XY "True" 
+     .OldRCSSweepDefintion "False" 
+End With
+
+'@ set mesh properties
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+With MeshSettings
+     .SetMeshType "Tet" 
+     .Set "Version", 0%
+End With
+With Mesh 
+     .StepsPerWavelengthTet "4" 
+     .MinimumStepNumberTet "10" 
+     .MeshType "Tetrahedral" 
+     .MeshAllRegions "False" 
+     .MaterialRefinementTet "False" 
+End With
+
+'@ change solver type
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+ChangeSolverType "HF IntegralEq"
+
+'@ define frequency domain solver parameters
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.SetCreator "High Frequency" 
+With FDSolver
+     .Reset 
+     .Method "Surface Mesh" 
+     .OrderTet "Second" 
+     .OrderHFMOR "2" 
+     .OrderSrf "First" 
+     .Stimulation "All", "1" 
+     .ResetExcitationList 
+     .AutoNormImpedance "True" 
+     .NormingImpedance "50" 
+     .ModesOnly "False" 
+     .ConsiderPortLossesTet "True" 
+     .SetShieldAllPorts "False" 
+     .AccuracyHex "1e-6" 
+     .AccuracyTet "1e-4" 
+     .AccuracySrf "1e-3" 
+     .LimitIterations "False" 
+     .MaxIterations "0" 
+     .SetCalculateExcitationsInParallel "True", "False", "" 
+     .StoreAllResults "False" 
+     .StoreResultsInCache "False" 
+     .UseHelmholtzEquation "True" 
+     .LowFrequencyStabilization "True" 
+     .Type "Auto" 
+     .MeshAdaptionHex "False" 
+     .MeshAdaptionTet "True" 
+     .AcceleratedRestart "True" 
+     .FreqDistAdaptMode "Distributed" 
+     .HexMORSettings "", "1001" 
+     .NewIterativeSolver "True" 
+     .TDCompatibleMaterials "False" 
+     .ExtrudeOpenBC "True" 
+     .SetOpenBCTypeHex "Default" 
+     .SetOpenBCTypeTet "Default" 
+     .AddMonitorSamples "True" 
+     .SParameterSweep "False" 
+     .CalcStatBField "False" 
+     .CalcPowerLoss "True" 
+     .CalcPowerLossPerComponent "False" 
+     .StoreSolutionCoefficients "True" 
+     .UseDoublePrecision "False" 
+     .UseDoublePrecision_ML "True" 
+     .MixedOrderSrf "False" 
+     .MixedOrderTet "False" 
+     .PreconditionerAccuracyIntEq "0.15" 
+     .MLFMMAccuracy "Default" 
+     .MinMLFMMBoxSize "0.20" 
+     .UseCFIEForCPECIntEq "true" 
+     .UseFastRCSSweepIntEq "true" 
+     .UseSensitivityAnalysis "False" 
+     .SweepErrorThreshold "True", "0.01" 
+     .SweepErrorChecks "2" 
+     .SweepMinimumSamples "3" 
+     .SweepConsiderAll "True" 
+     .SweepConsiderReset 
+     .InterpolationSamples "1001" 
+     .SweepWeightEvanescent "1.0" 
+     .AddSampleInterval "750", "950", "1", "Automatic", "False" 
+     .AddInactiveSampleInterval "", "", "", "Automatic", "False" 
+     .MPIParallelization "False"
+     .UseDistributedComputing "False"
+     .NetworkComputingStrategy "RunRemote"
+     .NetworkComputingJobCount "3"
+     .LimitCPUs "True"
+     .MaxCPUs "48"
+     .HardwareAcceleration "False"
+     .MaximumNumberOfGPUs "1"
+End With
+With IESolver
+     .Reset 
+     .UseFastFrequencySweep "False" 
+     .UseIEGroundPlane "False" 
+     .PreconditionerType "Auto" 
+End With
+With IESolver
+     .SetFMMFFCalcStopLevel "0" 
+     .SetFMMFFCalcNumInterpPoints "6" 
+     .UseFMMFarfieldCalc "True" 
+     .SetCFIEAlpha "1.000000" 
+     .LowFrequencyStabilization "False" 
+     .LowFrequencyStabilizationML "True" 
+     .Multilayer "False" 
+     .SetiMoMACC_I "0.0001" 
+     .SetiMoMACC_M "0.0001" 
+     .DeembedExternalPorts "True" 
+     .SetOpenBC_XY "True" 
+     .OldRCSSweepDefintion "False" 
+End With
+
+'@ set surface mesh type
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.MeshType "Surface"
+
+'@ change solver type
+
+'[VERSION]2013.6|23.0.0|20140115[/VERSION]
+ChangeSolverType "HF Time Domain" 
+
+
+'@ define frequency range
+
+'[VERSION]2013.6|23.0.0|20140115[/VERSION]
+Solver.FrequencyRange "750", "950" 
+
+
+'@ define time domain solver parameters
+
+'[VERSION]2013.6|23.0.0|20140115[/VERSION]
+Mesh.SetCreator "High Frequency" 
+
+With Solver 
+     .Method "Hexahedral"
+     .CalculationType "TD-S"
+     .StimulationPort "All"
+     .StimulationMode "All"
+     .SteadyStateLimit "-30.0"
+     .MeshAdaption "False"
+     .AutoNormImpedance "False"
+     .NormingImpedance "50"
+     .CalculateModesOnly "False"
+     .SParaSymmetry "False"
+     .StoreTDResultsInCache  "False"
+     .FullDeembedding "False"
+     .SuperimposePLWExcitation "False"
+     .UseSensitivityAnalysis "False"
+End With
+
+
+'@ set pba mesh type
+
+'[VERSION]2013.6|23.0.0|20140115[/VERSION]
+Mesh.MeshType "PBA"
 

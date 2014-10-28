@@ -16,7 +16,7 @@
      .Inductance "NanoH" 
 [ENDUNITS]
 [FREQUENCYRANGE]
-Solver.FrequencyRange "700", "1000" 
+Solver.FrequencyRange "750", "950" 
 [ENDFREQUENCYRANGE]
 [BACKGROUND]
      .XminSpace "0.0" 
