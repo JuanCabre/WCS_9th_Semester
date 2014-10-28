@@ -1,0 +1,6 @@
+FeatureKeywords:string:mesh:lib:meshsim:surface, visualization:mesh_view:default_engine, solver:hf:ie:i, mesh:surface:i, units:Length:cm, units:Frequency:MHz, boundary:open, boundary:open (add space), source:discrete edge port, lineqssolver:iterative:MoM, lineqssolver:setting:auto, monitor:farfield:single freq, solver:pp:sparameter:basicbranch, solver:pp:sparameter:renorm, solver:pp:sparameter:ffbalance, solver:pp:sparameter:calcyz, solver:pp:sparameter:calcvswr, solver:pp:sparameter:updatebalance, solver:pp:farfield:2d, visualization:field_plot:default_engine, lineqssolver:direct
+LastWorkflowState:string:tetmesh:success
+solver_hf_int_fd/MaxResidentSizeMiB:int:158
+solver_pp/MaxResidentSizeMiB:int:20
+tetmesh/MaxResidentSizeMiB:int:43
+---
