@@ -1,0 +1,17 @@
+Machine: JOHANNES-PC
+Sockets: 1
+Cores: 2
+Memory: 0 uB
+Processor: GenuineIntel
+ProcSpeed: Unknown
+FSB: Unknown
+Accelerator: None
+Version: 2013.0 [Release]
+Compilation: Mar 23 2013 (01:54:17)	
+Date: 2014 Oct 28 (Tue): 15:00:49
+Tag: Time [s]: Memory WS [MB]: Memory Virt [MB]: Memory Free [MB]
+Create surface mesh: 0.006: 0.417969: 0: 839.211
+Subdivide: 0.009: 0.789063: 0: 837.629
+Convert to slim mesh: 0.001: 0.921875: 0: 836.438
+Save slim mesh: 0.002: 0.921875: 0: 836.324
+Summary: 0.018: 0.921875: 0: 836.324
