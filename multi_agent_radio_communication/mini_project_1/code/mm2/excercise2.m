@@ -19,7 +19,7 @@ for i = 1:N
 end
 
 ch1 = x .* exp(-j*x1);
-ch2 = a .* exp(-j*a1);
+ch2 = 0.5*a .* exp(-j*a1);
 
 
 
