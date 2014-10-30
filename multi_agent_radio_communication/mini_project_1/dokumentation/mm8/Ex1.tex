@@ -14,10 +14,104 @@ Calculate the following parameters:}
 
 \subsection{1)}
 \textit{FFT time-period}
+\begin{flalign} 
+ && T_{symbol} =& T_{G} + T_{FFT} & \\
+ && T_{FFT} =& T_{symbol} - T_{G} & \\
+\end{flalign}
+With $T_{symbol}$ = 4 $\mu$s and $T_{G}$ = 0.8 $\mu$s
+\begin{flalign}
+ && T_{FFT} =& 4 - 0.8 & \\ 
+ &&  =& 3.2 & [\SI{}{\micro\second}] & \label{eq:mm8_ex1_q1}
+\end{flalign}
 
 \subsection{2)}
+\textit{Sampling frequency}
+For the sampling frequency in baseband, each subcarrier needs to be extracted. 
+\begin{flalign}
+&& F_{S} =& \frac{N_{sub}}{T_{FFT}} &
+\end{flalign}
+$N_{sub}$ = 64 and $T_{FFT}$ from \equref{eq:mm8_ex1_q1}
+\begin{flalign}
+&& F_{S}=& 20 & [\SIf{}{\mega\hertz}]
+\end{flalign}
 
 \subsection{3)}
-
+\textit{Sampling duration}
+The sampling duration is equal to the time-period $T_{FFT}$ because the CP should be avoided from the synchronization.
+\begin{flalign}
+&& T_{S} =& T_{FFT} &
+\end{flalign}
 
 \subsection{4)}
+\textit{Number of samples in the guard interval}
+With a sampling frequency of 20MHz and a duration of the guard interval of 0.8$\mu$s
+\begin{flalign}
+&& NS_{GI} =& F_{S} \cdot T_{GI} &\\
+&& =& 16 & 
+\end{flalign}
+
+\subsection{5)}
+\textit{Subcarrier frequency spacing}
+The spacing between the subcarriers should correspond to:
+\begin{flalign}
+ && F_{spacing} =& \frac{1}{T_{FFT}} &
+ && =& 16 &
+\end{flalign}
+
+
+\subsection{6)}
+\textit{For different data rates, different coding scheme and different combination of modulation scheme, calculate}
+
+\subsubsection*{a)} 
+\textit{Coded bits per subcarriers}
+The coded bits,$C_{b}$, can be calculated by 
+\begin{flalign}
+&& C_{bsc} =& log_{2}(M)&
+\end{flalign}
+Where M is the order 
+\\
+For BPSK the coded bits per subcarrier is: 
+\begin{flalign}
+&& C_{bsc(BPSK)} =& 1&
+\end{flalign}
+For QPSK the coded bits per subcarrier is: 
+\begin{flalign}
+&& C_{bsc(QPSK)} =& 2&
+\end{flalign}
+For 16QAM the coded bits per subcarrier is: 
+\begin{flalign}
+&& C_{bsc(16QAM)} =& 4&
+\end{flalign}
+For 64QAM the coded bits per subcarrier is: 
+\begin{flalign}
+&& C_{bsc(64QAM)} =& 6&
+\end{flalign}
+
+\subsubsection*{b)} 
+\textit{Coded bits per OFDM symbol}
+\begin{flalign}
+&& C_{bsy} =& N_{data carriers} \cdot log_{2}(M)&
+\end{flalign}
+For BPSK the coded bits per subcarrier is: 
+\begin{flalign}
+&& C_{bsy(BPSK)} =& 1 \cdot 48& \\
+&& =& 48 &
+\end{flalign}
+For QPSK the coded bits per subcarrier is: 
+\begin{flalign}
+&& C_{bsy(QPSK)} =& 2 \cdot 48& \\
+&& =& 96 &
+\end{flalign}
+For 16QAM the coded bits per subcarrier is: 
+\begin{flalign}
+&& C_{bsy(16QAM)} =& 4 \cdot 48& \\
+&& =&  192& 
+\end{flalign}
+For 64QAM the coded bits per subcarrier is: 
+\begin{flalign}
+&& C_{bsy(64QAM)} =& 6 \cdot 48& \\
+&& =& 288 &
+\end{flalign}
+
+\subsubsection*{c)} 
+\textit{Data bits per OFDM symbol}
