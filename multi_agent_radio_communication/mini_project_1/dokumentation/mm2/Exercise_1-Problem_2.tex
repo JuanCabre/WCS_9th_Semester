@@ -6,24 +6,32 @@ This is done using the following code:
 
 \FloatBarrier % Stops figs fucking arround
 \subsection{a. Show the envelope distribution of the signals and the correlation coefficient.}
-\fig[keepaspectratio=true,width=10cm]{ST_rayleigh_envelope_cor0.eps}{Envelope of uncorrelated Rayleigh fading channels}{fig:ST_rayleigh_envelope_cor0}
-\fig[keepaspectratio=true,width=10cm]{ST_rayleigh_mrc_cor0.eps}{CDF of Rayleigh fading with MRC for uncorrelated channels}{fig:rayleigh_mrc_cor0}
+Using the code shown in \cref{cl:RayleighGeneration} we can generate a plot as shown here in \figref{fig:ST_rayleigh_envelope_cor0}.
 
-
+\fig[keepaspectratio=true,width=11cm]{ST_rayleigh_envelope_cor0.eps}{Envelope of uncorrelated Rayleigh fading channels}{fig:ST_rayleigh_envelope_cor0}
 
 \FloatBarrier % Stops figs fucking arround
 \subsection{b. Implement the Alamouti scheme and find the resulting envelope distribution.}
+Implementing the Alamouti scheme is equivalent to MRC when there are 2 antennas at the Tx site. This is implemented in the code as shown in \cref{cl:Alamouti}.
+\code{language=Matlab,caption = Maximum Ration Combining of 2 Channels,label=cl:Alamouti,linerange={64-71},firstnumber=64}{code/mm2/excercise2.m}
 
-
-
+The resulting plot from \cref{cl:Alamouti} is shown here in \figref{fig:rayleigh_mrc_cor0}:
+\fig[keepaspectratio=true,width=11cm]{ST_rayleigh_mrc_cor0.eps}{CDF of Rayleigh fading with MRC for uncorrelated channels}{fig:rayleigh_mrc_cor0}
 
 \FloatBarrier % Stops figs fucking arround
 \subsection{Repeat (a) and (b) for the case where the channels are correlated with $\rho=0.4$ }
 To do this the same code is used as for question (a) but here the correlation is set to approximating $\rho=0.4$ this is giving the following plots:
-\fig[keepaspectratio=true,width=10cm]{ST_rayleigh_envelope.eps}{Envelope of Rayleigh fading}{fig:ST_rayleigh_envelope}
-\fig[keepaspectratio=true,width=10cm]{ST_rayleigh.eps}{CDF of Rayleigh fading}{fig:ST_rayleigh}
-\fig[keepaspectratio=true,width=10cm]{ST_rayleigh_mrc.eps}{CDF of Rayleigh fading with MRC}{fig:ST_rayleigh_mrc}
+\fig[keepaspectratio=true,width=11cm]{ST_rayleigh_envelope.eps}{Envelope of Rayleigh fading (Correlation $\rho=0.4$)}{fig:ST_rayleigh_envelope}
 
+\fig[keepaspectratio=true,width=11cm]{ST_rayleigh.eps}{CDF of Rayleigh fading (Correlation $\rho=0.4$)}{fig:ST_rayleigh}
+
+\fig[keepaspectratio=true,width=11cm]{ST_rayleigh_mrc.eps}{CDF of Rayleigh fading with MRC (Correlation $\rho=0.4$)}{fig:ST_rayleigh_mrc}
 
 \FloatBarrier % Stops figs fucking arround
 \subsection{Repeat (a) and (b) for the case where the average power of the second channel is one half of the power of the first channel.}
+We are using the same code again but introducing the average power of channel 2 is the half of channel 1.
+\fig[keepaspectratio=true,width=11cm]{ST_rayleigh_envelope_half.eps}{Envelope of Rayleigh fading (Correlation $\rho=0.4$, Channel 2 half power)}{fig:ST_rayleigh_envelope_half}
+
+\fig[keepaspectratio=true,width=11cm]{ST_rayleigh_half.eps}{CDF of Rayleigh fading (Correlation $\rho=0.4$, Channel 2 half power)}{fig:ST_rayleigh_half}
+
+\fig[keepaspectratio=true,width=11cm]{ST_rayleigh_mrc_half.eps}{CDF of Rayleigh fading with MRC (Correlation $\rho=0.4$, Channel 2 half power)}{fig:ST_rayleigh_mrc_half}
