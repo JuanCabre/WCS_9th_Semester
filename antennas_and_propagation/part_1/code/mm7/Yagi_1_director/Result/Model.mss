@@ -1,7 +1,7 @@
 Solver type
-Integral equation solver
+Transient solver
 Mesh type
-Surface
+Hexahedral
 IsIgnoreLossyMetals
 0
 IsIgnoreLossyDielectrics

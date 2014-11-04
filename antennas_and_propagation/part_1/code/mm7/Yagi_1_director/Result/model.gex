@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaGeometryFile version="20121212">
+  <Components>
+    <Component name="component1:Director1">
+      <Shape name="Components\component1:Director1" material="Copper (annealed)" id="1">
+        <Face>
+          <MeshGroup2D>
+            <Pos list="1 2 3"/>
+            <DS list=""/>
+          </MeshGroup2D>
+        </Face>
+      </Shape>
+    </Component>
+    <Component name="component1:Excitation_1">
+      <Shape name="Components\component1:Excitation_1" material="Copper (annealed)" id="2">
+        <Face>
+          <MeshGroup2D>
+            <Pos list="4 5 6"/>
+            <DS list=""/>
+          </MeshGroup2D>
+        </Face>
+      </Shape>
+    </Component>
+    <Component name="component1:Excitation_2">
+      <Shape name="Components\component1:Excitation_2" material="Copper (annealed)" id="3">
+        <Face>
+          <MeshGroup2D>
+            <Pos list="7 8 9"/>
+            <DS list=""/>
+          </MeshGroup2D>
+        </Face>
+      </Shape>
+    </Component>
+    <Component name="component1:Reflector">
+      <Shape name="Components\component1:Reflector" material="Copper (annealed)" id="4">
+        <Face>
+          <MeshGroup2D>
+            <Pos list="10 11 12"/>
+            <DS list=""/>
+          </MeshGroup2D>
+        </Face>
+      </Shape>
+    </Component>
+  </Components>
+  <GeometryFile filename="3d.slm" type="slim"/>
+  <HexMesh>
+    <Dimensions nx="43" ny="20" nz="52"/>
+    <MeshPlanesX values=" -15.930650154799 -12.678343192965 -9.4260362311305 -6.1737292692963 -2.9214223074622 -1.5008418020599 -1.1168685591385 -0.79163786295507 -0.46640716677165 -0.14117647058824 0.14117647058824 0.46797872062241 0.79478097065658 1.1215832206908 1.5102189334642 2.7054822875464 3.2660320171819 3.6078285440152 3.9346307940494 4.2614330440835 4.5882352941177 4.9076293260089 5.2270233579001 5.5464173897914 5.8756290588147 6.3721924319117 8.9999999999999 11.627807568088 12.124370941185 12.453582610208 12.7729766421 13.092370673991 13.411764705882 13.718589979506 14.02541525313 14.332240526754 14.642819099246 15.064418144502 17.069403915725 20.137656651964 23.205909388203 26.274162124442 29.342414860681"/>
+    <MeshPlanesY values=" -15.930650154799 -12.678343192965 -9.4260362311305 -6.1737292692963 -2.9214223074622 -1.5008418020599 -1.1168685591385 -0.79163786295507 -0.46640716677165 -0.14117647058824 0.14117647058824 0.46640716677165 0.79163786295507 1.1168685591385 1.5008418020599 2.9214223074622 6.1737292692963 9.4260362311305 12.678343192965 15.930650154799"/>
+    <MeshPlanesZ values=" -24.613003095975 -21.360696134141 -18.108389172307 -14.856082210473 -11.603775248638 -10.183194743236 -9.7992215003147 -9.4739908041313 -9.1487601079479 -8.8235294117645 -8.470588235294 -8.1176470588235 -7.764705882353 -7.5882352941175 -7.2681206254881 -6.9480059568588 -6.6278912882294 -6.2583390142117 -5.4973764894634 -3.8941176470587 -2.2908588046541 -1.5298962799058 -1.160344005888 -0.84022933725869 -0.52011466862934 -0.2 0.2 0.52011466862935 0.84022933725869 1.160344005888 1.5298962799058 2.2908588046541 3.8941176470587 5.4973764894634 6.2583390142117 6.6278912882294 6.9480059568588 7.2681206254881 7.5882352941175 7.764705882353 8.1176470588235 8.470588235294 8.8235294117645 9.1487601079479 9.4739908041313 9.7992215003147 10.183194743236 11.603775248638 14.856082210473 18.108389172307 21.360696134141 24.613003095975"/>
+  </HexMesh>
+  <Materials>
+    <Material name="Copper (annealed)" priority="2">
+      <Color value="1 1 0"/>
+      <Transparency value="0"/>
+      <Wireframe value="0"/>
+      <Reflective value="0"/>
+      <Outline value="1"/>
+      <OutlineIfTransparent value="0"/>
+    </Material>
+    <Material name="DiscreteFacePort_PEC_Material^" priority="2">
+      <Color value="0.5 0.5 0.5"/>
+      <Transparency value="0.9"/>
+      <Wireframe value="1"/>
+      <Reflective value="1"/>
+      <Outline value="1"/>
+      <OutlineIfTransparent value="1"/>
+    </Material>
+  </Materials>
+  <MeshType type="hex"/>
+  <SimulationDomain min="-15.930650154799 -15.930650154799 -24.613003095975" max="29.342414860681 15.930650154799 24.613003095975"/>
+  <Symmetries/>
+</MetaGeometryFile>
