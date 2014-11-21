@@ -22,7 +22,7 @@ h1=10;  % height terminal 1
 h2=2;   % height terminal 2
 Rg=-0.85; % ground reflection
 Rw=-0.5;  % wall reflection
-d=10:1:1000; %distance along street;
+d=10:1:100000; %distance along street;
 E=d-d;
 
 for i=1:N+1
@@ -41,10 +41,14 @@ P=20*log10(abs(E));
 Plos=1 ./d.^2; %direct field;
 P2=10*log10(abs(Plos));
 
-plot(log10(d),P+P2,'r',log10(d),P2,'g')
-xlabel('log(d)');
-grid
-axis([1 3 -70 -10]);
+plot(log10(d),P+P2,'r',log10(d),P2,'g','linewidth',2)
+xlabel('log(d)','FontSize',15);
+ylabel('Field strength dB','FontSize',15);
+title('Field strength and path loss vs distance','FontSize',15);
+handle=legend('Field strength', 'Path loss');
+set(handle,'FontSize',12);
+grid on
+% axis([1 3 -70 -10]);
 
 % discuss the result. Try also w low N=1 or 2
 
@@ -53,13 +57,15 @@ axis([1 3 -70 -10]);
 
 fd = 1/2*linspace(-1,1,length(E)); %Sampling frequency divided by the scale
 
-Et=exp(-j*k.*d);
-H = fftshift(fft(E))./fftshift(fft(Et));
+% Impulse response in frequency
+Et=exp(-j*k.*fd);
+% Infinite bandwith impulse response in frequency
+H = (fft(E))./Et;
 
-% Impulse response
+% Impulse response in space
 figure()
-plot(fd,abs(H).^2);
+plot(d,abs(ifft(H).^2),'linewidth',2);
 
 % This is the dopler shift
 figure()
-plot(fd,abs(fftshift(fft(E))).^2)
+plot(fd,abs(fftshift(fft(E))).^2,'linewidth',2)
