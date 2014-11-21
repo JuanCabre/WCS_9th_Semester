@@ -1,15 +1,15 @@
 [Author]
 dsafi
 [Mesh Cells]
-40698
+120655
 [Mesh Type]
-Hexahedral
+Tetrahedral
 [Last Problem Type]
 High Frequency
 [Last Solver Type]
-HF Time Domain
+HF Frequency Domain
 [Results]
-Time Domain: S-Parameter
+Frequency Domain: S-Parameter
 [Modeler Unique ID]
-4:yagi_1_director.cst;e91618a52dcb9013c403064263c6f987;31179:numberofparameters=8:port=1;mode=1;zre=0;zim=0:;;0#:d_de;d_re;l_d;l_e;l_r;r;f;lambda
+4:yagi_1_director.cst;0e198697e7746f9b1b291d0b677ba9c2;33738:numberofparameters=8:port=1;mode=1;zre=0;zim=0:;;0#:d_de;d_re;l_d;l_e;l_r;r;f;lambda
 [Comment]

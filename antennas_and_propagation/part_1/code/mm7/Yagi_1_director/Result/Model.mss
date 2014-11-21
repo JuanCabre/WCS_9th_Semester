@@ -1,7 +1,7 @@
 Solver type
-Transient solver
+Frequency domain solver
 Mesh type
-Hexahedral
+Tetrahedral
 IsIgnoreLossyMetals
 0
 IsIgnoreLossyDielectrics

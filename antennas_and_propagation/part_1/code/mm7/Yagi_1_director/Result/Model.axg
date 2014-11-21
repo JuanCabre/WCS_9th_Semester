@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CSTAuxiliaryGeometry version="20130131">
   <BoundingBox name="BoundingBox">
-    <BoxBody position="-15.93064975739 -15.93064975739 -24.6130027771" dimension="45.27306365967 31.86129951477 49.2260055542"/>
+    <BoxBody position="-11.41111087799 -11.41111087799 -19.9346408844" dimension="36.939868927 22.82222175598 39.8692817688"/>
   </BoundingBox>
   <Axes name="GlobalAxes">
     <AxesBody position="0 0 0" dimension="15 15 15"/>
   </Axes>
-  <DiscreteEdgePort name="Ports\port1">
-    <LineSet lines="0 1" points="4.588235378265 0.1411764770746 0.2000000029802 4.588235378265 0.1411764770746 -0.2000000029802"/>
-    <PortBody dimension="10 10 10" direction="0 0 -0.4000000059605" position="4.588235378265 0.1411764770746 0"/>
-    <Label text="1"/>
-  </DiscreteEdgePort>
+  <Object name="Ports\port1" type="">
+    <LineSet lines="0 1 2 3" material="Wire^Material" points="7.05882358551 0.3000000119209 0.2000000029802 7.05882358551 0.3000000119209 0 7.05882358551 0.3000000119209 -0.2000000029802 7.05882358551 0.3000000119209 0"/>
+    <Cone dimension="10 10 10" direction="0 0 -0.4000000059605" material="port^Material" position="7.05882358551 0.3000000119209 0"/>
+    <Label position="7.158823490143 0.4000000059605 0.1000000014901" text="1"/>
+  </Object>
+  <Object name="Ports\port1^nodes" type="wire_nodes">
+    <Sphere dimension="2 2 2" material="Wire^Material" position="7.05882358551 0.3000000119209 0.2000000029802"/>
+    <Sphere dimension="2 2 2" material="Wire^Material" position="7.05882358551 0.3000000119209 0"/>
+    <Sphere dimension="2 2 2" material="Wire^Material" position="7.05882358551 0.3000000119209 -0.2000000029802"/>
+  </Object>
   <Materials>
     <Material name="Wire^Material">
       <Color value="0 0.5019608139992 1"/>
