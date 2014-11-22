@@ -1,0 +1,22 @@
+20100312
+[start]ParamViewUI
+20120626
+[start]Offset Columns
+[start]Column Name
+Status
+[end]Column Name
+[end]Offset Columns
+[start]Parameter Columns
+[end]Parameter Columns
+[start]Result Columns
+[end]Result Columns
+[start]Filter Expression
+False
+[start]Selected Expression String
+*
+[end]Selected Expression String
+[end]Filter Expression
+[start]Hide Constant Params
+True
+[end]Hide Constant Params
+[end]ParamViewUI

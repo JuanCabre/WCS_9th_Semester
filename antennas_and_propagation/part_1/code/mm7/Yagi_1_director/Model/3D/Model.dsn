@@ -5,8 +5,8 @@ Portnames: 1
 Modenumbers: 1
 Portlabels: ""
 Number of frequency-points: 1
-Fmin: 7.500000e+008
-Fmax: 9.500000e+008
+Fmin: 3.500000e+008
+Fmax: 1.350000e+009
 Fscale: 1.000000e+006
 
 
@@ -20,8 +20,8 @@ Modenumber: 1
 Modetype: 6
 Zline: 5.000000e+001 0.000000e+000
 Fdev: 8.500000e+008
-Fmin: 7.500000e+008
-Fmax: 9.500000e+008
+Fmin: 3.500000e+008
+Fmax: 1.350000e+009
 PortModeConsState: 0
 *** endmode
 

@@ -1,9 +1,9 @@
-'# MWS Version: Version 2013.6 - Jan 15 2014 - ACIS 23.0.0 -
+'# MWS Version: Version 2013.0 - Mar 22 2013 - ACIS 23.0.0 -
 
 '# length = cm
 '# frequency = MHz
 '# time = ns
-'# frequency range: fmin = 750 fmax = 950
+'# frequency range: fmin = 350 fmax = 1350
 
 
 '@ use template: Antenna - Wire
@@ -254,7 +254,8 @@ With Transform
      .Destination "" 
      .Material "" 
      .Transform "Shape", "Translate" 
-End With
+End With 
+
 
 '@ delete shape: component1:solid1_1
 
@@ -267,7 +268,7 @@ Solid.Delete "component1:solid1_1"
 With Transform 
      .Reset 
      .Name "component1" 
-     .Vector "0.38*lambda", "0", "0" 
+     .Vector "D_RE+D_DE", "0", "0" 
      .UsePickedPoints "False" 
      .InvertPickedPoints "False" 
      .MultipleObjects "True" 
@@ -277,7 +278,8 @@ With Transform
      .Destination "" 
      .Material "" 
      .Transform "Shape", "Translate" 
-End With
+End With 
+
 
 '@ transform: scale component1:solid1
 
@@ -293,7 +295,8 @@ With Transform
      .Repetitions "1" 
      .MultipleSelection "False" 
      .Transform "Shape", "Scale" 
-End With
+End With 
+
 
 '@ define cylinder: component1:solid2
 
@@ -1364,20 +1367,17 @@ Mesh.MeshType "Surface"
 '@ change solver type
 
 '[VERSION]2013.6|23.0.0|20140115[/VERSION]
-ChangeSolverType "HF Time Domain" 
-
+ChangeSolverType "HF Time Domain"
 
 '@ define frequency range
 
 '[VERSION]2013.6|23.0.0|20140115[/VERSION]
-Solver.FrequencyRange "750", "950" 
-
+Solver.FrequencyRange "750", "950"
 
 '@ define time domain solver parameters
 
 '[VERSION]2013.6|23.0.0|20140115[/VERSION]
 Mesh.SetCreator "High Frequency" 
-
 With Solver 
      .Method "Hexahedral"
      .CalculationType "TD-S"
@@ -1395,9 +1395,120 @@ With Solver
      .UseSensitivityAnalysis "False"
 End With
 
-
 '@ set pba mesh type
 
 '[VERSION]2013.6|23.0.0|20140115[/VERSION]
 Mesh.MeshType "PBA"
+
+'@ define frequency range
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Solver.FrequencyRange "350", "1350" 
+
+
+'@ change solver type
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+ChangeSolverType "HF Frequency Domain" 
+
+
+'@ define frequency domain solver parameters
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.SetCreator "High Frequency" 
+
+With FDSolver
+     .Reset 
+     .Method "Tetrahedral Mesh" 
+     .OrderTet "Second" 
+     .OrderHFMOR "2" 
+     .OrderSrf "First" 
+     .Stimulation "All", "1" 
+     .ResetExcitationList 
+     .AutoNormImpedance "True" 
+     .NormingImpedance "50" 
+     .ModesOnly "False" 
+     .ConsiderPortLossesTet "True" 
+     .SetShieldAllPorts "False" 
+     .AccuracyHex "1e-6" 
+     .AccuracyTet "1e-4" 
+     .AccuracySrf "1e-3" 
+     .LimitIterations "False" 
+     .MaxIterations "0" 
+     .SetCalculateExcitationsInParallel "True", "False", "" 
+     .StoreAllResults "False" 
+     .StoreResultsInCache "False" 
+     .UseHelmholtzEquation "True" 
+     .LowFrequencyStabilization "True" 
+     .Type "Auto" 
+     .MeshAdaptionHex "False" 
+     .MeshAdaptionTet "True" 
+     .AcceleratedRestart "True" 
+     .FreqDistAdaptMode "Distributed" 
+     .HexMORSettings "", "1001" 
+     .NewIterativeSolver "True" 
+     .TDCompatibleMaterials "False" 
+     .ExtrudeOpenBC "True" 
+     .SetOpenBCTypeHex "Default" 
+     .SetOpenBCTypeTet "Default" 
+     .AddMonitorSamples "True" 
+     .SParameterSweep "False" 
+     .CalcStatBField "False" 
+     .CalcPowerLoss "True" 
+     .CalcPowerLossPerComponent "False" 
+     .StoreSolutionCoefficients "True" 
+     .UseDoublePrecision "False" 
+     .UseDoublePrecision_ML "True" 
+     .MixedOrderSrf "False" 
+     .MixedOrderTet "False" 
+     .PreconditionerAccuracyIntEq "0.15" 
+     .MLFMMAccuracy "Default" 
+     .MinMLFMMBoxSize "0.20" 
+     .UseCFIEForCPECIntEq "true" 
+     .UseFastRCSSweepIntEq "true" 
+     .UseSensitivityAnalysis "False" 
+     .SweepErrorThreshold "True", "0.01" 
+     .SweepErrorChecks "2" 
+     .SweepMinimumSamples "3" 
+     .SweepConsiderAll "True" 
+     .SweepConsiderReset 
+     .InterpolationSamples "1001" 
+     .SweepWeightEvanescent "1.0" 
+     .AddSampleInterval "750", "950", "1", "Automatic", "False" 
+     .AddInactiveSampleInterval "", "", "", "Automatic", "False" 
+     .MPIParallelization "False"
+     .UseDistributedComputing "False"
+     .NetworkComputingStrategy "RunRemote"
+     .NetworkComputingJobCount "3"
+     .LimitCPUs "True"
+     .MaxCPUs "48"
+End With
+
+With IESolver
+     .Reset 
+     .UseFastFrequencySweep "False" 
+     .UseIEGroundPlane "False" 
+     .PreconditionerType "Auto" 
+End With
+
+With IESolver
+     .SetFMMFFCalcStopLevel "0" 
+     .SetFMMFFCalcNumInterpPoints "6" 
+     .UseFMMFarfieldCalc "True" 
+     .SetCFIEAlpha "1.000000" 
+     .LowFrequencyStabilization "False" 
+     .LowFrequencyStabilizationML "True" 
+     .Multilayer "False" 
+     .SetiMoMACC_I "0.0001" 
+     .SetiMoMACC_M "0.0001" 
+     .DeembedExternalPorts "True" 
+     .SetOpenBC_XY "True" 
+     .OldRCSSweepDefintion "False" 
+End With
+
+
+'@ set tetrahedral mesh type
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+Mesh.MeshType "Tetrahedral"
 
