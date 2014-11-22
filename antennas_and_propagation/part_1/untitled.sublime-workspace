@@ -1,0 +1,546 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"str",
+				"string"
+			],
+			[
+				"sym",
+				"symbols"
+			],
+			[
+				"e",
+				"enum	Enumeration"
+			],
+			[
+				"ma",
+				"map	std::map"
+			],
+			[
+				"stem",
+				"stemlines	statement"
+			],
+			[
+				"ara",
+				"arctan2	class"
+			],
+			[
+				"symb",
+				"symbols_until_pivot"
+			],
+			[
+				"sy",
+				"symbols_until_pivot"
+			],
+			[
+				"da",
+				"data"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "master.tex",
+			"settings":
+			{
+				"buffer_size": 2461,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dokumentation/mm10/Pb1.tex",
+			"settings":
+			{
+				"buffer_size": 341,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/make.sublime-build",
+	"command_palette":
+	{
+		"height": 148.0,
+		"selected_items":
+		[
+			[
+				"Build: ",
+				"Build: Choose Quick Build"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"LaTeXing: Open"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"cta",
+				"CTags: Show Symbols (all)"
+			],
+			[
+				"ctag",
+				"CTags: Show Symbols (all)"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Git: Push"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git ",
+				"Git: Status"
+			],
+			[
+				"git s",
+				"Git: Status"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"git cha",
+				"Git: Change Branch"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"clang",
+				"Package Control: Install Package"
+			],
+			[
+				"anaconda tes",
+				"Anaconda: Run Current Test"
+			],
+			[
+				"anaconda",
+				"Anaconda: Set Python interpreter"
+			],
+			[
+				"repl",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"repl ip",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"op",
+				"Open IPython Notebook"
+			],
+			[
+				"py",
+				"Open Current Notebook As Ipynb File"
+			],
+			[
+				"ope",
+				"Open IPython Notebook"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 453.0
+	},
+	"console":
+	{
+		"height": 225.0,
+		"history":
+		[
+			"ctags --help",
+			"ls",
+			"view.run_command(\"goto_line\", {\"line\": 10})",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/master_thesis/scripts/blk_prob_extr_reqst.m",
+		"/home/juan/.config/sublime-text-3/Packages/User/make.sublime-build",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/master.fdb_latexmk",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/Pb1.tex",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/Introduction.tex",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/master.sublime-project",
+		"/home/juan/.config/sublime-text-3/Packages/User/LaTeXing.sublime-settings",
+		"/home/juan/.config/sublime-text-3/Packages/LaTeXing/LaTeXing.sublime-settings",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/introduction.tex",
+		"/home/juan/.config/sublime-text-3/Packages/LaTeXing/LaTeX.sublime-build",
+		"/home/juan/.config/sublime-text-3/Packages/LaTeXing/latexing/api/mendeley.map",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/thesis/split_code_save/split_code_save.cpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/thesis/first_implementation/first_implementation.cpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/examples/tutorial/basic.cpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/thesis/split_code_save/wscript_build",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/basic_factory.hpp",
+		"/home/juan/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/storage_aware_encoder.hpp",
+		"/home/juan/.config/sublime-text-3/Packages/CTags/Default.sublime-keymap",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/object/mapped_file_source.hpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/object/file_encoder.hpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/rlnc/shallow_full_rlnc_encoder.hpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/rlnc/full_rlnc_encoder.hpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/plain_symbol_id_writer.hpp",
+		"/home/juan/.config/sublime-text-3/Packages/User/CTags.sublime-settings",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/payload_encoder.hpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/test/src/kodo_unit_test/declare_stack_factories.hpp",
+		"/home/juan/.config/sublime-text-3/Packages/CTags/CTags.sublime-settings",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/.tags",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/.tags",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/Makefile",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/code/mm2/ray_doppler.m",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/code/mm2/excercise2.m",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/libswift.sublime-project",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/api.cpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/swift.h",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/swift-dynamic",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/scripts/player.bat",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/scripts/client-download.sh",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/scripts/client.sh",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/scripts/source-file.sh",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/scripts/player.sh",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/scripts/source-dvbt.sh",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/README.md",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/NativeLib.cpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/channel.cpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/swift.cpp",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/do_tests.sh",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/libswift/doc/wireshark-dissector/README",
+		"/home/juan/webrtc/src/talk/examples/peerconnection/server/main.cc",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/master_thesis/C:\\nppdf32Log\\debuglog.txt",
+		"/home/juan/.profile",
+		"/home/juan/.bashrc",
+		"/home/juan/webrtc2/src/Makefile",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/master_thesis/webrtc-read-only/webrtc/p2p/base/p2ptransport.h",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/master_thesis/webrtc-read-only/webrtc/p2p/OWNERS",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/master_thesis/webrtc-read-only/webrtc/p2p/base/sessionmanager.h",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/object/file_encoder.hpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/shallow_symbol_storage.hpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/rlnc/shallow_full_rlnc_encoder.hpp",
+		"/home/juan/Desktop/netlogo/netlogo-5.1.0/readme.md",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/thesis/split_code_save/split_code_save.cpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/examples/customize_partitioning_scheme/customize_partitioning_scheme.cpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/examples/encode_decode_storage/encode_decode_storage.cpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/examples/encode_decode_file/encode_decode_file.cpp",
+		"/home/juan/Desktop/Gemstar Momma Video Teaser [mininova].torrent",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/master_thesis/bronco/bronco/src/client/bronco_client.cc",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/master_thesis/bronco/bronco/src/client/clientconn.cc",
+		"/home/juan/.config/sublime-text-3/Packages/Cfserver/Cfserver.sublime-settings",
+		"/home/juan/Documents/University/WCS Master Program/8th_semester/big group drive/PART_1/code/exercise1_mm2.m",
+		"/home/juan/Documents/University/WCS Master Program/8th_semester/big group drive/PART_1/code/delayspread.m",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/last_config.sh",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/object/object_filename.hpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/thesis_examples/encode_decode_file/thesis_encode_decode_file.cpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/object/partitioning.hpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/thesis/split_code_save/wscript_build",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/wscript",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/object/storage_decoder.hpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/rfc5052_partitioning_scheme.hpp",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/rlnc/full_rlnc_encoder.hpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/thesis/split_code_save/split_code_save.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/examples/encode_decode_file/encode_decode_file.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/thesis_examples/encode_decode_file/thesis_encode_decode_file.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/examples/encode_decode_storage/encode_decode_storage.cpp",
+		"/home/juan/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/config.py",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/examples/customize_partitioning_scheme/wscript_build",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/rlnc/full_rlnc_codes.hpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/benchmark/throughput3/codes.hpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/src/kodo/sparse_dof_feedback_encoder3.hpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/thesis_examples/encode_decode_file/encode_decode_file.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/thesis/split_code_save/encode_decode_file.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/wscript",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/examples/hello_kodo/main.cpp",
+		"/home/juan/.config/sublime-text-3/Packages/User/C++.sublime-settings",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/wscript",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/thesis_examples/encode_decode_file/wscript_build",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/examples/encode_decode_simple/encode_decode_simple.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/thesis_examples/encode_decode_storage/encode_decode_storage.cpp",
+		"/home/juan/Desktop/wscript",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/code/mm1/mm1_pretty_solution_pretty_coments.m",
+		"/home/juan/Documents/University/WCS Master Program/9th_semester/master_thesis/scripts/erlangB.m",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/json_plot_data.py",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/destination_gauge.cpp",
+		"/home/juan/Student_helper/MeanAndLean/scripts/plot_energy_per_bit_vs_symbol_size.py",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/plot_avrg_packet_vs_coefficient.py",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/benchmark/throughput3/main.cpp",
+		"/home/juan/Desktop/stem_plot.py",
+		"/home/juan/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/examples/is_symbol_pivot_counter/is_symbol_pivot_counter.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/rasps_juan_test_using_gauge/destination/destination_gauge.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/last_config.sh",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/is_symbol_pivot_counter.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/scripts/juan_leaner_and_meaner/on_dev_rasp_measure_power_script.sh",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/scripts/juan_leaner_and_meaner/s3_measure_power_script.sh",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/rasps_juan_test_using_gauge/source/source_gauge.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/tables-eaf062/4.1.0/src/tables/csv_format.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/tables-eaf062/4.1.0/src/tables/format.hpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/stdout_printer.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/python_printer.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/json_printer.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/csv_printer.hpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/csv_printer.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/juan_test_using_gauge/destination/destination_gauge.cpp",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/scripts/juan_leaner_and_meaner/pc_measure_power_script.sh",
+		"/home/juan/Desktop/playing.cpp",
+		"/etc/systemd/logind.conf",
+		"/home/juan/.bash_history"
+	],
+	"find":
+	{
+		"height": 52.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			" \n",
+			"build",
+			"semilogy",
+			"semilogx",
+			"plot",
+			"tracker",
+			"request",
+			"path",
+			"match",
+			"decode",
+			"prom",
+			"0.4",
+			"0",
+			"K",
+			"c++",
+			"pivot_NonzeroSparseNC_Binary_density01",
+			"pivot_RLNC_Binary_out",
+			"pivot_RLNC_Binary8_out",
+			"density",
+			"density_steps",
+			"budge",
+			"budget",
+			"sleep",
+			"rate",
+			"Nonzero",
+			"symbols_until_pivot",
+			"pivu",
+			"lin_dep",
+			"symbols_until_pivot",
+			"received_per_step",
+			"lin_dep",
+			"json_printer",
+			"plt",
+			"shift+p"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "master.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2134,
+								2134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 595.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "dokumentation/mm10/Pb1.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 229.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 112.0
+	},
+	"project": "master.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 302.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
