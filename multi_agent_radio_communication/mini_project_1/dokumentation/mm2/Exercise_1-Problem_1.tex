@@ -1,7 +1,15 @@
 \section{Exercise 1 - Problem 1}
 \textit{ANALYTICAL: Select one of the code examples shown in class and show that they can achieve full diversity order.}\\
 
-The code chosen was the one with three antennas and four symbols from the slides.\\
+The code chosen was the one with three antennas and four symbols from the slides. This code however presented an error, so the used in this excersise was found in wikipedia, and it is the matrix $S$.\\
+
+\begin{center}
+$S=\begin{bmatrix}
+s1 &-s2  &-s3  &-s4  &s1^{*}  &-s2^{*}  &-s3^{*}  &-s4^{*} \\ 
+s2 &s1  &s4  &-s3  &s2^{*}  &s1^{*}  &s4^{*}  &-s3^{*} \\ 
+s3 &-s4  &s1  &s2  &s3^{*}  &-s4^{*}  &s1^{*}  &s2^{*} 
+\end{bmatrix}$\\
+\end{center}
 
 The first required step was to find the matrix E
 \begin{flalign}
@@ -12,7 +20,10 @@ Once that matrix was found, the objective was to check if the rank was 3 (since 
 
 If the matrix E also resulted diagonal then this would mean that the evaluated code is also orthogonal.\\
 
-The matrix E resulted to be (after correcting the error in the slide):
-\begin{flalign}
- && E =& S \cdot S^H & \label{eq:1_matrixE}
-\end{flalign}
+The matrix E resulted to be (after correcting the error in the slide):\\
+
+$\begin{bmatrix}
+2 \left | s_{1} \right |^2 + 2 \left | s_{2} \right |^2 + 2 \left | s_{3} \right |^2 + 2 \left | s_{4} \right |^2& 0  & 0\\ 
+ 0& 2 \left | s_{1} \right |^2 + 2 \left | s_{2} \right |^2 + 2 \left | s_{3} \right |^2 + 2 \left | s_{4} \right |^2 &0 \\ 
+ 0&  0& 2 \left | s_{1} \right |^2 + 2 \left | s_{2} \right |^2 + 2 \left | s_{3} \right |^2 + 2 \left | s_{4} \right |^2
+\end{bmatrix}$
