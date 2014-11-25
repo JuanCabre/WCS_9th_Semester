@@ -99,25 +99,75 @@ P=20*log10(abs(amp));
 delay_v = reshape(delay,[1 numel(delay)]);
 P = P - P(1,1);
 P_v = reshape(P,[1 numel(P)]);
+P_ti = 10.^(P_v/20);
+
+% figure;
+% stem(delay_v,P_v,'r','linewidth',2)
+% xlabel('Delay (s)','FontSize',15);
+% ylabel('Power (dB)','FontSize',15);
+% title('Impulse Response','FontSize',15);
+
 
 figure;
-stem(delay_v,P_v,'r','linewidth',2)
+stem(delay_v,P_ti,'b','linewidth',2)
 xlabel('Delay (s)','FontSize',15);
-ylabel('Power (dB)','FontSize',15);
-title('Field strength vs delay','FontSize',15);
-% handle=legend('Field strength', 'Path loss');
-% set(handle,'FontSize',12);
+ylabel('Power','FontSize',15);
+title('Impulse Response','FontSize',15);
 
 
-% % % % % % Impulse response in frequency
-% % % % % Et=exp(-j*k.*fd);
-% % % % % % Infinite bandwith impulse response in frequency
-% % % % % H = (fft(E))./Et;
-% % % % % 
-% % % % % % Impulse response in space
-% % % % % figure()
-% % % % % plot(d,abs(ifft(H).^2),'linewidth',2);
+% impulse response for 200m
 
-% This is the dopler shift
-% figure()
-% plot(fd,abs(fftshift(fft(E))).^2,'linewidth',2)
+dref = 200;
+ddis = sqrt(dref.^2+(h1-h2)^2);
+
+R1=sqrt(dref.^2+(h1-h2)^2);  % distance between antenna and side images;
+R2=sqrt(dref.^2+(h1+h2)^2);  % distance between ground image and side images;
+
+Floss1 = lambda./(4.*pi.*R1); 
+Floss2 = lambda./(4.*pi.*R2);
+
+E1 = Floss1.*exp(-j*k*R1);
+E2 = (Rg).*Floss2.*exp(-j*k*R2);
+
+dis = [R1;R2];
+amp = [E1;E2];
+
+if(N>0)
+for i=2:N+1
+%insert here the contribution from the various images and sum them to a total E;
+R1=sqrt(dref.^2+(h1-h2)^2+((i-1)*a)^2);  % distance between antenna and side images;
+R2=sqrt(dref.^2+(h1+h2)^2+((i-1)*a)^2);  % distance between ground image and side images;
+Floss1 = lambda./(4.*pi.*R1); 
+Floss2 = lambda./(4.*pi.*R2);
+
+E1 = 2*Floss1.*((Rw^(i-1))*exp(-j*k*R1));
+E2 = 2*(Rg).*Floss2.*((Rw^(i-1))*exp(-j*k*R2));
+
+dis = [dis [R1;R2]];
+amp = [amp [E1;E2]];
+
+end
+end
+
+delay = (dis-ddis)./(3e8);
+P=20*log10(abs(amp));
+
+
+delay_v = reshape(delay,[1 numel(delay)]);
+P = P - P(1,1);
+P_v = reshape(P,[1 numel(P)]);
+P_ti = 10.^(P_v/20);
+
+% figure;
+% stem(delay_v,P_v,'r','linewidth',2)
+% xlabel('Delay (s)','FontSize',15);
+% ylabel('Power (dB)','FontSize',15);
+% title('Impulse Response','FontSize',15);
+
+
+hold all;
+stem(delay_v,P_ti,'r','linewidth',2)
+xlabel('Delay (s)','FontSize',15);
+ylabel('Power','FontSize',15);
+title('Impulse Response','FontSize',15);
+
