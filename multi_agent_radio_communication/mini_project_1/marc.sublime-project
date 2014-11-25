@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+
+	"options":{
+	"root":"master.tex",
+	"pdf":"master.pdf"
+	},
+}

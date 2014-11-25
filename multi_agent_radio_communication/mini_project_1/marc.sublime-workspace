@@ -48,10 +48,10 @@
 	"buffers":
 	[
 		{
-			"file": "part1_aap.sublime-project",
+			"file": "/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/master.lot",
 			"settings":
 			{
-				"buffer_size": 134,
+				"buffer_size": 610,
 				"line_ending": "Unix"
 			}
 		}
@@ -195,13 +195,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1",
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation",
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10",
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm6"
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1"
 	],
 	"file_history":
 	[
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/part1_aap.sublime-project",
+		"/home/juan/.config/sublime-text-3/Packages/User/LaTeXing.sublime-settings",
+		"/home/juan/.config/sublime-text-3/Packages/LaTeXing/LaTeXing.sublime-settings",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/Pb1.tex",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/plot_avrg_packet_vs_coefficient.py",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/master.fdb_latexmk",
@@ -209,8 +209,6 @@
 		"/home/juan/.config/sublime-text-3/Packages/User/make.sublime-build",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/Introduction.tex",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/master.sublime-project",
-		"/home/juan/.config/sublime-text-3/Packages/User/LaTeXing.sublime-settings",
-		"/home/juan/.config/sublime-text-3/Packages/LaTeXing/LaTeXing.sublime-settings",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/introduction.tex",
 		"/home/juan/.config/sublime-text-3/Packages/LaTeXing/LaTeX.sublime-build",
 		"/home/juan/.config/sublime-text-3/Packages/LaTeXing/latexing/api/mendeley.map",
@@ -328,8 +326,7 @@
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/juan_test_using_gauge/destination/destination_gauge.cpp",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/scripts/juan_leaner_and_meaner/pc_measure_power_script.sh",
 		"/home/juan/Desktop/playing.cpp",
-		"/etc/systemd/logind.conf",
-		"/home/juan/.bash_history"
+		"/etc/systemd/logind.conf"
 	],
 	"find":
 	{
@@ -347,6 +344,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"swr",
+			"dic",
 			" \n",
 			"build",
 			"semilogy",
@@ -403,25 +402,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "part1_aap.sublime-project",
-					"semi_transient": false,
+					"file": "/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/master.lot",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 134,
+						"buffer_size": 610,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								73,
-								73
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -476,7 +474,7 @@
 	{
 		"height": 112.0
 	},
-	"project": "part1_aap.sublime-project",
+	"project": "marc.sublime-project",
 	"replace":
 	{
 		"height": 46.0
