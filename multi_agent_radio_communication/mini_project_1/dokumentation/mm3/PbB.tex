@@ -1,40 +1,32 @@
 \section{Problem B}
-
-\textit{MINIMISING RADIATED POWER. For the same given coverage area, compare the radiated power (interference) of a single antenna system, $P_{tx}^1$, to the total radiated power of an M-antenna distributed system, $P_{tx}^M$, for both the network (downlink) and the portable side (uplink). State the implications of the relation.}
+\textit{MINIMISING RADIATED POWER. For the same given coverage area, compare the radiated power (interference) of a single antenna system, $P_{tx}^1$, to the total radiated power of an M-antenna distributed system, $P_{tx}^M$, for both the network (downlink) and the portable side (uplink). State the implications of the relation.}\\
 
 In this "lemma" we need to consider these two cases: Single Antenna System (S) and M Antenna Distributed System (M).
 For the case of Single Antenna System, as there is only one antenna, the total area covered ($A^s_C$) is the area covered for the single antenna.
-
 \begin{equation}
 A^s_c = \pi \cdot (d^s_{c})^2
 \end{equation}
 
 For that area the path loss has the expression:
-
 \begin{equation}
 PL^s_{max} = \dfrac{P^s_{R}}{P_{d_{c}}} = c\left(\dfrac{A^s_c}{\pi}\right)^{\frac{\varphi}{2}}= c\left(d^s_c\right) ^{\varphi}
 \end{equation}
 
-Note that in the last expression $P_{d_{c}}$ has no superscript, given that is the minimum acceptable downlink power level and must be considered with the same value in the Distributed System case. Nonetheless, the area covered by each antenna in the DS is smaller, so the power that the antenna needs to reach $P_{d_{c}}$ at the cell bounding will be lower.
+Note that in the last expression $P_{d_{c}}$ has no superscript, given that is the minimum acceptable downlink power level and must be considered with the same value in the Distributed System case. Nonetheless, the area covered by each antenna in the DS is smaller, so the power that the antenna needs to reach $P_{d_{c}}$ at the cell bounding will be lower.\\
 
 In order to compute the transmitted power let's take into account the expression of the cover area for the M Antenna System:
-
 \begin{align*}
 A^m_{c,total} &= M \cdot A^m_{c} \\
 &= M \cdot \pi \cdot (d^m_{c})^{2}
 \end{align*}
 
-
 Comparing it with the area covered in the single antenna case we obtain the relation between the radius:
-
 \begin{equation}
 A^s_{c}= A^m_{Tc}\ \ \Longrightarrow \ \ \pi \cdot (d^s_{c})^2 = M \cdot \pi \cdot (d^m_{c})^2 \ \  \Longrightarrow \ \
 \frac{(d^s_{c})^2}{M} = (d^m_{c})^2
 \end{equation}
 
-
 Next step is to find the relation between the path loss in the two cases:
-
 \begin{align*}
 PL^m_{max} &= c(d^m_c) ^{\varphi} \\
 	&= c(d^s_c)^{\varphi}\cdot (M)^{\frac{-\varphi}{2}}\\ %Shit
@@ -43,26 +35,19 @@ PL^m_{max} &= c(d^m_c) ^{\varphi} \\
 \end{align*}
 
 As the $P_{d_{c}}$ is the same in both cases we can obtain the relation between the power received in both cases at the reference distance (1m):
-
 \begin{align*}
 \frac{P^s_R}{PL^s_{max}}=\frac{P^m_R}{PL^m_{max}}\ \ &\Longrightarrow \ \ P^m_R = P^s_R \cdot (M)^{\frac{-\varphi}{2}}
 \end{align*}
 
 Finally, to study the radiated power we have to distinguish the downlink from the uplink. In the \textbf{uplink} we consider the power needed for the user to connect to the antenna:
-
 \begin{align*}
 P^M_{tx} &= P^1_{tx} \cdot M^{\frac{-\varphi}{2}}
 \end{align*}
-
-\textit{For any value of $\varphi$ the Multi-antenna distributed system is more efficient than the Single Antenna System}
-
-\
+\textit{For any value of $\varphi$ the Multi-antenna distributed system is more efficient than the Single Antenna System}\\
 
 In the \textbf{downlink} scenario, the total radiated power is the sum of the radiated power for each antenna:
-
 \begin{align*}
 P^M_{tx} &= P^1_{tx} \cdot M^{\frac{-\varphi}{2}} \cdot M\\
 &=P^1_{tx} \cdot M^{\frac{2-\varphi}{2}}
 \end{align*}
-
 \textit{It can be obtained from this expression that for values of path loss exponent ($\varphi$) higher than 2, the Distributed System is more efficient.}
