@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CST3DFieldViewInfoText creator="" version="20101110">
+  <Title data="High Frequency Mesh" type="High Frequency Mesh"/>
+  <TextItem name="Symmetries:_tag">
+    <Text visible="true" label="Symmetries:" data="none" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Surface area:_tag">
+    <Text visible="true" label="Surface area:" data="89.9031" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Min. edge length:_tag">
+    <Text visible="false" label="Min. edge length:" data="0.133333" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Max. edge length:_tag">
+    <Text visible="false" label="Max. edge length:" data="0.588471" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Min. Quality:_tag">
+    <Text visible="false" label="Min. Quality:" data="0.399558" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Max. Quality:_tag">
+    <Text visible="false" label="Max. Quality:" data="0.999965" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Average Quality:_tag">
+    <Text visible="false" label="Average Quality:" data="0.952337" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+</CST3DFieldViewInfoText>
