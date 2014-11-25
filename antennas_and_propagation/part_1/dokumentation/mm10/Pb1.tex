@@ -36,18 +36,21 @@ where N is the number of reflection,$ R_{w}$ is the reflection coefficient for t
 \end{pitemize}
 }
 
-In this section we are going to build the impulse response in function of the delay for different distances: $dref_1$=100 and $dref_2$= 200. The delay is calculate 
+In this section we are going to build the impulse response in function of the delay for different distances: $dref_1$=100 and $dref_2$= 200. 
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=18cm]{Impulse_Response.eps}
+  \includegraphics[width=15cm]{Impulse_Response.eps}
   \caption{Impulse response in function of the delay}
-  \label{fig:field_pathloss}
+  \label{fig:Impulse_Response}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=18cm]{Impulse_Response_Delay_norm.eps}
+  \includegraphics[width=15cm]{Impulse_Response_Delay_norm.eps}
   \caption{Impulse response in function of the delay with the first tap received}
-  \label{fig:field_pathloss}
+  \label{fig:Impulse_Response_Delay_norm}
 \end{figure}
+
+The figures above represent the impulse response for a distance between the antennas of 100 and 200 metres with a blue and red plot respectively. The \figref{fig:Impulse_Response} is represented in function of the total delay since the signal was transmitted. As it can be observed, the total delay for the first trace upcoming to the receiver is higher for a longer distance between the antennas. This result is completely logical given the fact that the ray have to go through a longer way. 
+On the other hand, in \figref{fig:Impulse_Response_Delay_norm} we can observe the impulse response in function of the delay to the first tap received. In this case is shown that for a longer distance between the antennas the delay for the different paths is shorter. That's caused by the fact that for a longer distance the angle of the reflected rays is smaller and the effective length difference between the direct trace and the rest is shorter.
