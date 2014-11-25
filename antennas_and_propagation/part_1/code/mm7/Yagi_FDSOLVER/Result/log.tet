@@ -1,0 +1,13 @@
+=== BEGIN SESSION ==========================================================
+[09:39:47] Build: 64bit; Number: 20130322; ID: 2013.0 Release from 2013-03-22 (change 246519); Date: 2013-03-22
+[09:39:47] MeshMode: n
+[09:39:47] Operation: c
+[09:39:47] SrfMethod: g
+[09:39:47] VolMethod: a
+[09:39:47] FileFormat: i
+[09:39:47] Adaptive mesh refinement (pos.snap.)
+[09:39:47] Problem class: High Frequency
+[09:39:47] - Refining mesh
+[09:40:23] - OK
+[09:40:24] Done
+=== END SESSION ============================================================

@@ -1,0 +1,32 @@
+CST performance analysis
+Yagi_1_director
+Machine: JOHANNES-PC
+Sockets: 1
+Cores: 2
+Memory: 0 uB
+Processor: GenuineIntel
+ProcSpeed: Unknown
+FSB: Unknown
+Accelerator: None
+Version: 2013.0 [Release]
+Compilation: Mar 23 2013 (01:54:17)	
+Date: 2014 Oct 28 (Tue): 15:00:49
+|                                              | Time         | Memory                            |
+|                                              | hh.mm.ss,mmm | Work. Set : Virtual   : Min Free  |
+-- Subtriangulation -------------------------------------------------------------------------------
+|                         Create surface mesh: | 00:00:00,006 | 438.27 kB :   0.00  B : 879.98 MB |
+|                                   Subdivide: | 00:00:00,009 | 827.39 kB :   0.00  B : 878.32 MB |
+|                        Convert to slim mesh: | 00:00:00,001 | 966.66 kB :   0.00  B : 877.07 MB |
+|                              Save slim mesh: | 00:00:00,002 | 966.66 kB :   0.00  B : 876.95 MB |
+---------------------------------------------------------------------------------------------------
+|                                     Summary: | 00:00:00,018 | 966.66 kB :   0.00  B : 876.95 MB |
+---------------------------------------------------------------------------------------------------
+
+
+
+Memory trace:
+
+                      | Work. Set : Virtual   : Min Free  || Analyzer stack
+---------------------------------------------------------------------------
+2014-Oct-28, 15:00:49 | 966.66 kB :   0.00  B : 876.95 MB || Save slim mesh : Subtriangulation |
+

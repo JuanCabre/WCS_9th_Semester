@@ -1,0 +1,15 @@
+[Author]
+dsafi
+[Mesh Cells]
+120655
+[Mesh Type]
+Tetrahedral
+[Last Problem Type]
+High Frequency
+[Last Solver Type]
+HF Frequency Domain
+[Results]
+Frequency Domain: S-Parameter
+[Modeler Unique ID]
+4:yagi_fdsolver.cst;f86c2dd59661706413e3517832cae50f;38148:numberofparameters=8:port=1;mode=1;zre=0;zim=0:;;0#:d_de;d_re;l_d;l_e;l_r;r;f;lambda
+[Comment]

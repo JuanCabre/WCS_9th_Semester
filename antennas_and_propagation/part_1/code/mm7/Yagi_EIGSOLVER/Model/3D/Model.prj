@@ -1,0 +1,15 @@
+[Author]
+dsafi
+[Mesh Cells]
+51520
+[Mesh Type]
+Hexahedral
+[Last Problem Type]
+High Frequency
+[Last Solver Type]
+HF Eigenmode
+[Results]
+Unknown
+[Modeler Unique ID]
+4:yagi_eigsolver.cst;d28e665b75117bdb3df81f6c75f06791;37024:numberofparameters=8:port=1;mode=1;zre=0;zim=0:;;0#:d_de;d_re;l_d;l_e;l_r;r;f;lambda
+[Comment]
