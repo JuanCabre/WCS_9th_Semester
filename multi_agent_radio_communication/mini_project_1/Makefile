@@ -11,7 +11,7 @@ OTHER = *~ *.acr *.acn *.alg *.aux *.gls *.glo *.glg *.toc *.tdo *.bbl *.blg *.g
 
 latex: master.tex
 	latex --synctex=1 master.tex
-	#bibtex master
+	bibtex master
 	#makeglossaries master
 	latex --synctex=1 master.tex
 	latex --synctex=1 master.tex
