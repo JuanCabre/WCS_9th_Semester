@@ -11,14 +11,4 @@
 	"root":"master.tex",
 	"pdf":"master.pdf"
 	},
-
-	"build_systems":
-    [
-        {
-            "name": "make",
-            "shell_cmd": "make"
-        }
-    ]
-
-
 }
