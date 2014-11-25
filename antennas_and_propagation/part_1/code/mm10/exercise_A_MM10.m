@@ -30,10 +30,12 @@ R1=sqrt(d.^2+(h1-h2)^2+((i-1)*a)^2);  % distance between antenna and side images
 R2=sqrt(d.^2+(h1+h2)^2+((i-1)*a)^2);  % distance between ground image and side images;
 
 %insert here the contribution from the various images and sum them to a total E;
+Floss1 = sqrt(lambda./(4.*pi.*R1)); 
+Floss2 = sqrt(lambda./(4.*pi.*R2));
 if i == 1
-E = E + (Rw^(i-1))*exp(-j*k*R1)+ (Rg)*(Rw^(i-1))*exp(-j*k*R2);
+E = E + Floss1.*((Rw^(i-1))*exp(-j*k*R1))+ (Rg).*Floss2.*((Rw^(i-1))*exp(-j*k*R2));
 else
-E = E + 2*(Rw^(i-1))*exp(-j*k*R1)+ 2*(Rg)*(Rw^(i-1))*exp(-j*k*R2);
+E = E + 2*Floss1.*((Rw^(i-1))*exp(-j*k*R1))+ 2*(Rg).*Floss2.*((Rw^(i-1))*exp(-j*k*R2));
 end
 end
 
@@ -41,7 +43,7 @@ P=20*log10(abs(E));
 Plos=1 ./d.^2; %direct field;
 P2=10*log10(abs(Plos));
 
-plot(log10(d),P+P2,'r',log10(d),P2,'g','linewidth',2)
+plot(log10(d),P,'r',log10(d),P2,'g','linewidth',2)
 xlabel('log(d)','FontSize',15);
 ylabel('Field strength dB','FontSize',15);
 title('Field strength and path loss vs distance','FontSize',15);
