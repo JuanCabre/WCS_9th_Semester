@@ -545,3 +545,14 @@ rebuild
 result
 HIDDENITEM
 ^farfield (f=850)_1(1).fie
+:8:1000
+hidden
+internal
+solverstart
+noresult
+FARFIELDPOLAR
+Farfields\farfield (f=850) [1(1)]\farfield (f=850) [1(1)]
+^farfield (f=850) [1(1)].sig
+dB
+Phi / Degree
+Farfield Gain Abs (Theta=90)

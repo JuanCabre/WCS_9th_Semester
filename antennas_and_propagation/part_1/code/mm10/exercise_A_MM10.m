@@ -16,13 +16,13 @@ clf
 f=2400;
 lambda=300/f;
 k=2*pi/lambda;
-N=10;   
+N=0;   
 a=10;   % what is this ? = Distance between the walls
 h1=10;  % height terminal 1
 h2=2;   % height terminal 2
 Rg=-0.85; % ground reflection
 Rw=-0.5;  % wall reflection
-d=10:1:1000; %distance along street;
+d=10:1:10000; %distance along street;
 E=d-d;
 
 for i=1:N+1
@@ -30,18 +30,20 @@ R1=sqrt(d.^2+(h1-h2)^2+((i-1)*a)^2);  % distance between antenna and side images
 R2=sqrt(d.^2+(h1+h2)^2+((i-1)*a)^2);  % distance between ground image and side images;
 
 %insert here the contribution from the various images and sum them to a total E;
+Floss1 = lambda./(4.*pi.*R1); 
+Floss2 = lambda./(4.*pi.*R2);
 if i == 1
-E = E + (Rw^(i-1))*exp(-j*k*R1)+ (Rg)*(Rw^(i-1))*exp(-j*k*R2);
+E = E + Floss1.*((Rw^(i-1))*exp(-j*k*R1))+ (Rg).*Floss2.*((Rw^(i-1))*exp(-j*k*R2));
 else
-E = E + 2*(Rw^(i-1))*exp(-j*k*R1)+ 2*(Rg)*(Rw^(i-1))*exp(-j*k*R2);
+E = E + 2*Floss1.*((Rw^(i-1))*exp(-j*k*R1))+ 2*(Rg).*Floss2.*((Rw^(i-1))*exp(-j*k*R2));
 end
 end
 
 P=20*log10(abs(E));
-Plos=1 ./d.^2; %direct field;
+Plos=(lambda./(4*pi*d)).^2; %direct field;
 P2=10*log10(abs(Plos));
 
-plot(log10(d),P+P2,'r',log10(d),P2,'g','linewidth',2)
+plot(log10(d),P,'r',log10(d),P2,'g','linewidth',2)
 xlabel('log(d)','FontSize',15);
 ylabel('Field strength dB','FontSize',15);
 title('Field strength and path loss vs distance','FontSize',15);
@@ -55,13 +57,10 @@ grid on
 % construct the time response
 % How will you plot the time response (power versus delay)?
 
-fd = 1/2*linspace(-1,1,length(E)); %Sampling frequency divided by the scale
 
-Et=exp(-j*k.*d);
-H = fftshift(fft(E))./fftshift(fft(Et));
 % Impulse response
 figure()
-plot(fd,abs(H).^2);
+
 
 
 
@@ -75,5 +74,5 @@ plot(fd,abs(H).^2);
 % % % % % plot(d,abs(ifft(H).^2),'linewidth',2);
 
 % This is the dopler shift
-figure()
-plot(fd,abs(fftshift(fft(E))).^2,'linewidth',2)
+% figure()
+% plot(fd,abs(fftshift(fft(E))).^2,'linewidth',2)

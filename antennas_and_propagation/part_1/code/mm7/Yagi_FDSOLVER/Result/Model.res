@@ -950,3 +950,15 @@ complex
 
 Frequency / MHz
 Impedance in Ohm
+:8:1000
+hidden
+internal
+solverstart
+noresult
+XYSIGNAL2
+farfield cartesian
+Farfields\farfield (f=850) [1]\farfield (f=850) [1]
+^farfield (f=850) [1].sig
+dB
+Phi / Degree
+Farfield Gain Abs (Theta=90)

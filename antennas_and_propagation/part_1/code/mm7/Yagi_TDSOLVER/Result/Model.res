@@ -861,3 +861,14 @@ Excitation Signals\default
 
 Time / ns
 Excitation: default
+:8:1000
+hidden
+internal
+solverstart
+noresult
+FARFIELDPOLAR
+Farfields\farfield (f=850) [1]\farfield (f=850) [1]
+^farfield (f=850) [1].sig
+dB
+Phi / Degree
+Farfield Gain Abs (Theta=90)

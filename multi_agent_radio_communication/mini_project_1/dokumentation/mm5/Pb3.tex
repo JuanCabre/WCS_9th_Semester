@@ -13,27 +13,20 @@
 Assume that the probability of packet error due to the noise is $P_{e}$. Assume that each packet has D bits and the packet duration is equal to the slot durations T. There is only one terminal in the system which communicates with a Base station, such that there are no collisions in the system and a packet can be lost only due to the noise. A new packet arrives to terminal whenever the previous packet has been transmitted correctly.}
 \subsection {a)}
 \textit{What is the maximal throughput that the terminal can achieve?}
-The probability of successful transmission is 
+
+The throughput is how much data that is transmitted according to the time $\frac{D}{T_{s}}$ so if the data packet is unsuccessful the throughput would be $\frac{D}{n\cdot T_{s}}$. The first run would be $P_{e}\frac{D}{T_{s}}$. If it fail it goes into the loop until it successfully transmit the packet. This loop could be seen as a binomial process.
 \begin{flalign}
-&& P_{t} &= 1 - P_{e}& 
+ && P(X=i)=& \binom{n}{i}q^{i}(1-q)^{n-i} &
 \end{flalign}
-if an error occurs the retransmission probability is 
+where n is number of trials and i is the number of times it successes. So the total throughput becomes.
 \begin{flalign}
-&& P_{retransmission} &= q&
+ && TP =&  P_{e}\frac{D}{nT_{s}} - P_{e}\frac{D}{nT_{s}} \cdot \binom{n}{i}q^{i}(1-q)^{n-i} &\\
+ && TP =& P_{e}\frac{D}{nT_{s}}(1 - \binom{n}{i}q^{i}(1-q)^{n-i})
 \end{flalign}
-and if it waits it is 
-\begin{flalign}
- && P_{wait} &= 1-q &
-\end{flalign}
-
-For the error part: 
-\begin{flalign}
- P_{succes|fail} = (1-P_{e})P_{e}P_{retransmission}
-\end{flalign}
-
-
-
-
 
 \subsection {b)}
 \textit{What is the throughput that the terminal can achieve if it turns off the ALOHA protocol and retransmits the packet until successful transmission?} 
+The throughput if q equal 1 is the case if it transmit right away. 
+\begin{flalign}
+ && TP=& P_{e}\frac{D}{nT_{s}} &
+\end{flalign}
