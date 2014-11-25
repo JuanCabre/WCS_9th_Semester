@@ -1,34 +1,33 @@
 \section{Problem 2}
-\textit{Using the FDTD matlab code given at the course, design a Yagi-Uda antenna that has a gain of at least 6 dBi at 850 Mhz.}
+\textit{Using the FDTD matlab code given at the course, design a Yagi-Uda antenna that has a gain of at least 6 dBi at 850 Mhz.}\\
 
-
-We followed the design diagram for a Yagi-Uda antenna of three elements found on-line and shown in \figref{fig:wiki_yagi_antenna}.
+We followed the design proposal for a Yagi-Uda antenna originally proposed by Hidetsugu Yagi in \cite{lit:YAGI}. The specific details for a three elements is found from the standardization from the National Bureau of Standards (US) shown in \tref{tab:Yagi-jpg}.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=10cm]{wiki_yagi_antenna.eps}
-  \caption{Figure showing the angles involved in the dipole inclination and rotation (WRITE SOURCE)}
-  \label{fig:wiki_yagi_antenna}
+  \includegraphics[width=10cm]{Yagi-jpg.eps}
+  \caption{Table showing the length needed for optimized gain @400MHz. Reflector is placed $0.2\lambda$ behind the driven element \cite[p.~7]{lit:NBS}}
+  \label{tab:Yagi-jpg}
 \end{figure}
 
-Since the antenna should have a required gain of 6 dBi at 850 Mhz, our wavelength of interest is $\lambda = \SI{0.352}{\meter}$. Given that wavelength, since we wanted to have an accurate FDTD simulation, we set the cell size to $\SI{0.01}{\meter}$. The literature recommends to use a cell size of at least a tenth of a wavelength, with the chosen value we were sure that we were fulfilling that requirement.
+Since the antenna should have a required gain of 6 dBi at 850 Mhz, our wavelength of interest is $\lambda = \SI{0.353}{\meter}$. Given that wavelength, since we wanted to have an accurate FDTD simulation, we set the cell size to $\SI{0.01}{\meter}$. The literature recommends to use a cell size of at least a tenth of a wavelength, with the chosen value we were sure that we were fulfilling that requirement.\\
 
 The simulation geometry is shown in the \figref{fig:3_element_yagi-uda_geometry} and the simulation parameters are shown in \tref{tab:antenna_param}
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=10cm]{3_element_yagi-uda_geometry.eps}
-  \caption{Figure showing the angles involved in the dipole inclination and rotation (WRITE SOURCE)}
+  \caption{Figure showing the angles involved in the dipole inclination and rotation}
   \label{fig:3_element_yagi-uda_geometry}
 \end{figure}
 
 \ptable{| p{12cm} | p{6cm} |}{ %
 Parameter 		&	Value 			\\ \hline
-Reflector size 		        &	$18 cells$	        \\ \hline
-Dipole size 		        &	$16 cells$	        \\ \hline
-Director size 		        &	$12 cells$	        \\ \hline
+Reflector size 		        &	$17 cells$	        \\ \hline
+Dipole size 		        &	$18 cells$	        \\ \hline
+Director size 		        &	$15 cells$	        \\ \hline
 Reflector position (x axis) 		        &	$0 cells$	        \\ \hline
-Dipole position (x axis) 		        &	$9 cells$	        \\ \hline
+Dipole position (x axis) 		        &	$7 cells$	        \\ \hline
 Director position (x axis) 		        &	$14 cells$	        \\ \hline
 Cell size 		        &	$\SI{0.01}{\meter}$	        \\ \hline
 Excitation lower freq 		        &	$\SI{1}{\hertz}$	        \\ \hline
@@ -40,7 +39,7 @@ From the radiation diagram of \figref{fig:yagi_radiation_pattern_director} we ca
 \begin{figure}[!h]
   \centering
   \includegraphics[width=10cm]{yagi_radiation_pattern_director.eps}
-  \caption{Figure showing the angles involved in the dipole inclination and rotation (WRITE SOURCE)}
+  \caption{Figure showing the angles involved in the dipole inclination and rotation}
   \label{fig:yagi_radiation_pattern_director}
 \end{figure}
 
@@ -50,6 +49,15 @@ From the radiation diagram of \figref{fig:yagi_radiation_pattern_director} we ca
   \caption{Figure showing the angles involved in the dipole inclination and rotation (WRITE SOURCE)}
   \label{fig:3_element_yagi-uda}
 \end{figure}
+
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{Yagi_CardPlot.eps}
+  \caption{Figure showing the angles involved in the dipole inclination and rotation (WRITE SOURCE)}
+  \label{fig:Yagi_CardPlot}
+\end{figure}
+
 
 For didactical purposes we tried to simulate the Yagi-Uda antenna without the director. The geometry of the simulation is shown in \figref{fig:2_element_yagi-uda_geometry}. The simulated radiation pattern is shown in \figref{fig:yagi_radiation_pattern} and it can be seen that, as it was expected, it is a less directive antenna (with a gain of 5 dBi) than the 3-elements Yagi-Uda.
 
