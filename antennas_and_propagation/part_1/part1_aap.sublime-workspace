@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"figu",
+				"begin{figure*}	latex-document"
+			],
+			[
 				"str",
 				"string"
 			],
@@ -48,22 +52,6 @@
 			"settings":
 			{
 				"buffer_size": 247,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "master.tex",
-			"settings":
-			{
-				"buffer_size": 2461,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/plot_avrg_packet_vs_coefficient.py",
-			"settings":
-			{
-				"buffer_size": 1193,
 				"line_ending": "Unix"
 			}
 		}
@@ -207,14 +195,18 @@
 	},
 	"expanded_folders":
 	[
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1"
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm6"
 	],
 	"file_history":
 	[
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/Pb1.tex",
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/plot_avrg_packet_vs_coefficient.py",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/master.fdb_latexmk",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/master_thesis/scripts/blk_prob_extr_reqst.m",
 		"/home/juan/.config/sublime-text-3/Packages/User/make.sublime-build",
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/Pb1.tex",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/Introduction.tex",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/master.sublime-project",
 		"/home/juan/.config/sublime-text-3/Packages/User/LaTeXing.sublime-settings",
@@ -316,7 +308,6 @@
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/json_plot_data.py",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/destination_gauge.cpp",
 		"/home/juan/Student_helper/MeanAndLean/scripts/plot_energy_per_bit_vs_symbol_size.py",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/plot_avrg_packet_vs_coefficient.py",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/benchmark/throughput3/main.cpp",
 		"/home/juan/Desktop/stem_plot.py",
 		"/home/juan/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
@@ -407,7 +398,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -423,8 +414,8 @@
 						"selection":
 						[
 							[
-								192,
-								192
+								246,
+								246
 							]
 						],
 						"settings":
@@ -435,63 +426,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "master.tex",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2461,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2335,
-								2335
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 918.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/plot_avrg_packet_vs_coefficient.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1193,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]

@@ -22,7 +22,7 @@ h1=10;  % height terminal 1
 h2=2;   % height terminal 2
 Rg=-0.85; % ground reflection
 Rw=-0.5;  % wall reflection
-d=10:1:100000; %distance along street;
+d=10:1:1000; %distance along street;
 E=d-d;
 
 for i=1:N+1
@@ -57,14 +57,22 @@ grid on
 
 fd = 1/2*linspace(-1,1,length(E)); %Sampling frequency divided by the scale
 
-% Impulse response in frequency
-Et=exp(-j*k.*fd);
-% Infinite bandwith impulse response in frequency
-H = (fft(E))./Et;
-
-% Impulse response in space
+Et=exp(-j*k.*d);
+H = fftshift(fft(E))./fftshift(fft(Et));
+% Impulse response
 figure()
-plot(d,abs(ifft(H).^2),'linewidth',2);
+plot(fd,abs(H).^2);
+
+
+
+% % % % % % Impulse response in frequency
+% % % % % Et=exp(-j*k.*fd);
+% % % % % % Infinite bandwith impulse response in frequency
+% % % % % H = (fft(E))./Et;
+% % % % % 
+% % % % % % Impulse response in space
+% % % % % figure()
+% % % % % plot(d,abs(ifft(H).^2),'linewidth',2);
 
 % This is the dopler shift
 figure()
