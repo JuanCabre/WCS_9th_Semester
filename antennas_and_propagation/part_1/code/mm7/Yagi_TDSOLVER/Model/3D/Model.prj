@@ -11,5 +11,5 @@ HF Time Domain
 [Results]
 Time Domain: S-Parameter
 [Modeler Unique ID]
-4:yagi_1_director.cst;0de3baed779a05d6a73dbc30ba04e7fa;35692:numberofparameters=8:port=1;mode=1;zre=0;zim=0:;;0#:d_de;d_re;l_d;l_e;l_r;r;f;lambda
+4:yagi_tdsolver.cst;a3054453a5986527e1cfefbf1b3e5ce0;37358:numberofparameters=8:port=1;mode=1;zre=0;zim=0:;;0#:d_de;d_re;l_d;l_e;l_r;r;f;lambda
 [Comment]

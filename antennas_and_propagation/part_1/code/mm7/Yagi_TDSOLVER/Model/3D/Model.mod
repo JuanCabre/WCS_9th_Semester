@@ -1506,8 +1506,7 @@ Mesh.MeshType "Tetrahedral"
 '@ define frequency range
 
 '[VERSION]2013.0|23.0.0|20130322[/VERSION]
-Solver.FrequencyRange "350", "1350" 
-
+Solver.FrequencyRange "350", "1350"
 
 '@ define background
 
@@ -1522,7 +1521,6 @@ With Background
      .ZmaxSpace "0.0" 
      .ApplyInAllDirections "False" 
 End With 
-
 With Material 
      .Reset 
      .FrqType "all"
@@ -1570,20 +1568,17 @@ With Material
      .Transparentoutline "False" 
      .Transparency "0" 
      .ChangeBackgroundMaterial
-End With 
-
+End With
 
 '@ change solver type
 
 '[VERSION]2013.0|23.0.0|20130322[/VERSION]
-ChangeSolverType "HF Time Domain" 
-
+ChangeSolverType "HF Time Domain"
 
 '@ define time domain solver parameters
 
 '[VERSION]2013.0|23.0.0|20130322[/VERSION]
 Mesh.SetCreator "High Frequency" 
-
 With Solver 
      .Method "Hexahedral"
      .CalculationType "TD-S"
@@ -1601,9 +1596,71 @@ With Solver
      .UseSensitivityAnalysis "False"
 End With
 
-
 '@ set pba mesh type
 
 '[VERSION]2013.0|23.0.0|20130322[/VERSION]
 Mesh.MeshType "PBA"
+
+'@ farfield plot options
+
+'[VERSION]2013.0|23.0.0|20130322[/VERSION]
+With FarfieldPlot 
+     .Plottype "Polar" 
+     .Vary "angle2" 
+     .Theta "90" 
+     .Phi "90" 
+     .Step "1" 
+     .Step2 "1" 
+     .SetLockSteps "True" 
+     .SetPlotRangeOnly "False" 
+     .SetThetaStart "0" 
+     .SetThetaEnd "180" 
+     .SetPhiStart "0" 
+     .SetPhiEnd "360" 
+     .SetTheta360 "False" 
+     .SymmetricRange "False" 
+     .SetTimeDomainFF "False" 
+     .SetFrequency "850" 
+     .SetTime "0" 
+     .SetColorByValue "True" 
+     .DrawStepLines "False" 
+     .DrawIsoLongitudeLatitudeLines "False" 
+     .ShowStructure "False" 
+     .SetStructureTransparent "False" 
+     .SetFarfieldTransparent "False" 
+     .SetSpecials "enablepolarextralines" 
+     .SetPlotMode "Gain" 
+     .Distance "1" 
+     .UseFarfieldApproximation "True" 
+     .SetScaleLinear "False" 
+     .SetLogRange "40" 
+     .SetLogNorm "0" 
+     .DBUnit "0" 
+     .EnableFixPlotMaximum "False" 
+     .SetFixPlotMaximumValue "1.0" 
+     .SetInverseAxialRatio "False" 
+     .SetAxesType "user" 
+     .Phistart "1.000000e+000", "0.000000e+000", "0.000000e+000" 
+     .Thetastart "0.000000e+000", "0.000000e+000", "1.000000e+000" 
+     .PolarizationVector "0.000000e+000", "1.000000e+000", "0.000000e+000" 
+     .SetCoordinateSystemType "spherical" 
+     .SetPolarizationType "Linear" 
+     .SlantAngle 0.000000e+000 
+     .Origin "zero" 
+     .Userorigin "4.567000e+000", "0.000000e+000", "0.000000e+000" 
+     .SetUserDecouplingPlane "False" 
+     .UseDecouplingPlane "False" 
+     .DecouplingPlaneAxis "X" 
+     .DecouplingPlanePosition "0.000000e+000" 
+     .LossyGround "False" 
+     .GroundEpsilon "1" 
+     .GroundKappa "0" 
+     .EnablePhaseCenterCalculation "False" 
+     .SetPhaseCenterAngularLimit "3.000000e+001" 
+     .SetPhaseCenterComponent "boresight" 
+     .SetPhaseCenterPlane "both" 
+     .ShowPhaseCenter "True" 
+     .StoreSettings
+End With 
+
 
