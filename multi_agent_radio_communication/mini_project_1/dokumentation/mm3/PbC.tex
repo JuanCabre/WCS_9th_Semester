@@ -8,5 +8,13 @@ The maximum pathloss is given by:
 
 where $PL_{max}$ is the maximum pathloss, $P_R$ is the reference power which is equivalent to the transmitted power and $P_{d_c}$ is the minimum acceptable downlink power level at the cell boundary which is at the distance $d_c$ from the cell center (Radius of coverage area). $A_c$ is the coverage area of the cell and $\gamma$ is the pathloss exponent. C is a scaling constant. \\
 
-From \equref{eq:MaximumPathLoss} it can be seen that there is a direct relation to the area of the cell. Therefore the relation between number of antennas ($M$) and the area ($A_c$) found in \secref{sec:mm3_PbA} and shown in \equref{eq:ExpressionForAcWithM} can be used here. 
+From the hint given in the exercise we can derive the following:
+\begin{flalign}
+&& \frac{PL_{max}^M}{PL_{max}^1}  =& \frac{P_{R}^M}{P_{R}^1} = \frac{P_{R}^1}{P_{R}^1 \cdot M} = \frac{1}{M} & \label{eq:hintTBS} 
+\end{flalign}
 
+Using this relation we can combine it with area relation from \secref{sec:mm3_PbA} and shown in \equref{eq:ExpressionForAcWithM} where the relation between  number of antennas ($M$) and the area ($A_c$) is found. This is shown in the following:
+\begin{flalign}
+&& PL_{max}^M  =& \frac{C}{\pi} \, \left(A_{C}^M\right)^{\frac{\gamma}{2}} = \frac{C}{\pi} \, \left(A_{C}^1\right)^{\frac{\gamma}{2}} \, \left(M^{-\frac{2}{\gamma}}\right)^{\frac{\gamma}{2}}  = \frac{1}{M}\, PL_{max}^1 & 
+\end{flalign}
+This shows the relation to \equref{eq:hintTBS} giving that these are equivalent.
