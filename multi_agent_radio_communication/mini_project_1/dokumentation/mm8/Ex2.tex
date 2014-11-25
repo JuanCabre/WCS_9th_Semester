@@ -1,0 +1,11 @@
+\section{Exercise 2} \label{sec:mm8_Ex1}
+\textit{Show that the last $N$ samples of the circular convolution with the cyclic prefix are equal to the $N$ samples of the linear convolution when an empty cyclic prefix is used.}\\
+
+For this we used \cite[p.~384]{lit:goldsmith} as reference. Here the following prove is stated:
+\begin{flalign} 
+ && y[n] =& \tilde{x}[n] \ast h[n] & \\
+ &&      =& \sum_{k=0}^\mu h[n]\,\tilde{x}[n-k]& \\
+ &&      =& \sum_{k=0}^\mu h[n]\,x[n-k]\,N& \\
+ &&      =& \,x[n]\circledast h[n]&
+\end{flalign}
+From this the relation between the 
