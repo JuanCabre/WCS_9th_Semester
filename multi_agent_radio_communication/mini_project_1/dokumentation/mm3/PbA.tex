@@ -2,7 +2,6 @@
 \textit{MAXIMISING COVERAGE AREA. For a given radiated power, compare the coverage area of a single antenna system, $A_c^1$, to the coverage area of an M-antenna distributed antenna system, $A_c^M$. State the implications of the relation.}\\
 
 We assume, that the minimum acceptable downlink power remains the same for both the single antenna system and the M-antenna system. Also, the total radiated power is constant, so it is divided onto the M antennas. The addition of an index M denotes the belonging to the M-antenna system, so for example $A_c^1$ is the coverage area of the single antenna system, while $A_{c}^M$ is the M-antenna system cell coverage area. 
-
 \begin{flalign}
 && P_{d_c}^1 &= P_{d_c}^M &\\
 && &=const. &\\
@@ -10,14 +9,12 @@ We assume, that the minimum acceptable downlink power remains the same for both 
 && PL^1&=M\cdot PL^M & \label{eq:pathloss_1_M}
 \end{flalign}
 
-The relationship between the path loss and the coverage area is given as
-
+The relationship between the path loss and the coverage area is given as:
 \begin{flalign}
 PL = C \left(\frac{A_c^1}{\pi}\right)^\frac{\gamma}{2}. 
 \end{flalign}
 
 This can be inserted to \eqref{eq:pathloss_1_M} to find the relation between the coverage area in both cases.
-
 \begin{flalign}
 \left(\frac{A_c^1}{\pi}\right)^{\frac{\gamma}{2}}=M\cdot\left(\frac{A_{c}^M}{\pi}\right)^{\frac{\gamma}{2}}\\
 \left(A_c^1\right)^{\frac{\gamma}{2}}=M\cdot (A_{c}^M)^{\frac{\gamma}{2}}\\
@@ -26,16 +23,25 @@ A_c^1=M^{\frac{2}{\gamma}}\cdot A_{c}^M \\
 \frac{A_{c,total}^M}{A_{c}^1} =\frac{A_{c}^M\cdot M}{A_{c}^1}=M^{-\frac{2}{\gamma}+1}
 \end{flalign}
 
-The implications of this factor are shown in \figref{fig:Acm_M}, \figref{fig:Acmtot_M}, \figref{fig:Acm_gamma}, \figref{fig:Acmtot_gamma} and \figref{fig:Acmtot_gamma_M}. [Additional text to describe implications...?]
-
+The implications of this factor are shown in the following plots. In \figref{fig:Acm_M} the path-loss exponent ($\gamma$) is constant at 4 and the number of antennas is changed in order to see the impact on coverage area for each antenna. This is related to the transmit power needed from each cell antenna.
 \fig[keepaspectratio=true,width=11cm]{Acm_M.eps}{Coverage Area of one cell for multiple antennas vs. antenna number.}{fig:Acm_M}
 
+In \figref{fig:Acm_PvsD} it can be seen how the coverage distance for each cell related to the transmit power. 
+\fig[keepaspectratio=true,width=11cm]{Acm_PvsD.eps}{Transmit power per cell vs. distance.}{fig:Acm_PvsD}
+The implication of this is that having a distributed antenna system have advantages when the following relation is fulfilled.
+\begin{flalign}
+\frac{\left(d_{c}^2\right)^2}{\left(d_{c}^1\right)^2} > 0.5 
+\end{flalign}
+The squaring of the distances is related to the area of coverage. \\
+
+In \figref{fig:Acmtot_M} it can be seen that using more antennas using the same transmit power will cover a larger area as also makes sense. 
 \fig[keepaspectratio=true,width=11cm]{Acmtot_M.eps}{Total coverage Area for multiple antennas vs. antenna number.}{fig:Acmtot_M}
 
+In \figref{fig:Acm_gamma} it can be seen that using only two antennas can cover different area sizes dependent on the path-loss exponent. This might seem counter intuitive but if one were to include the interference as a factor it makes sense that having a larger path-loss will enable more power transmitted by the cell giving a larger coverage area. This plot is showing the impact for one cell and \figref{fig:Acmtot_gamma} is showing it for the total two cells.
 \fig[keepaspectratio=true,width=11cm]{Acm_gamma.eps}{Coverage Area of one cell for multiple antennas vs. PL coefficient.}{fig:Acm_gamma}
-
 \fig[keepaspectratio=true,width=11cm]{Acmtot_gamma.eps}{Total coverage Area for multiple antennas vs. PL coefficient.}{fig:Acmtot_gamma}
 
+In \figref{fig:Acmtot_gamma_M} a surface plot is showing the relation between the different parameters in play.
 \fig[keepaspectratio=true,width=11cm]{Acmtot_gamma_M.eps}{Total coverage Area vs. PL coefficient and number of antennas.}{fig:Acmtot_gamma_M}
 
 
