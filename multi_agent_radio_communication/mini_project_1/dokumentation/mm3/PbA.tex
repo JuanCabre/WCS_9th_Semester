@@ -28,19 +28,24 @@ The implications of this factor are shown in the following plots. In \figref{fig
 
 In \figref{fig:Acm_PvsD} it can be seen how the coverage distance for each cell related to the transmit power. 
 \fig[keepaspectratio=true,width=11cm]{Acm_PvsD.eps}{Transmit power per cell vs. distance.}{fig:Acm_PvsD}
+\fig[keepaspectratio=true,width=11cm]{Acm_PvsA.eps}{Transmit power per cell vs. area.}{fig:Acm_PvsA}
+\FloatBarrier
+
 The implication of this is that having a distributed antenna system have advantages when the following relation is fulfilled.
 \begin{flalign}
-\frac{\left(d_{c}^2\right)^2}{\left(d_{c}^1\right)^2} > 0.5 
+\frac{A_{c}^2}{A_{c}^1} &> 0.5 
 \end{flalign}
-The squaring of the distances is related to the area of coverage. \\
+This relates to \figref{fig:Acm_PvsA}. \\
 
 In \figref{fig:Acmtot_M} it can be seen that using more antennas using the same transmit power will cover a larger area as also makes sense. 
 \fig[keepaspectratio=true,width=11cm]{Acmtot_M.eps}{Total coverage Area for multiple antennas vs. antenna number.}{fig:Acmtot_M}
+\FloatBarrier
 
 In \figref{fig:Acm_gamma} it can be seen that using only two antennas can cover different area sizes dependent on the path-loss exponent. This might seem counter intuitive but if one were to include the interference as a factor it makes sense that having a larger path-loss will enable more power transmitted by the cell giving a larger coverage area. This plot is showing the impact for one cell and \figref{fig:Acmtot_gamma} is showing it for the total two cells.
 \fig[keepaspectratio=true,width=11cm]{Acm_gamma.eps}{Coverage Area of one cell for multiple antennas vs. PL coefficient.}{fig:Acm_gamma}
 \fig[keepaspectratio=true,width=11cm]{Acmtot_gamma.eps}{Total coverage Area for multiple antennas vs. PL coefficient.}{fig:Acmtot_gamma}
 
+\FloatBarrier
 In \figref{fig:Acmtot_gamma_M} a surface plot is showing the relation between the different parameters in play.
 \fig[keepaspectratio=true,width=11cm]{Acmtot_gamma_M.eps}{Total coverage Area vs. PL coefficient and number of antennas.}{fig:Acmtot_gamma_M}
 
