@@ -48,10 +48,26 @@
 	"buffers":
 	[
 		{
-			"file": "/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/master.lot",
+			"file": "master.tex",
 			"settings":
 			{
-				"buffer_size": 610,
+				"buffer_size": 3011,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dokumentation/mm8/Ex2.tex",
+			"settings":
+			{
+				"buffer_size": 1575,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "NOTES.tex",
+			"settings":
+			{
+				"buffer_size": 6665,
 				"line_ending": "Unix"
 			}
 		}
@@ -59,9 +75,13 @@
 	"build_system": "Packages/User/make.sublime-build",
 	"command_palette":
 	{
-		"height": 148.0,
+		"height": 375.0,
 		"selected_items":
 		[
+			[
+				"git s",
+				"Git: Status"
+			],
 			[
 				"Build: ",
 				"Build: Build"
@@ -108,10 +128,6 @@
 			],
 			[
 				"git ",
-				"Git: Status"
-			],
-			[
-				"git s",
 				"Git: Status"
 			],
 			[
@@ -195,10 +211,18 @@
 	},
 	"expanded_folders":
 	[
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1"
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm8"
 	],
 	"file_history":
 	[
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/master_thesis/testing_bucket",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/Makefile",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm4/PbB.tex",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm2/Exercise_1-Problem_1.tex",
+		"/home/juan/Desktop/exercise_MM1B_template.m",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/marc.sublime-project",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/part1_aap.sublime-project",
 		"/home/juan/.config/sublime-text-3/Packages/User/LaTeXing.sublime-settings",
 		"/home/juan/.config/sublime-text-3/Packages/LaTeXing/LaTeXing.sublime-settings",
@@ -320,17 +344,11 @@
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/tables-eaf062/4.1.0/src/tables/format.hpp",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/stdout_printer.cpp",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/python_printer.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/json_printer.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/csv_printer.hpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/csv_printer.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/juan_test_using_gauge/destination/destination_gauge.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/scripts/juan_leaner_and_meaner/pc_measure_power_script.sh",
-		"/home/juan/Desktop/playing.cpp",
-		"/etc/systemd/logind.conf"
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/json_printer.cpp"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -344,6 +362,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"a",
 			"swr",
 			"dic",
 			" \n",
@@ -402,30 +421,87 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/master.lot",
-					"semi_transient": true,
+					"file": "master.tex",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 610,
+						"buffer_size": 3011,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2068,
+								2068
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 714.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "dokumentation/mm8/Ex2.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1222,
+								1222
+							]
+						],
+						"settings":
+						{
+							"spell_check": true,
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "NOTES.tex",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 6665,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2007,
+								2007
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -512,7 +588,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 302.0,
+	"side_bar_width": 459.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

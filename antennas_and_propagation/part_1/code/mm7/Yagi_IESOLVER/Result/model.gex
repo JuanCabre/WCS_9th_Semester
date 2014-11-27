@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaGeometryFile version="20121212">
+  <Components>
+    <Component name="Components\component1:Director1">
+      <Shape name="Components\component1:Director1" id="0" visible="1" material="Copper (annealed)">
+        <MeshGroup3D list=""/>
+        <Face>
+          <MeshGroup0D list=""/>
+          <MeshGroup1D list=""/>
+          <MeshGroup2D>
+            <Pos list="62 63 64"/>
+            <Neg list=""/>
+            <DS list=""/>
+          </MeshGroup2D>
+        </Face>
+      </Shape>
+    </Component>
+    <Component name="Components\component1:Excitation_1">
+      <Shape name="Components\component1:Excitation_1" id="1" visible="1" material="Copper (annealed)">
+        <MeshGroup3D list=""/>
+        <Face>
+          <MeshGroup0D list=""/>
+          <MeshGroup1D list=""/>
+          <MeshGroup2D>
+            <Pos list="59 60 61"/>
+            <Neg list=""/>
+            <DS list=""/>
+          </MeshGroup2D>
+        </Face>
+      </Shape>
+    </Component>
+    <Component name="Components\component1:Excitation_2">
+      <Shape name="Components\component1:Excitation_2" id="2" visible="1" material="Copper (annealed)">
+        <MeshGroup3D list=""/>
+        <Face>
+          <MeshGroup0D list=""/>
+          <MeshGroup1D list=""/>
+          <MeshGroup2D>
+            <Pos list="56 57 58"/>
+            <Neg list=""/>
+            <DS list=""/>
+          </MeshGroup2D>
+        </Face>
+      </Shape>
+    </Component>
+    <Component name="Components\component1:Reflector">
+      <Shape name="Components\component1:Reflector" id="3" visible="1" material="Copper (annealed)">
+        <MeshGroup3D list=""/>
+        <Face>
+          <MeshGroup0D list=""/>
+          <MeshGroup1D list=""/>
+          <MeshGroup2D>
+            <Pos list="53 54 55"/>
+            <Neg list=""/>
+            <DS list=""/>
+          </MeshGroup2D>
+        </Face>
+      </Shape>
+    </Component>
+  </Components>
+  <GeometryFile filename="3d.slim" type="slim"/>
+  <Materials>
+    <Material name="Copper (annealed)" priority="2">
+      <Color value="1 1 0"/>
+      <Transparency value="0"/>
+      <Wireframe value="0"/>
+      <Reflective value="0"/>
+      <Outline value="1"/>
+      <OutlineIfTransparent value="0"/>
+    </Material>
+    <Material name="DiscreteFacePort_PEC_Material^" priority="2">
+      <Color value="0.5 0.5 0.5"/>
+      <Transparency value="0.9"/>
+      <Wireframe value="1"/>
+      <Reflective value="1"/>
+      <Outline value="1"/>
+      <OutlineIfTransparent value="1"/>
+    </Material>
+  </Materials>
+  <MeshType type="surface"/>
+  <SimulationDomain min="-11.411111111111 -11.411111111111 -19.934640522876" max="25.528758169935 11.411111111111 19.934640522876"/>
+  <Symmetries/>
+  <Transformations/>
+  <UnitCell/>
+</MetaGeometryFile>
