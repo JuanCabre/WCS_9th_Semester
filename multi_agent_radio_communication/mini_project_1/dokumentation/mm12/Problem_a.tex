@@ -7,21 +7,24 @@
 
 The calculation will be split in the following way to get an overview of the needed steps.
 \begin{itemize}
- \item Initial BS
- \item Initial GW
+ \item Initial (Base stations) BS
+ \item Initial (Gateway controller) GW
  \item Update BS
  \item Update GW
  \item Backhaul
 \end{itemize}
-The CAPEX will be the price of the BS and the price of the GW. The IMPEX will be the installation cost of each femto cell. The OPEX will be the service cost and the backhaul. The results can be seen in table \ref{tab1:mm12proba}. 
+
+The CAPEX will be the price of the BS and the price of the GW. The IMPEX will be the installation cost of each femto cell. The OPEX will be the service cost and the backhaul. The results can be seen in table \ref{tab1:mm12proba}. It is important to note that when a price that comes in the future wants to be ``translated'' to present time, we should use the Discrete present value formula.
 
 Formulas used in the calculation is Discrete Present Value (Net Present Value, DPV). 
 \begin{flalign}
  && DPV((VF_{0} , VF_{1},....,VF_{N-1}, r))=& \sum_{t = 0}^{N-1} \frac{VF_{t}}{(1+r)^{t}}&
 \end{flalign}
-and the fact that installation, service and leasing costs increase by 2\% annually.
+Where r is the interest rate.
+
+Installation, service and leasing costs increase by 2\% annually.
 \begin{flalign}
- && annual decrease&= (1.02)^{t} &
+ && annual increase(t)&= (1.02)^{t} &
 \end{flalign}
 
 
