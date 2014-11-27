@@ -1,7 +1,9 @@
 \section{Problem C}
 \textit{REDUCING MAXIMUM PATH LOSS. For the same given coverage area, compare the maximum path loss of a single antenna system, $PL_{max^1}$, to the maximum path loss of an M-antenna distributed system, $PL_{max^M}$, and express the reduction in the dynamic range. Define path loss at the cell boundary, $d_c$, of the single-antenna system (as in the boxed expression above). State the implications of the relation.}\\
 
-The maximum pathloss is given by:
+First the relation between the maximum path-loss for one and M antennas is described by \equref{eq:probc1} from problem B.\\
+
+The maximum path-loss is form this exercise given by:
 \begin{flalign}
 && PL_{max} \equiv & \frac{P_R}{P_{d_c}} = C\left(\frac{A_c}{\pi}\right)^{\sfrac{\gamma}{2}} & \label{eq:MaximumPathLoss}
 \end{flalign}  
@@ -10,11 +12,9 @@ where $PL_{max}$ is the maximum pathloss, $P_R$ is the reference power which is 
 
 From the hint given in the exercise we can derive the following:
 \begin{flalign}
-&& \frac{PL_{max}^M}{PL_{max}^1}  =& \frac{P_{R}^M}{P_{R}^1} = \frac{P_{R}^1}{P_{R}^1 \cdot M} = \frac{1}{M} & \label{eq:hintTBS} 
+&& \frac{PL_{max}^M}{PL_{max}^1}  =& \frac{PL_{max}^1 \, M^{\frac{-\gamma}{2}}}{PL_{max}^1} = M^{\frac{-\gamma}{2}} & \label{eq:hintTBS} 
 \end{flalign}
+This relation between the two is however already shown in problem B.\\
 
-Using this relation we can combine it with area relation from \secref{sec:mm3_PbA} and shown in \equref{eq:ExpressionForAcWithM} where the relation between  number of antennas ($M$) and the area ($A_c$) is found. This is shown in the following:
-\begin{flalign}
-&& PL_{max}^M  =& \frac{C}{\pi} \, \left(A_{C}^M\right)^{\frac{\gamma}{2}} = \frac{C}{\pi} \, \left(A_{C}^1\right)^{\frac{\gamma}{2}} \, \left(M^{-\frac{2}{\gamma}}\right)^{\frac{\gamma}{2}}  = \frac{1}{M}\, PL_{max}^1 & 
-\end{flalign}
-This shows the relation to \equref{eq:hintTBS} giving that these are equivalent.
+This indicate that the higher the path-loss is the more advantages it is to use a distributed system.  
+
