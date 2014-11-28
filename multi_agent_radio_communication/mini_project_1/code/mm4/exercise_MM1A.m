@@ -360,12 +360,101 @@ title('Powers at different Offset-Angles')
     title('Offset: 58°, CIR>15dB')
     
 
+    %%
+    
+    %%
+    
+    %%
+    
+test=transpose(RESULT3_dB);
+    
+    
+RESULT3_dB_polar=[ transpose(rad-pi/2) transpose(RESULT3_dB+Tx_power*ones(size(RESULT3_dB,1),size(RESULT3_dB,2)))];
+
+figure
+polar(RESULT3_dB_polar(:,1),RESULT3_dB_polar(:,2))
+
+title('Equivalent radiation pattern')
+    
+
+figure
+plot(rad-pi/2,RESULT3_dB-max(RESULT3_dB));
+title('Antenna Pattern Cartesian Plot')
+xlabel('Angle [rad]')
+axis([0, pi, -15, 0])
+ylabel('Power [dB]')
+grid on
+
+%%
+
+    offset=59;
+    o1=offset;
+    o2=0;
+    o3=-offset;
+    o4=2*offset;
+    o5=-2*offset;
+    
+    figure
     
     
     
+    a_SDMAdB_polar=[ transpose(rad+o1/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2))  
+    hold on
+    
+    a_SDMAdB_polar=[ transpose(rad+o2/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o3/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o4/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o5/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2)) 
+    
+    
+    title('Offset: 59°, CIR>9dB')
+
+     
+    
+    %%
+    
+    %%
+
+    offset=63.3;
+    o1=offset;
+    o2=0;
+    o3=-offset;
+    o4=2*offset;
+    o5=-2*offset;
+    
+    figure
     
     
     
+    a_SDMAdB_polar=[ transpose(rad+o1/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2))  
+    hold on
+    
+    a_SDMAdB_polar=[ transpose(rad+o2/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2))  
     
     
+    a_SDMAdB_polar=[ transpose(rad+o3/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2))  
     
+    
+    a_SDMAdB_polar=[ transpose(rad+o4/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2))  
+    
+    
+    a_SDMAdB_polar=[ transpose(rad+o5/180*pi-pi/2) (RESULT3_dB_polar+Tx_power*ones(size(RESULT3_dB_polar,1),size(RESULT3_dB_polar,2)))];
+    polar(a_SDMAdB_polar(:,1),RESULT3_dB_polar(:,2)) 
+    
+    
+    title('Offset: 63.3°, CIR>15dB')

@@ -1,10 +1,52 @@
 \section{Problem 1 - Analytical expressions}
-Derive analytical expressions for different tactics. 
+\textit{Derive analytical expressions for different tactics. }\\
 
+The pay off from the different tactics is given by the following:
+\begin{center}
+  \begin{tabular}{ c | c | c }
+      			& Cooperate & Defect 	\\ \hline
+    Cooperate 	& 3/3	 	& 0/5 		\\ \hline
+    Defect		& 5/0 		& 1/1 		\\
+    \hline
+  \end{tabular}
+\end{center}
+The expression to use here is given by:
+\begin{flalign}
+ && \texttt{PayOff}=& \frac{\texttt{[Total \# of same tactic]}\cdot \texttt{[Point]} + \texttt{[Total \# of different tactic]}\cdot \texttt{Point}}{\texttt{Total \# of nodes}} &
+\end{flalign}
 \subsection{10 TIT for TAT and 10 DEFECT}
+For this the expression can be written like:
+\begin{flalign}
+ && TfT=& \frac{9\cdot 3 + 10\cdot 1}{19} =1.95 &
+\end{flalign}
 
+\begin{flalign}
+ && Defect=& \frac{9\cdot 1 + 10\cdot 1}{19} =1 &
+\end{flalign}
+
+I can be noted that this is the same (almost) as the values found in the simulations shown in \figref{fig:10tft_10def-jpg}.
 
 \subsection{10 COOPERATE and 10 DEFECT}
+\begin{flalign}
+ && Coop=& \frac{9\cdot 3 + 10\cdot 0}{19} =1.42 &
+\end{flalign}
 
+\begin{flalign}
+ && Defect=& \frac{9\cdot 1 + 10\cdot 5}{19} =3.1 &
+\end{flalign}
 
 \subsection{T TIT for TAT, D DEFECT and C COOPERATE}
+Tit for tat:
+\begin{flalign}
+ && TfT=& \frac{(T-1)\cdot 3 + C\cdot 3 + D\cdot 1}{T+D+C-1} =\frac{3\left(T+C-1\right)+D}{T+D+C-1} &
+\end{flalign}
+
+Cooperate:
+\begin{flalign}
+ && Coop=& \frac{T\cdot 3 + (C-1)\cdot 3 }{T+D+C-1} =\frac{3\left(T+C-1\right)}{T+D+C-1} &
+\end{flalign}
+
+Defect:
+\begin{flalign}
+ && Defect=& \frac{T\cdot 1 + C\cdot 5 + (D-1)\cdot 1}{T+D+C-1} =\frac{5\cdot C+T+D}{T+D+C-1} &
+\end{flalign}

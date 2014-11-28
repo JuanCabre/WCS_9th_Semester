@@ -1,0 +1,48 @@
+\section{Problem A}
+\textit{You are to make a total cost of ownership (TCO) financial estimate to determine the direct and indirect costs of an indoor wireless system over an analysis period of 5 years.}\\
+
+\textit{The system consists initially of 5 enterprise Femto base stations at a price tag of 500 Euros each and depreciation period of 7 years; the price erosion of the base station equipment is 6\% per year. In addition to the Femto base stations the system comprises a Femto gateway controller capable of handling up to 10 base stations; the gateway has a price tag of 50 Euros per connected base station and a depreciation period of 10 years. The base stations are connected to the gateway over an already existing Gigabit Ethernet network. The traffic from the gateway to the external network (backhaul) is carried over a leased fibre-optic connection, at a cost of 400 Euros per month. The installation cost per new Femto is 300 Euros and the annual service cost amounts to 20\% of the equipment cost; installation, service and leasing costs increase by 2\% annually.}\\
+\textit{After 3 years, an additional 3 Femto base stations, with the same depreciation period of 7 years, are installed in the system.}\\
+\textit{Detail the contributions to CAPEX, IMPEX and OPEX and calculate the TCO of this indoor wireless solution assuming a (risk and inflation compensated) interest rate of 5\%.}\\
+
+The calculation will be split in the following way to get an overview of the needed steps.
+\begin{itemize}
+ \item Initial (Base stations) BS
+ \item Initial (Gateway controller) GW
+ \item Update BS
+ \item Update GW
+ \item Backhaul
+\end{itemize}
+
+The CAPEX will be the price of the BS and the price of the GW. The IMPEX will be the installation cost of each femto cell. The OPEX will be the service cost and the backhaul. The results can be seen in table \ref{tab1:mm12proba}. It is important to note that when a price that comes in the future wants to be ``translated'' to present time, we should use the Discrete present value formula.
+
+Formulas used in the calculation is Discrete Present Value (Net Present Value, DPV). 
+\begin{flalign}
+ && DPV((VF_{0} , VF_{1},....,VF_{N-1}, r))=& \sum_{t = 0}^{N-1} \frac{VF_{t}}{(1+r)^{t}}&
+\end{flalign}
+Where r is the interest rate.
+
+Installation, service and leasing costs increase by 2\% annually.
+\begin{flalign}
+ && annual increase(t)&= (1.02)^{t} &
+\end{flalign}
+
+
+
+
+
+\ptable{| c | c |c | c | c |}{ %
+ASSETS	& NOTES  & CAPEX & IMPEX & OPEX \\ \hline 								
+Initial BS	& $5\cdot p_{BS} \cdot \frac{5}{7}$  & 1786 & &		\\ \hline
+  &	$5 \cdot p_{impl}$ & & 1500 &\\ \hline
+  & $5\cdot p_{BS} \cdot 0.2 = 500$ & &  & $ \sum_{t = 0}^{4} \frac{500\cdot(1.02)^{t}}{(1+0.05)^{t}} =  2361$ \\ \hline
+Initial GW  & $5\cdot p_{con}\cdot 5/10$ & 125 & & \\ \hline
+Update BS & $3\cdot p_{BS} \cdot \frac{2}{7}(0.94)^{3}$ & 307 & & \\\hline
+& $\frac{5 \cdot p_{impl}(1.02)^{3}}{(1.05)^{3}}$ & & 825& \\\hline
+& $3\cdot p_{BS} \cdot 0.2 \cdot (0.94)^{3} = 249$ & & & $\sum_{t = 3}^{4} \frac{249\cdot(1.02)^{t}}{(1+0.05)^{t}} =  450$ \\\hline
+Update GW  & $\frac{3\cdot p_{con} \cdot 2/10}{1.05^{3}}$ & 26 & & \\ \hline
+Backhaul & $12 \cdot p_{lease} = 4800$ &&& $\sum_{t = 0}^{4} \frac{4800\cdot(1.02)^{t}}{(1+0.05)^{t}} =  22667$ \\\hline
+\textbf{sum}  $[\geneuro]$&&  \textbf{2244}  & \textbf{2325} & \textbf{25478} \\\bottomrule
+\textbf{TOC}$[\geneuro]$&&&& \textbf{30047} \\\hline
+}{TCO of the indoor wireless solution}{tab1:mm12proba}
+Where $p_{BS} = 500 [\geneuro]$, $p_{impl} = 300 [\geneuro]$, $p_{con} = 50 [\geneuro]$ and $p_{lease} = 400 [\frac{\geneuro}{Month}]$ 

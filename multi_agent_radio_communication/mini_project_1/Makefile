@@ -12,7 +12,7 @@ OTHER = *~ *.log *.acr *.acn *.glsdefs *.alg *.aux *.gls *.glo *.glg *.toc *.tdo
 latex: master.tex
 	latex --synctex=1 master.tex
 	bibtex master
-	makeglossaries master
+	#makeglossaries master
 	latex --synctex=1 master.tex
 	makeglossaries master
 	latex --synctex=1 master.tex

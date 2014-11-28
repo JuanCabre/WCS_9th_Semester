@@ -92,7 +92,7 @@ amp = [amp [E1;E2]];
 end
 end
 
-delay = (dis - ddis)./(3e8);
+delay = (dis)./(3e8);
 P=20*log10(abs(amp));
 
 
@@ -149,7 +149,7 @@ amp = [amp [E1;E2]];
 end
 end
 
-delay = (dis-ddis)./(3e8);
+delay = (dis)./(3e8);
 P=20*log10(abs(amp));
 
 

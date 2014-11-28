@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CST3DFieldViewInfoText creator="" version="20121122">
+  <Title data="surface current (f=850) [1] (peak)" type="3D freq domain monitor"/>
+  <TextItem name="Type">
+    <Text visible="false" label="Type:" data="Surface Current" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Iso Value">
+    <Text visible="true" label="Iso Value:" data="$ifxCSTIsoSurface@isoValue$" condition="$ifxCSTIsoSurface@activate$=1" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Probe at">
+    <Text visible="true" label="Mouse pos.:" data="$ifxCSTProbingFilter@intersectionPoint$" condition="$ifxCSTProbingFilter@hit$=1 AND $ifxOpenSGGlyphViewer_PortMode@activate$=0 AND $ifxOpenSGGlyphViewer@activate$=0 AND $ifxOpenSGGlyphViewer_ifxCrossSection@activate$=0" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Probe result">
+    <Text visible="true" label="Result at mouse pos.:" data="$ifxCSTProbingFilter@outputValue$" condition="$ifxCSTProbingFilter@hit$=1 AND $ifxOpenSGGlyphViewer_PortMode@activate$=0 AND $ifxOpenSGGlyphViewer@activate$=0 AND $ifxOpenSGGlyphViewer_ifxCrossSection@activate$=0" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Probe at">
+    <Text visible="true" label="Mouse pos.:" data="$ifxCSTProbingFilter@intersectionPoint$" condition="$ifxCSTProbingFilter@hit$=1 AND $ifxOpenSGGlyphViewer_PortMode@activate$=1 OR $ifxCSTProbingFilter@hit$=1 AND $ifxOpenSGGlyphViewer_ifxCrossSection@activate$=1" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Probe result">
+    <Text visible="true" label="Result at mouse pos.:" data="$ifxCSTProbingFilter@outputVectorValue$" condition="$ifxCSTProbingFilter@hit$=1 AND $ifxOpenSGGlyphViewer_PortMode@activate$=1 OR $ifxCSTProbingFilter@hit$=1 AND $ifxOpenSGGlyphViewer_ifxCrossSection@activate$=1" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Plane_Normal">
+    <Text visible="true" label="Cutplane normal:" data="$ifxNavigationModule@cutplaneNormal$" condition="$ifxCrossSection@activate$=1" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Plane_Pos">
+    <Text visible="true" label="Cutplane position:" data="$ifxNavigationModule@cutplaneDistance$" condition="$ifxCrossSection@activate$=1" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Component">
+    <Text visible="true" label="Component:" data="$ifxOpenSGSurfaceMesh3DViewer@plot@component$" condition="$ifxOpenSGGlyphViewer_PortMode@activate$=0 AND $ifxOpenSGGlyphViewer@activate$=0 AND $ifxOpenSGGlyphViewer_ifxCrossSection@activate$=0" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="OrientationOutside">
+    <Text visible="true" label="Orientation:" data="Outside" condition="$ifxOpenSGSurfaceMesh3DViewer@insideOut$=0 AND $ifxOpenSGGlyphViewer_PortMode@activate$=0 AND $ifxOpenSGGlyphViewer@activate$=0 AND $ifxOpenSGGlyphViewer_ifxCrossSection@activate$=0" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Orientationinside">
+    <Text visible="true" label="Orientation:" data="Inside" condition="$ifxOpenSGSurfaceMesh3DViewer@insideOut$=1 AND $ifxOpenSGGlyphViewer_PortMode@activate$=0 AND $ifxOpenSGGlyphViewer@activate$=0 AND $ifxOpenSGGlyphViewer_ifxCrossSection@activate$=0" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Max2D">
+    <Text visible="true" label="2D Maximum:" data="$ifxOpenSGSurfaceMesh3DViewer_ifxCrossSection@maxValue$" condition="$ifxCrossSection@activate$=1" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Max2D_Pos">
+    <Text visible="false" label="2D Max. position:" data="$ifxOpenSGSurfaceMesh3DViewer_ifxCrossSection@maxValuePos$" condition="$ifxCrossSection@activate$=1" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Max3D">
+    <Text visible="true" label="3D Maximum:" data="$ifxOpenSGSurfaceMesh3DViewer@maxValue$" condition="$ifxCrossSection@activate$=0" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Max3D_Pos">
+    <Text visible="false" label="3D Max. position:" data="$ifxOpenSGSurfaceMesh3DViewer@maxValuePos$" condition="$ifxCrossSection@activate$=0" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Frequency">
+    <Text visible="true" label="Frequency:" data="850" condition="" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+  <TextItem name="Phase">
+    <Text visible="true" label="Phase:" data="$ifxNavigationModule@phase@current$" condition="$ifxOpenSGSurfaceMesh3DViewer@plot@attribute$=Wave" numberFormat="g" numberPrecision="4"/>
+  </TextItem>
+</CST3DFieldViewInfoText>

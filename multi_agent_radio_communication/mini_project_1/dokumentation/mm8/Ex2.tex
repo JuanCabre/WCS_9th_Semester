@@ -1,11 +1,15 @@
 \section{Exercise 2} \label{sec:mm8_Ex1}
 \textit{Show that the last $N$ samples of the circular convolution with the cyclic prefix are equal to the $N$ samples of the linear convolution when an empty cyclic prefix is used.}\\
 
-For this we used \cite[p.~384]{lit:goldsmith} as reference. Here the following prove is stated:
+For this we used \cite[p.~384]{lit:goldsmith} as reference. We want at the receiver to have something that looks like the circular convolution of the channel with the signal we want to obtain because if the channel is known, then, the wanted signal can be easily found. However we have the problem that the channel has the effect over any sent signal of producing a linear convolution. Mathematically we have 2 options, in theory we can modify $h[n]$ or the sent signal. However, practically, we do not have any control over the channel so we can only change the signal $x[n]$ to a certain $\tilde{x}[n]$, but what this $\tilde{x}[n]$ should be?.
+
+If we add a cyclic prefix as long as the memory of the channel, length $\mu$ to the signal $x[n]$, this is $\tilde{x}[n]=x[n]_{N}$, for $-\mu \leq n \leq N-1$ then, after sending that new signal through the channel, we get in the receiver something that looks like the circular convolution that we want as it is shown in the followings equations.
+
 \begin{flalign} 
  && y[n] =& \tilde{x}[n] \ast h[n] & \\
  &&      =& \sum_{k=0}^\mu h[n]\,\tilde{x}[n-k]& \\
- &&      =& \sum_{k=0}^\mu h[n]\,x[n-k]\,N& \\
+ &&      =& \sum_{k=0}^\mu h[n]\,x[n-k]_{N} \\
  &&      =& \,x[n]\circledast h[n]&
 \end{flalign}
-From this the relation between the 
+
+This is true because the third equality follows from the fact that, for $0 \leq k \leq \mu$, $\tilde{x}[n-k]=x[n-k]_{N}$ for $0 \leq n \leq N-1$.
