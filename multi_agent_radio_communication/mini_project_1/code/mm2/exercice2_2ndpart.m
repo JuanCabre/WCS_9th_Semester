@@ -2,16 +2,15 @@ clear all
 close all
 
 % make X number of uncorrelated channels
-nr_antennas = 2;                % dont use more than 8, error on plotting due to color function.
+nr_antennas = 2:2:8;                % dont use more than 8, error on plotting due to color function.
 nr_realizations = 1000;
 SNR=100;
 
-for o = 1:8
-    nr_antennas = nr_antennas + 2; 
-    H=zeros(nr_antennas,nr_antennas,nr_realizations);
+for o = 1:length(nr_antennas);
+    H=zeros(nr_antennas(o),nr_antennas(o),nr_realizations);
     for r=1:nr_realizations
-        for k = 1:nr_antennas
-            H(k,:,r) = (randn(1,nr_antennas) .* exp(-1i*randn(1,nr_antennas)));
+        for k = 1:nr_antennas(o)
+            H(k,:,r) = (randn(1,nr_antennas(o)) .* exp(-1i*randn(1,nr_antennas(o))));
         end
     end
     
@@ -49,7 +48,7 @@ plot(H1,Percent_Axis); hold on
 xlabel('Capacity [dB]')
 ylabel('CDF (%)')
 title('CDF data plot')
-%legend(leg)
+legend(num2str(nr_antennas'))
 
 
 figure
@@ -58,3 +57,4 @@ plot(H2,Percent_Axis)
 xlabel('\lambda^2 [dB]')
 ylabel('CDF (%)')
 title('CDF data plot')
+legend(num2str(nr_antennas'))
