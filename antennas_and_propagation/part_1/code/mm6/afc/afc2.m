@@ -118,6 +118,7 @@ ActualFileName = []; ActualPathName = [];
 GeomAxes = []; GeometryFig = []; Engine = [];
 SuccessFlag = false;
 plot_axes = []; probe_pointer = []; freq_pointer = []; pol_label = [];
+SourceDistance = [];
 
 %% string lists
 Units      = {'cells'};
@@ -233,8 +234,8 @@ ScreenSize = get(0,'ScreenSize');
 ScreenCenter = ScreenSize(3:4)./2;
 
 %% figure dimensions in pixels
-FigWidth = 265;
-FigHeight = 605;
+FigWidth = 265+20;
+FigHeight = 605+40;
 
 %% creating the main figure
 MainFig = figure('Visible','off', ...
@@ -968,7 +969,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% FDTD PARAMETERS PANEL %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-PanelHeight = 110;
+PanelHeight = 140;
 VerticalPosition = VerticalPosition - PanelHeight - Separate;
 ParamPanel = uipanel('Parent',Panel, ...
                      'ForegroundColor','b', ...
@@ -977,16 +978,16 @@ ParamPanel = uipanel('Parent',Panel, ...
                      'Position',[PanelsLeft VerticalPosition ...
                                  PanelsWidth PanelHeight]);
 
-uitext(ParamPanel,'Cell size:'           ,[10 70 130 17]);
-uitext(ParamPanel,'Frequency resolution:',[10 45 130 17]);
-
-Dx_Edit = uiedit(ParamPanel,'',[140 70 80 21],'Tag','Dx');
-Df_Edit = uiedit(ParamPanel,'',[140 45 80 21],'Tag','Df');
-
-uitext(ParamPanel,'  m', [220 70 20 17]);
-uitext(ParamPanel,'  Hz',[220 45 20 17]);
-
-set([Dx_Edit Df_Edit],'Callback',@ParamCallback);
+uitext(ParamPanel,'Cell size:'           ,[10 100 130 17]);
+uitext(ParamPanel,'Frequency resolution:',[10 70 130 17]);
+uitext(ParamPanel,'separation:',[10 45 130 17]);
+Dx_Edit = uiedit(ParamPanel,'',[140 100 80 21],'Tag','Dx');
+Df_Edit = uiedit(ParamPanel,'',[140 70 80 21],'Tag','Df');
+SourceDistance_Edit = uiedit(ParamPanel,'',[140 45 80 21],'Tag','SD');
+uitext(ParamPanel,'m', [220 100 20 17]);
+uitext(ParamPanel,'Hz',[220 70 20 17]);
+uitext(ParamPanel,'NC',[220 45 20 17]);
+set([Dx_Edit Df_Edit SourceDistance_Edit],'Callback',@ParamCallback);
 
 function ParamCallback(src,eventdata)
     
@@ -1008,8 +1009,11 @@ function ParamCallback(src,eventdata)
                     v.Vs = GaussSinePulse(v.mag,v.fc,v.fs,v.offset);
             end;
         end;
-
+ 
     end;
+    if src == SourceDistance_Edit
+            SourceDistance = str2num(get(src,'String'));
+        end
     
 end
 
@@ -6719,7 +6723,23 @@ function Simulate(src,eventdata,arg,DeployDir)
         %%%%%%%%%%%%%%%%
         %% MAIN CYCLE %%
         %%%%%%%%%%%%%%%%
+        if isempty(SourceDistance)
+            SourceDistance = 0;
+            t0 = 0;
+        else
+cellSize = v.Dx;
+dist = SourceDistance*cellSize;
 
+deltaT = v.Dt;
+centerFreq = v.fmax/2;
+c = 3E8;
+lambda=c/centerFreq;
+
+K = dist/lambda;
+tau = K/centerFreq;
+% tau = K/v.fs;
+t0 = round(tau/deltaT);
+        end
         for t = 1:Nt,
 
 
@@ -6846,8 +6866,7 @@ function Simulate(src,eventdata,arg,DeployDir)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %% Excitation and readout %%
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-dist = 8;
-t0 = 14;
+
             if lumpedsource_flag,
                 if hardsource_flag,
 
@@ -6888,7 +6907,7 @@ case 3, %% z dir
 Ez(SourceSubs(1),SourceSubs(2),SourceSubs(3)) = ...
 Ez(SourceSubs(1),SourceSubs(2),SourceSubs(3)) - in(t);
  %% ---  added field update --- %% 
-Ez(SourceSubs(1)-dist,SourceSubs(2),SourceSubs(3)) = in(t+t0);
+ Ez(SourceSubs(1)-SourceDistance,SourceSubs(2),SourceSubs(3)) =  in(t+t0);
  %% --- --- %%
 out(t) = Ez(SourceSubs(1),SourceSubs(2),SourceSubs(3));
                     end;
