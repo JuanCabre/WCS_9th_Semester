@@ -51,6 +51,7 @@ H= (h_screen + tan(alpha)*r_tx) + red_zone;
 r(1:ny)= sqrt( (H -[1:ny].*delta_y).^2 + (r_tx)^2);
 % Initial Field
 E(1,:)=1./(r.^0.5) .* exp(-i*k.*r);
+% E(1,:)=1;
 
 plot(abs(E(1,:)),'-b');
 hold on; grid on

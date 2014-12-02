@@ -21,7 +21,7 @@ The placement of the resistor depend on the distance between the two sources. In
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=20cm]{figures/geometry_two_dipoles.eps}
+  \includegraphics[width=12cm]{figures/geometry_two_dipoles.eps}
   \caption{Plot showing the two dipoles plotted, one with a source and the other with a resistor}
   \label{fig1:ap_mm7_pb1}
 \end{figure}
@@ -54,9 +54,36 @@ To translate this into the index, t, used in the code.
 \end{flalign}
 
 The code that needs to be modified is in the function MatlabFDTD in the afc.m file. Under the resistive source an update to the electric field is added, the change is depending on how the two sources is oriented. For the settings explained in section \ref{sec:mm7pb1_simulation} the updates needs to be done in the Ez, and can be seen in the code snippet \ref{cl:afc}.  
-\code{language=Matlab,caption = AFC program,label=cl:afc,linerange={6887-6893},firstnumber=6887}{code/mm6/afc/afc2.m}
-
-
+\code{language=Matlab,caption = AFC program,label=cl:afc,linerange={6906-6912},firstnumber=6887}{code/mm6/afc/afc2.m}
 
 
 \subsection{Results}
+In \citep{lit:AT} chapter 6 array structure is described. For a two element array it applies that if the antennas is placed with a distance of $d=\frac{\lambda}{4}$ between each other the phase difference between them will chancel in one direction and add in the other \citep[Sec. 6.2]{lit:AT}. This has been simulated an the result is shown in a 3d plot in figure \ref{fig2:ap_mm7_pb1} and a 2d plot for the X-Y plane in figure \ref{fig3:ap_mm7_pb1}. As can be seen in the two plots the two antennas creates a directional antenna.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=11cm]{figures/two_dipoles_lambda_4.eps}
+  \caption{3D-Plot showing the directional properties when the dipoles have a distance of $\frac{\lambda}{4}$}
+  \label{fig2:ap_mm7_pb1}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=11cm]{figures/two_dipoles_lambda_4_xyplot.eps}
+  \caption{2D-Plot showing the directional properties when the dipoles have a distance of $\frac{\lambda}{4}$}
+  \label{fig3:ap_mm7_pb1}
+\end{figure}
+
+If the two antennas is placed with a distance of $d=\frac{\lambda}{2}$ the two array should create what is called end-fire \citep[Sec. 6.3.2]{lit:AT}. This has also been simulated and the result can be seen in the 3d-plot in figure \ref{fig4:ap_mm7_pb1} and a 2d plot for the X-Y plane in figure \ref{fig5:ap_mm7_pb1}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=11cm]{figures/two_dipoles_lambda_2.eps}
+  \caption{3D-Plot showing the directional properties when the dipoles have a distance of $\frac{\lambda}{2}$}
+  \label{fig4:ap_mm7_pb1}
+\end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=11cm]{figures/two_dipoles_lambda_2_xyplot.eps}
+  \caption{2D-Plot showing the directional properties when the dipoles have a distance of $\frac{\lambda}{2}$}
+  \label{fig5:ap_mm7_pb1}
+\end{figure}
