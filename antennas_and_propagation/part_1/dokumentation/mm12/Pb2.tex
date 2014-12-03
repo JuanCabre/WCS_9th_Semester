@@ -1,6 +1,57 @@
 \section{Problem 2 - Plotting}
 \textit{ Plot the magnitude and the phase for the reflection and transmission coefficients as a function of the incidence angle for both vertical and horizontal polarization, assuming that:}\\
 
-$eps_r=15$, $sigma=0.12Mhos$, $f=[1,4,100]MHz$\\
+$\varepsilon_r=15$, $\sigma=0.12$ Mhos $->$ Simens, $f=[1,4,100]$ MHz\\
 
-SOMETHING NICE...
+For vacuum the permittivity is defined to be:
+\begin{flalign}
+&& \varepsilon_0 \triangleq& \: \frac{1}{c^2 \, \mu_0}  &[\SIf{}{\farad\per\meter}]& \\
+&& 				 \approx& \: 8.8541878176... \cdot 10^{-12}  &[\SIf{}{\farad\per\meter}]& 
+\end{flalign}
+where $\varepsilon_0$ is the permittivity in vacuum, $c$ is the speed of light in vacuum defined to \SIf{299792458}{\meter\per\second} and $\mu_0$ is the vacuum permeability also known as the permeability of free space given as:
+\begin{flalign}
+&& \mu_0 \triangleq& \: 4 \pi \cdot 10^{-7}  &[\SIf{}{\henry\per\meter}]& \\
+&& 		\approx & \: 1.2566370614... \cdot 10^{-6}  &[\SIf{}{\henry\per\meter}]& 
+\end{flalign}
+
+The permittivity ($\varepsilon$) for a specific material is given from the relative permittivity ($\varepsilon_r$) as:
+\begin{flalign}
+&& \varepsilon \: = \: \varepsilon_r \cdot \varepsilon_0  && 
+\end{flalign}
+
+The complex permittivity is given by:
+\begin{flalign}
+&& \varepsilon' =& \: \varepsilon + \frac{\sigma}{j\,\omega} &&
+\end{flalign}
+where $\sigma$ is the conductivity and $\omega$ is the angular frequency which could be replaced by $2\pi \, f_c$, where $f_c$ is the carrier frequency. \\
+
+Now we want to use this for calculating the reflection ($\Gamma$) and transmission ($T$) coefficients. These are related to the orientation of the fields of the incident wave. Due to this two sets of equations is needed, one for both horizontal (H), E field parallel to the plane, and one for vertical (V), H field parallel to the plane. The coefficients for the two orientations is given as follows:
+\begin{flalign}
+&& \Gamma_{H} =& \frac{E_r}{E_i}\: = \:\frac{\cos\left(\theta_i\right)-\sqrt{\frac{\varepsilon_2}{\varepsilon_1}-\sin^2\left(\theta_i\right)}}{\cos\left(\theta_i\right)+\sqrt{\frac{\varepsilon_2}{\varepsilon_1}-\sin^2\left(\theta_i\right)}} && \\
+&& T_{H} =& \frac{E_t}{E_i} \: = \:\frac{2\,\cos\left(\theta_i\right)}{\cos\left(\theta_i\right)+\sqrt{\frac{\varepsilon_2}{\varepsilon_1}-\sin^2\left(\theta_i\right)}} && \\
+&& \Gamma_{V} =& \frac{E_r}{E_i}\: = \: \frac{\frac{\varepsilon_2}{\varepsilon_1}\,\cos\left(\theta_i\right)-\sqrt{\frac{\varepsilon_2}{\varepsilon_1}-\sin^2\left(\theta_i\right)}}{\frac{\varepsilon_2}{\varepsilon_1}\,\cos\left(\theta_i\right)+\sqrt{\frac{\varepsilon_2}{\varepsilon_1}-\sin^2\left(\theta_i\right)}}&& \\
+&& T_{V} =& \frac{E_t}{E_i} \: = \:  \left(1-R_v\right)\,\frac{\cos\left(\theta_i\right)}{\cos\left(\theta_t\right)} &&
+\end{flalign} 
+where $\varepsilon_1$ and $\varepsilon_2$ is given for the two materials, $\theta_i$ is the incident angle and $\theta_t$ is the transmitted angle. The transmitted angel can be found using the wave number for the two materials as shown here:
+\begin{flalign}
+&& \theta_t =& \frac{k_1}{k_2}\,\sin\left(\theta_r\right) &&\\
+&& k =& \frac{2\pi}{\lambda} &&\\
+&& \lambda =& \frac{c}{f} &&\\
+&& c =& \frac{1}{\sqrt{\varepsilon\,\mu}} &&
+\end{flalign} 
+where $k_1$ and $k_2$ is given or can be calculated for the two materials as shown. $\theta_r$ is the reflected angle, $\lambda$ is the wavelength and $c$ is the speed of light. $\mu$ it the permeability which for non magnetic materials is approximated by $\mu_0=4\pi\cdot10^{-7}$.\\
+
+For this exercise one of the materials is given and it is chosen to use air (free space) as the other. The resulting plots using the formulations presented here is shown in \figref{fig:HorizontalPol_1}, \figref{fig:HorizontalPol_2}, \figref{fig:VerticalPol_1} and \figref{fig:VerticalPol_2}.
+
+\fig[keepaspectratio=true,width=13cm]{HorizontalPol_1.eps}{Reflection coefficients for horizontal polarization}{fig:HorizontalPol_1}
+
+\fig[keepaspectratio=true,width=13cm]{HorizontalPol_2.eps}{Transmission coefficients for horizontal polarization}{fig:HorizontalPol_2}
+
+\fig[keepaspectratio=true,width=13cm]{VerticalPol_1.eps}{Reflection coefficients for vertical polarization}{fig:VerticalPol_1}
+
+\fig[keepaspectratio=true,width=13cm]{VerticalPol_2.eps}{Transmission coefficients for vertical polarization}{fig:VerticalPol_2}
+
+
+
+
+ 
