@@ -17,7 +17,7 @@ eps=0.01; % acceptable field error pertubation.. look out , too small blows up a
 h_screen=5;
 %% choose angle of incidence, start w 0
 alpha=(0/360)*2*pi; % in radians
-r_tx=10; % transmitter/source speration to 1st screen edge
+r_tx=100000; % transmitter/source speration to 1st screen edge
 E0=10; %start field strength
 
 N=2; %last screen
@@ -50,10 +50,10 @@ H= (h_screen + tan(alpha)*r_tx) + red_zone;
 % Distance from source
 r(1:ny)= sqrt( (H -[1:ny].*delta_y).^2 + (r_tx)^2);
 % Initial Field
-E(1,:)=1./(r.^0.5) .* exp(-i*k.*r);
-% E(1,:)=1;
+ E(1,:)=1./(r.^0.5) .* exp(-i*k.*r);
+%E(1,:)=1;
 
-plot(abs(E(1,:)),'-b');
+% plot(abs(E(1,:)),'-b');
 hold on; grid on
 
 %3 condition array before FFT.. what do you do here?
@@ -73,10 +73,17 @@ E(1,:)=fft(E(1,:),ny);
 
 
 %5 propagator
-w_prop=exp(-((ky.^2-k.^2).^0.5) * delta_x); % why not as in paper : ky^2<=k^2 vs ky^2>k^2 ???
+w_prop_old=exp(-((ky.^2-k.^2).^0.5) * delta_x); % why not as in paper : ky^2<=k^2 vs ky^2>k^2 ???
+for l=1:length(ky)
+    if ky(l)^2<=k^2
+        w_prop(l)=exp(-1i*((-ky(l)^2+k.^2).^0.5) * delta_x);
+    else
+        w_prop(l)=exp(-1*((-k.^2+ky(l)^2).^0.5) * delta_x);
+    end
+end
 
 %6 multiply and inverse FFT
-E(2,:)=ifft(w_prop.*E(1,:),ny);
+E(2,:)=ifft((conj(w_prop)).*((E(1,:))),ny);
 
 
 %7 extract and plot results at position of last screen
@@ -85,15 +92,25 @@ plot(abs(E(2,:)),'-m')
 
 %% map to total field dependency for 'true life' launched spherical  wave
 
-plot(abs(E(2,:)),'-c')
+plot(abs(E(2,:)),'-k')
 
 1/delta_y
-plot([red_zone/delta_y,red_zone/delta_y],[0,0.4],'k')
+% plot([red_zone/delta_y,red_zone/delta_y],[0,0.4],'k')
 
 %what do observe wrt expected diffraction field?? - what does it indicate
 %we might have to do?
 
 hold off
+
+figure
+plot(phase(w_prop))
+hold on
+plot(phase(w_prop_old))
+
+figure
+plot(abs(w_prop))
+hold on
+plot(abs(w_prop_old))
 
 
 %8 when this works (try differnt alpha and r_tx) .. try to to one more
