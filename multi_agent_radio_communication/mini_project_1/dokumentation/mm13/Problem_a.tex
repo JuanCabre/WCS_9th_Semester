@@ -23,4 +23,40 @@
 
 \textit{How many cycles did it take to identify all unique ID's? (write down the execution results of each step in the process)}\\
 
-SOMETHING
+The ID from the names 
+\ptable{| c | c|c |c |}{ %
+Person & Tag & ID & ID hex \\\hline
+Maria & MARI &    01 00 10 01 & 0x44 \\\hline
+Djam & DJAM &     00 01 00 01 & 0x11 \\\hline
+Jesper & JESP &   01 00 10 10 & 0x4A \\\hline
+Fuentes & FUEN &  00 10 00 01 & 0x21 \\\hline
+Anders & ANDE &   00 01 00 00& 0x10 \\\hline
+Johannes & JOHA & 01 10 01 00 & 0x64 \\\hline
+}{ID table for all persons}{tab1:mm13_prob_a}
+
+First the reader sends 0xFF and get responses from everyone to identify where the problems lays. The response will sum up so if everyone answer with 0 the sum will be 0, if everyone 1 it will be 1, and everything in between will be set to X. \\
+
+\ptable{| c | c | c | c |}{ %
+Step & Request & Response & Found\\\hline
+1 & 11 11 11 11 & 0X XX XX XX &  \\\hline
+2 & 00 11 11 11 & 00 XX 00 0X &\\\hline
+3 & 00 01 11 11 & 00 01 00 0X & Found two\\\hline
+4 & 00 11 00 01 & 00 10 00 01 & Found 1 \\ \hline
+5 & 01 11 11 11 & 01 X0 XX XX & \\\hline
+6 & 01 00 11 11 & 01 00 10 XX & \\\hline
+7 & 01 00 10 01 & 01 00 10 01 & Found 1 \\\hline
+8 & 01 00 10 11 & 01 00 10 10 & Found 1 \\\hline
+9 & 01 10 11 11 & 01 10 01 00 & Found 1 \\\hline
+}{ID table for all persons}{tab2:mm13_prob_a}
+  \FloatBarrier
+\begin{description}
+ \item [Step 1] From the answer set the first unknown equal 0, get maximum half in response
+ \item [Step 2] Further reduce setting next unknown equal 0
+ \item [Step 3] From answer we know we have two tags (Djam and Anders) tell them to be quiet.
+ \item [Step 4] Found one (Fuentes) tell to be quiet.
+ \item [Step 5] Begin from step one 
+ \item [Step 6] reduce again 
+ \item [Step 7] Found one (Maria) tell to be quiet.
+ \item [Step 8] Found one (Jesper) tell to be quiet.
+ \item [Step 9] Found last one (Johannes) tell to be quiet.
+\end{description}
