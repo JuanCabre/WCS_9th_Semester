@@ -11,13 +11,13 @@ c=3*10^8;
 lambda=c/f;
 k=2*pi/lambda;
 delta_y=lambda/3 %screen aperture resolution
-delta_x=10; % screen spacing
+delta_x=100; % screen spacing
 eps=0.01; % acceptable field error pertubation.. look out , too small blows up array sizes
 %% define your height of screen
 h_screen=5;
 %% choose angle of incidence, start w 0
 alpha=(0/360)*2*pi; % in radians
-r_tx=100000; % transmitter/source speration to 1st screen edge
+r_tx=100; % transmitter/source speration to 1st screen edge
 E0=10; %start field strength
 
 N=2; %last screen
@@ -53,7 +53,7 @@ r(1:ny)= sqrt( (H -[1:ny].*delta_y).^2 + (r_tx)^2);
  E(1,:)=1./(r.^0.5) .* exp(-i*k.*r);
 %E(1,:)=1;
 
-% plot(abs(E(1,:)),'-b');
+plot(abs(E(1,:)),'-b');
 hold on; grid on
 
 %3 condition array before FFT.. what do you do here?
@@ -73,7 +73,10 @@ E(1,:)=fft(E(1,:),ny);
 
 
 %5 propagator
+% Propagator difined by Patrick
 w_prop_old=exp(-((ky.^2-k.^2).^0.5) * delta_x); % why not as in paper : ky^2<=k^2 vs ky^2>k^2 ???
+
+% Propagator defined by the paper
 for l=1:length(ky)
     if ky(l)^2<=k^2
         w_prop(l)=exp(-1i*((-ky(l)^2+k.^2).^0.5) * delta_x);
@@ -81,18 +84,24 @@ for l=1:length(ky)
         w_prop(l)=exp(-1*((-k.^2+ky(l)^2).^0.5) * delta_x);
     end
 end
+% Both propagators provide the same results. it means that we need to
+% correct the fliping introduced by Matlab
 
 %6 multiply and inverse FFT
+% Due to the shift of the FFT implemented by Matlab, we need to conjugate
+% the propagator
 E(2,:)=ifft((conj(w_prop)).*((E(1,:))),ny);
 
 
 %7 extract and plot results at position of last screen
 %% identify index corresponiong to you angle of incidence/grazing incidence
-plot(abs(E(2,:)),'-m')
+% plot(abs(E(2,:)),'-m')
 
 %% map to total field dependency for 'true life' launched spherical  wave
 
 plot(abs(E(2,:)),'-k')
+legend('Transmited field','Truncated and neutralized field','Resulting field after the screen')
+title('Fields When rtx=100')
 
 1/delta_y
 % plot([red_zone/delta_y,red_zone/delta_y],[0,0.4],'k')

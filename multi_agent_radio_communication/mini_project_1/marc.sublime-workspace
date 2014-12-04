@@ -51,7 +51,7 @@
 			"file": "master.tex",
 			"settings":
 			{
-				"buffer_size": 3011,
+				"buffer_size": 3455,
 				"line_ending": "Unix"
 			}
 		},
@@ -60,14 +60,6 @@
 			"settings":
 			{
 				"buffer_size": 1575,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "NOTES.tex",
-			"settings":
-			{
-				"buffer_size": 6665,
 				"line_ending": "Unix"
 			}
 		}
@@ -83,6 +75,10 @@
 				"Git: Status"
 			],
 			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
 				"Build: ",
 				"Build: Build"
 			],
@@ -93,10 +89,6 @@
 			[
 				"latex",
 				"LaTeXing: Open"
-			],
-			[
-				"pack",
-				"Package Control: Install Package"
 			],
 			[
 				"cta",
@@ -213,10 +205,14 @@
 	[
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation",
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm8"
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm12"
 	],
 	"file_history":
 	[
+		"/home/juan/Dropbox/WCS_9/Antennas and Propagation/mm11/exercise_MM9_PO.m",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm12/Problem_a.tex",
+		"/home/juan/Desktop/netlogo/netlogo-5.1.0/readme.md",
+		"/home/juan/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/master_thesis/testing_bucket",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/Makefile",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm4/PbB.tex",
@@ -241,7 +237,6 @@
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/examples/tutorial/basic.cpp",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/thesis/split_code_save/wscript_build",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/basic_factory.hpp",
-		"/home/juan/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/storage_aware_encoder.hpp",
 		"/home/juan/.config/sublime-text-3/Packages/CTags/Default.sublime-keymap",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/kodo/src/kodo/object/mapped_file_source.hpp",
@@ -285,7 +280,6 @@
 		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/object/file_encoder.hpp",
 		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/shallow_symbol_storage.hpp",
 		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/src/kodo/rlnc/shallow_full_rlnc_encoder.hpp",
-		"/home/juan/Desktop/netlogo/netlogo-5.1.0/readme.md",
 		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/thesis/split_code_save/split_code_save.cpp",
 		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/examples/customize_partitioning_scheme/customize_partitioning_scheme.cpp",
 		"/home/juan/Documents/University/WCS Master Program/9th_semester/kodo/examples/encode_decode_storage/encode_decode_storage.cpp",
@@ -342,9 +336,7 @@
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/rasps_juan_test_using_gauge/source/source_gauge.cpp",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/tables-eaf062/4.1.0/src/tables/csv_format.cpp",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/tables-eaf062/4.1.0/src/tables/format.hpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/stdout_printer.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/python_printer.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/json_printer.cpp"
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/stdout_printer.cpp"
 	],
 	"find":
 	{
@@ -362,6 +354,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"and",
 			"a",
 			"swr",
 			"dic",
@@ -425,15 +418,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3011,
+						"buffer_size": 3455,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2068,
-								2068
+								1069,
+								1069
 							]
 						],
 						"settings":
@@ -441,7 +434,7 @@
 							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 714.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -474,34 +467,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "NOTES.tex",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 6665,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2007,
-								2007
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 204.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -588,7 +553,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 459.0,
+	"side_bar_width": 247.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
