@@ -4,7 +4,7 @@ close all
 % make X number of uncorrelated channels
 nr_antennas = 2:2:8;                % dont use more than 8, error on plotting due to color function.
 nr_realizations = 1000;
-SNR=100;
+SNR=170;
 
 for o = 1:length(nr_antennas);
     H=zeros(nr_antennas(o),nr_antennas(o),nr_realizations);
