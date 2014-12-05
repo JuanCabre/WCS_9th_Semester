@@ -7,8 +7,23 @@
 
 ZMCSCG stands for Zero-Mean Circulant Symmetric Complex Gaussian. \\
 
-Using multiple transmit and receive antennas will help increase the capacity of the MIMO system. This can be seen from the capacity values obtained in Matlab, where the capacity formula is $C=C+log_{2}(1+SNR \lambda ^{2})$. The channel capacity is also higly related to the correlation between transmit and receive antennas. The capacity is reduced as the correlation becomes higher. .......\\
+The "water filling" principle implies assigning different values at the transmitted power for different transmit antennas according to channel performance, in order to increase capacity. This means that as it becomes better, the channel gets more power. \\
 
-Another statistical notion of the channel capacity is the outage channel capacity. It is defined as $P_{out}(R)=Pr(C(H)<R)$. The system is said to be in outage if the decoding error probability cannot be made arbitrarily small with the transmission rate of R bps/Hz. Then, the $\epsilon$ outage channel capacity is defined as the largest possible data rate such that the outage probability in formula (19) is less than .... \\
+Using multiple transmit and receive antennas will help increase the capacity of the MIMO system. This can be seen from the capacity values obtained in Matlab, where the capacity formula is $C=C+log_{2}(1+SNR \lambda ^{2})$. The cdf plot for the obtained capacity values is shown in \figref{fig:MIMO_capacity} at 10 dB SNR.
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{MIMO_capacity.eps}
+  \caption{Capacity of a MIMO system using from 2 up to 8 antennas for 10dB SNR}
+  \label{fig:MIMO_capacity}
+\end{figure}
+As it can be seen, using higher order MIMO implies an increase in capacity. By doubling the number of antennas from 2 to 4 and from 4 to 8, there is also an increase in capacity with 10 dB. \\
 
-The maximum outage capacity can be defined as the maximum rate that can be maintained in all channel states with some probability of outage (no data transmission).
+The capacity for low SNR values(1 dB) is shown in \figref{fig:MIMO_capacity_low_SNR}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{MIMO_capacity_low_SNR.eps}
+  \caption{Capacity of a MIMO system using from 2 up to 8 antennas for 1dB SNR}
+  \label{fig:MIMO_capacity_low_SNR}
+\end{figure}
+%The channel capacity is also higly related to the correlation between transmit and receive antennas. The capacity is reduced as the correlation becomes higher.
+%The maximum outage capacity can be defined as the maximum rate that can be maintained in all channel states with some probability of outage (no data transmission).
