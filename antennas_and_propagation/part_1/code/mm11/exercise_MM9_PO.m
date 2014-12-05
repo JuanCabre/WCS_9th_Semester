@@ -11,13 +11,13 @@ c=3*10^8;
 lambda=c/f;
 k=2*pi/lambda;
 delta_y=lambda/3 %screen aperture resolution
-delta_x=100; % screen spacing
+delta_x=10; % screen spacing
 eps=0.01; % acceptable field error pertubation.. look out , too small blows up array sizes
 %% define your height of screen
 h_screen=5;
 %% choose angle of incidence, start w 0
 alpha=(0/360)*2*pi; % in radians
-r_tx=100; % transmitter/source speration to 1st screen edge
+r_tx=1000; % transmitter/source speration to 1st screen edge
 E0=10; %start field strength
 
 N=2; %last screen
@@ -34,8 +34,8 @@ ny= round(2*yc/delta_y + 6*w/delta_y + h_screen/delta_y);
 
 %1a set ky , i..e space frequency variable, what range does it have and
 %why?, what units?
-nyy=0; %try to vary this .. what happens why? .. what should it be?
-ky=(((1:ny)-nyy)/ny).*2*pi/delta_y; 
+nyy=52; %try to vary this .. what happens why? .. what should it be?
+ky=(((1:ny)-nyy)/ny).*2*pi/delta_y;
 
 red_zone= yc+3*w
 
@@ -90,7 +90,8 @@ end
 %6 multiply and inverse FFT
 % Due to the shift of the FFT implemented by Matlab, we need to conjugate
 % the propagator
-E(2,:)=ifft((conj(w_prop)).*((E(1,:))),ny);
+w_prop=circshift(w_prop,[1 -52])
+E(2,:)=ifft((w_prop).*((E(1,:))),ny);
 
 
 %7 extract and plot results at position of last screen
@@ -111,15 +112,18 @@ title('Fields When rtx=100')
 
 hold off
 
-figure
-plot(phase(w_prop))
-hold on
-plot(phase(w_prop_old))
-
-figure
-plot(abs(w_prop))
-hold on
-plot(abs(w_prop_old))
+% figure
+% % plot(phase(flip(conj(w_prop))))
+% plot(phase(w_prop))
+% 
+% hold on
+% plot(phase(E(1,:)),'r')
+% 
+% figure
+% % plot(abs(flip(conj(w_prop))))
+% plot(abs(w_prop))
+% hold on
+% plot(abs(E(1,:)),'r')
 
 
 %8 when this works (try differnt alpha and r_tx) .. try to to one more
@@ -131,9 +135,9 @@ function [Neutral] = neutraliser(y,yc,w)
 %y is array storing y coordinates
 %yc is where soft transition starts to kick in
 %factor 1/2 due to JE Berg
-   Neutral=0.5*exp(-(y-yc).^2/w^2); % for yc<y<yc+3*w
+   Neutral=exp(-(y-yc).^2/w^2); % for yc<y<yc+3*w
    Neutral=(y<=(yc+3*w)).*Neutral; % 0 above neutralising zone
-  Neutral=0.5*(y<yc)+(y>=yc).*Neutral; %(1->)1/2 below neutralising zone
+  Neutral=(y<yc)+(y>=yc).*Neutral; %(1->)1/2 below neutralising zone
   disp(length(Neutral))
  
 
