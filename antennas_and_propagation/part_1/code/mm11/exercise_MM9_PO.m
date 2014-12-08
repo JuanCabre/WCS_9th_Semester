@@ -112,18 +112,18 @@ title('Fields When rtx=100')
 
 hold off
 
-% figure
-% % plot(phase(flip(conj(w_prop))))
-% plot(phase(w_prop))
-% 
-% hold on
-% plot(phase(E(1,:)),'r')
-% 
-% figure
-% % plot(abs(flip(conj(w_prop))))
-% plot(abs(w_prop))
-% hold on
-% plot(abs(E(1,:)),'r')
+figure
+% plot(phase(flip(conj(w_prop))))
+plot(phase(w_prop))
+
+hold on
+plot(phase(E(1,:)),'r')
+
+figure
+% plot(abs(flip(conj(w_prop))))
+plot(abs(w_prop))
+hold on
+plot(abs(E(1,:)),'r')
 
 
 %8 when this works (try differnt alpha and r_tx) .. try to to one more

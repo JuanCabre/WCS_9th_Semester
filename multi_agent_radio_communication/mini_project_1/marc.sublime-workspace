@@ -56,6 +56,14 @@
 			}
 		},
 		{
+			"file": "dokumentation/mm13/Problem_1.tex",
+			"settings":
+			{
+				"buffer_size": 1763,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "dokumentation/mm8/Ex2.tex",
 			"settings":
 			{
@@ -425,8 +433,8 @@
 						"selection":
 						[
 							[
-								1069,
-								1069
+								550,
+								550
 							]
 						],
 						"settings":
@@ -442,6 +450,34 @@
 				},
 				{
 					"buffer": 1,
+					"file": "dokumentation/mm13/Problem_1.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1763,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								873,
+								873
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "dokumentation/mm8/Ex2.tex",
 					"semi_transient": false,
 					"settings":
@@ -466,7 +502,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
