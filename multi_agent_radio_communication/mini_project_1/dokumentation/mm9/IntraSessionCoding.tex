@@ -3,8 +3,7 @@
 
 \subsection{Exercise 5: Parameters }
 \textit{What is the field size and the generation size in this problem?}\\
-
-Something...
+The field size (q) is equal to 2 and the generation size is equal to 3. 
 
 \subsection{Exercise 2: Throughput With Network Coding}
 \textit{Assuming that the destination has no coded packets at the beginning, what is the probability of a linear combination not being useful? Use the following table that represents the coding coefficients ci of each original packet Pi to identify which case(s) are useful or not. Calculate the probability knowing that each case is equally likely.}\\
@@ -15,7 +14,7 @@ Something...
   \caption{}
   \label{fig:Intra_session_1}
 \end{figure}
-The probability knowing that each case is equally likely is $P=\frac{7}{8}$.\\
+The coding coefficient (0, 0, 0) is not useful because the receiver will receive all zeros. So, the probability to receive a useful packet is $P_{useful}=\frac{7}{8}$.\\
 
 \textit{Assuming that one coded packet has arrived to the destination with coding coefficients (0, 1, 1), calculate again the probability of a new incoming coded packet being useful to the receiver. Use the following table for help.}\\
 
@@ -25,7 +24,8 @@ The probability knowing that each case is equally likely is $P=\frac{7}{8}$.\\
   \caption{}
   \label{fig:Intra_session_2}
 \end{figure}
-The probability knowing that each case is equally likely is $P=\frac{6}{8}=\frac{3}{4}$.\\
+
+Since it has been received the code (0, 1, 1) the probability of having at useful packet at the receiver will be less than before: $P_{useful}=\frac{6}{8}=\frac{3}{4}$.\\
 \textit{Assuming that two coded packets have arrived to the destination with coding coefficients (0, 1, 1) and (1, 1, 0), calculate again the probability of a new incoming coded packet being useful to the receiver. Note that this corresponds to the probability of receiving the last useful coded packet before being able to decode. Use the following table for help.}\\
 
 \begin{figure}[!h]
@@ -34,8 +34,9 @@ The probability knowing that each case is equally likely is $P=\frac{6}{8}=\frac
   \caption{}
   \label{fig:Intra_session_3}
 \end{figure}
-The probability knowing that each case is equally likely is $P=\frac{4}{8}=\frac{1}{2}$.\\
+The coding (1, 0, 1) is not useful because a linear combination of the two received. So, in the case he probability of having a useful packet at the receiver is $P_{useful}=\frac{4}{8}=\frac{1}{2}$.\\
 \subsubsection{What conclusions can you derive from these results?}
 
 \subsubsection{When the generation size is larger, will the probability of receiving the last coded packet before decoding change?}
+No, because it would $\frac{1}{q}$ where q is the field size.
 
