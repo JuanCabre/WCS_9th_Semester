@@ -20,7 +20,7 @@ Subsequently the field needed to be truncated to simulate in this way the effect
 
 The resulted field after the truncation and neutralization is shown in \figref{fig:mm11_one_screen}.
 
-To calculate the field at the diffractive screen, according to the results of Berg and Holmquist, we can multiply the FFT of the incoming truncated and neutralized field by a propagator function (also defined in the $K_{y}$ domain) and then inverse Fourier transform to obtain the resulting field after the diffraction effect occurs. This propagator function in the $K_{y}$ domain appears because, in order to solve this diffraction problem one must solve the Helmholtz integral equation which for the actual geometry can be expressed as a convolution (Berg and Holmquist 1994). In \figref{fig:mm11_one_screen} one can appreciate the effect of the diffractive screen in the resulting field.
+To calculate the field at the diffractive screen, according to the results of Berg and Holmquist, we can multiply the FFT of the incoming truncated and neutralized field by a propagator function (also defined in the $K_{y}$ domain) and then inverse Fourier transform to obtain the resulting field after the diffraction effect occurs. This propagator function in the $K_{y}$ domain appears because, in order to solve this diffraction problem one must solve the Helmholtz integral equation which for the actual geometry can be expressed as a convolution (Berg and Holmquist 1994). In \figref{fig:mm11_one_screen} one can appreciate the effect of the diffractive screen in the resulting field. As it can be expected from the lecture for the input field, the field after the first screen has half the field at the screen edge height and settles with some overshoots at one. The used input field is a cylindrical wave at a long distance to the screen looking like a plane wave at the screen.
 
 
 \begin{figure}[!h]
@@ -30,4 +30,23 @@ To calculate the field at the diffractive screen, according to the results of Be
   \label{fig:mm11_one_screen}
 \end{figure}
 
-This is an iterative method, which means that once we have found the resulting field after one diffractive screen, we can use it as an input for the next screen.
+This is an iterative method, which means that once we have found the resulting field after one diffractive screen, we can use it as an input for the next screen. 
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=16cm]{mm11_two_screen_alpha_0.eps}
+  \caption{Plot showing the fields received after each screen and the incident field.}
+  \label{fig:mm11_two_screen_alpha_0}
+\end{figure}
+
+As can be seen in \figref{fig:mm11_two_screen_alpha_0}, the resulting field after the second screen does not change strongly. This is because the truncated field at the second screen has a similar structure as the one at the first screen we used as an input for the first screen diffraction, just adding under- and overshoots due to the first diffraction and having a slight slope starting at the upper edge of the second screen. 
+
+Changing the angle of the transmitter $\alpha$, the results are shown in \figref{fig:mm11_two_screen}. The resulting field is shifted a bit down towards the ground. This is because this angle can also be seen as an effective height decrease of the screen, the white region (direct, LOS) expands further downwards.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=16cm]{mm11_two_screen.eps}
+  \caption{Plot showing the fields received after each screen and the incident field.}
+  \label{fig:mm11_two_screen}
+\end{figure}
+
