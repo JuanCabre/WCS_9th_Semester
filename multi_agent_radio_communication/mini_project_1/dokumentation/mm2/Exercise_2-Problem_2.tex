@@ -18,12 +18,19 @@ Using multiple transmit and receive antennas will help increase the capacity of 
 \end{figure}
 As it can be seen, using higher order MIMO implies an increase in capacity. By doubling the number of antennas from 2 to 4 and from 4 to 8, there is also an increase in capacity with 10 dB. \\
 
-The capacity for low SNR values(1 dB) is shown in \figref{fig:MIMO_capacity_low_SNR}
+The capacity for low SNR values(5 dB) is shown in \figref{fig:MIMO_capacity_low_SNR} and for high SNR values in \figref{fig:MIMO_capacity_high_SNR}. It can be seen from the two figures that the ergodic capacity of the system is higher for high SNR values. The \SI{10}{\percent} outage capacity means that \SI{90}{\percent} of the channel realizations have guaranteed data capacity, which can also be depicted in the two CDF plots.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=10cm]{MIMO_capacity_low_SNR.eps}
-  \caption{Capacity of a MIMO system using from 2 up to 8 antennas for 1dB SNR}
+  \caption{Capacity of a MIMO system using from 2 up to 8 antennas for 5dB SNR}
   \label{fig:MIMO_capacity_low_SNR}
 \end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{MIMO_capacity_high_SNR.eps}
+  \caption{Capacity of a MIMO system using from 2 up to 8 antennas for 25dB SNR}
+  \label{fig:MIMO_capacity_high_SNR}
+\end{figure}
+
 %The channel capacity is also higly related to the correlation between transmit and receive antennas. The capacity is reduced as the correlation becomes higher.
 %The maximum outage capacity can be defined as the maximum rate that can be maintained in all channel states with some probability of outage (no data transmission).

@@ -4,7 +4,7 @@ close all
 % make X number of uncorrelated channels
 nr_antennas = 2:2:8;                % dont use more than 8, error on plotting due to color function.
 nr_realizations = 1000;
-SNR=170;
+SNR=316.23;
 
 for o = 1:length(nr_antennas);
     H=zeros(nr_antennas(o),nr_antennas(o),nr_realizations);
@@ -47,7 +47,7 @@ Percent_Axis = linspace (0 ,100 , 1000);
 plot(H1,Percent_Axis); hold on
 xlabel('Capacity [dB]')
 ylabel('CDF (%)')
-title('CDF data plot')
+title('CDF data plot for the Capacity')
 legend(num2str(nr_antennas'))
 
 
@@ -56,5 +56,5 @@ Percent_Axis = linspace (0 ,100 , 1000);
 plot(H2,Percent_Axis)
 xlabel('\lambda^2 [dB]')
 ylabel('CDF (%)')
-title('CDF data plot')
+title('CDF data plot for the Capacity')
 legend(num2str(nr_antennas'))
