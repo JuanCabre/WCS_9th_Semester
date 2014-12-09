@@ -37,7 +37,7 @@ ny= round(2*yc/delta_y + 6*w/delta_y + h_screen/delta_y);
 nyy=52; %try to vary this .. what happens why? .. what should it be?
 ky=(((1:ny)-nyy)/ny).*2*pi/delta_y;
 
-red_zone= yc+3*w
+red_zone= yc+3*w;
 
 %2 initiate arrays
 E(1,:)=zeros(size(ky));
@@ -93,6 +93,16 @@ end
 w_prop=circshift(w_prop,[1 -52])
 E(2,:)=ifft((w_prop).*((E(1,:))),ny);
 
+% % % % % % Second screen % % % % % % % % % % % % % % % % % % % % 
+E(3,:)=E(2,:);
+% Truncate field in the second screen
+E(3,1:round(h_screen/delta_y + red_zone/delta_y))=0;
+E(3,end+1-length(y):end)=E(3,end+1-length(y):end).*neutraliser(y,yc,w);
+E(3,:)=fft(E(3,:),ny);
+E(4,:)=ifft((w_prop).*((E(3,:))),ny);
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
 
 %7 extract and plot results at position of last screen
 %% identify index corresponiong to you angle of incidence/grazing incidence
@@ -106,6 +116,7 @@ title('Fields when rtx=1000, delta_{x}=10','FontSize',15)
 
 1/delta_y
 plot([red_zone/delta_y,red_zone/delta_y],[0,0.02],'k')
+plot(abs(E(4,:)),'c');
 
 %what do observe wrt expected diffraction field?? - what does it indicate
 %we might have to do?
@@ -117,17 +128,20 @@ figure
 plot(phase(w_prop))
 
 hold on
-plot(phase(E(1,:)),'r')
+plot(phase(E(4,:)),'r')
 
 figure
 % plot(abs(flip(conj(w_prop))))
 plot(abs(w_prop))
 hold on
-plot(abs(E(1,:)),'r')
+plot(abs(E(4,:)),'r')
 
 
 %8 when this works (try differnt alpha and r_tx) .. try to to one more
 %screen (and try to vary screen heights..1st all same , then different)
+figure(10)
+% plot(abs(E(3,:))); hold on
+plot(abs(E(4,:)),'r');
 
  
 function [Neutral] = neutraliser(y,yc,w)
