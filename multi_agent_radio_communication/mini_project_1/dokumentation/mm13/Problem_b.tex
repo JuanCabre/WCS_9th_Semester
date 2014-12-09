@@ -1,6 +1,35 @@
 \section{Problem B}
 \textit{Anti collision - Aloha type exercise, As in A: but now try w one or more Aloha type protocols}\\
 
-SOMETHING...
+For this example we've considered the Slotted Aloha Protocol. We've done 2 different simulations, one with 3 time slots and another one with 4 slots.
+\\
+\\
 
+\textbf{3 Slots}
 
+\ptable{| c | c | c | c | c | c | c |}{ %
+Person & Maria & Djam & Jesper & Pablo & Anders & Marika \\\hline
+1st Iteration & Slot 3 & Slot 3 & \underline{\textbf{Slot 1}} & Slot 2 & Slot 3 & Slot 2 \\\hline
+2nd Iteration & Slot 2 & \underline{\textbf{Slot 1}} & -- & Slot 2 & Slot 2 & Slot 2 \\\hline
+3rd Iteration & Slot 1 & -- & -- & Slot 1 & Slot 3 & Slot 3 \\\hline
+4th Iteration & \underline{\textbf{Slot 1}} & -- & -- & Slot 2 & Slot 2 & Slot 2 \\\hline
+5th Iteration & -- & -- & -- & Slot 2 & Slot 2 & \underline{\textbf{Slot 1}} \\\hline
+6th Iteration & -- & -- & -- & \underline{\textbf{Slot 3}} & \underline{\textbf{Slot 1}} & -- \\\hline
+}{ID table for all persons}{tab1:mm13_prob_b}
+
+\textbf{4 Slots}
+\ptable{| c | c | c | c | c | c | c |}{ %
+Person & Maria & Djam & Jesper & Pablo & Anders & Marika \\\hline
+1st Iteration & Slot 2 & Slot 1 & Slot 1 & Slot 2 & \underline{\textbf{Slot 3}} & \underline{\textbf{Slot 4}} \\\hline
+2nd Iteration & \underline{\textbf{Slot 2}} & Slot 4 & Slot 4 & Slot 4 & -- & -- \\\hline
+3rd Iteration & -- & Slot 2 & Slot 2 & \underline{\textbf{Slot 1}} & -- & -- \\\hline
+4th Iteration & -- & \underline{\textbf{Slot 3}} & \underline{\textbf{Slot 2}} & -- & -- & -- \\\hline
+}{ID table for all persons}{tab1:mm13_prob_b2}
+
+To complete statistically this part, we ran multiples simulations with the same parameters to obtain a more reliable results:
+
+\ptable{| c | c | c | c |}{ %
+Nº Slots Considered & 3 Slots & 4 Slots & 5 Slots \\\hline
+Average Iterations Needed & 5.5 & 3.86 & 3.17 \\\hline
+Average total slots & 16.5 & 15.44 & 15.85 \\\hline
+}{ID table for all persons}{tab1:mm13_prob_b2}
