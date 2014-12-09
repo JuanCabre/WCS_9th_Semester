@@ -9,16 +9,32 @@ Something...
 \subsection{Exercise 2: Throughput With Network Coding}
 \textit{Assuming that the destination has no coded packets at the beginning, what is the probability of a linear combination not being useful? Use the following table that represents the coding coefficients ci of each original packet Pi to identify which case(s) are useful or not. Calculate the probability knowing that each case is equally likely.}\\
 
-Add fig...\\
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=8cm]{Intra_session_1.eps}
+  \caption{}
+  \label{fig:Intra_session_1}
+\end{figure}
+The probability knowing that each case is equally likely is $P=\frac{7}{8}$.\\
 
 \textit{Assuming that one coded packet has arrived to the destination with coding coefficients (0, 1, 1), calculate again the probability of a new incoming coded packet being useful to the receiver. Use the following table for help.}\\
 
-Add fig...\\
-
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=8cm]{Intra_session_2.eps}
+  \caption{}
+  \label{fig:Intra_session_2}
+\end{figure}
+The probability knowing that each case is equally likely is $P=\frac{6}{8}=\frac{3}{4}$.\\
 \textit{Assuming that two coded packets have arrived to the destination with coding coefficients (0, 1, 1) and (1, 1, 0), calculate again the probability of a new incoming coded packet being useful to the receiver. Note that this corresponds to the probability of receiving the last useful coded packet before being able to decode. Use the following table for help.}\\
 
-Add fig...\\
-
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=8cm]{Intra_session_3.eps}
+  \caption{}
+  \label{fig:Intra_session_3}
+\end{figure}
+The probability knowing that each case is equally likely is $P=\frac{4}{8}=\frac{1}{2}$.\\
 \subsubsection{What conclusions can you derive from these results?}
 
 \subsubsection{When the generation size is larger, will the probability of receiving the last coded packet before decoding change?}
