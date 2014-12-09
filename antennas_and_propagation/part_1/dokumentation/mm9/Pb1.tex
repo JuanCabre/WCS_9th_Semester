@@ -13,17 +13,53 @@ The scattering layout being implemented is two sets of scatterers, each set form
 \subsection{a)}
 \textit{Find link correlations (complex, envelope or power. What do you choose/why?)}\\
 
-The correlation of envelope and power due to it is easy to treat and in most cases it is sufficient
+The correlation of envelope and power due to it is easy to treat and in most cases it is sufficient.
+In \figref{fig:Envelope} the correlation between h11 and h32 has been calculated, and is shown in the plot.
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{envelope.eps}
+  \caption{Envelope of four links, and the correlation between h11 and h32}
+  \label{fig:Envelope}
+\end{figure}
 
 \subsection{b)}
 \textit{Look at eigen distribution, what is seen?}\\
 
+The eigen distribution is sown in the following for the two "extremes". The first, where there is a very good mixing of the paths and we will see all four modes. And the second, where the keyhole effect can bee seen. These two have been produced by different "engines" in the code to produce the specific outcomes. The two engine $h_1$ and $h_2$ can be seen in the following:
+%insert code
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{modes_mixed.eps}
+  \caption{The eigenmodes in mixed environment, all four modes possible}
+  \label{fig:modes_mixed}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{modes_keyhole.eps}
+  \caption{The eigenmodes in "keyhole" effect, only one mode possible}
+  \label{fig:modes_mixed}
+\end{figure}
 
 \subsection{c)}
 \textit{What is envelope distribution of link signals (in dB , why?)? (look at 10\% level vs mean, why?)}\\
 
-Sometimes Rayleigh, sometimes Rayleigh-Rayleigh BUT WE ARE NOT GETTING THIS!!! WHYYY 
+The first "engine" $h_1$, in the code will produce the single Rayleigh, while the second "engine", $h_2$, is used for the dual Rayleigh.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{cdf_rayleigh.eps}
+  \caption{Single-Rayleigh from the $h_1$ engine in the code}
+  \label{fig:modes_mixed}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=10cm]{cdf_double_rayleigh.eps}
+  \caption{Double-Rayleigh from the $h_2$ engine in the code}
+  \label{fig:modes_mixed}
+\end{figure}
 
 \subsection{d)}
 \textit{Doppler spectrum of a link signal looks like??}\\
@@ -33,18 +69,18 @@ The Doppler spectrum of a link signal has the classical bathtub shape when only 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=10cm]{singledopp.eps}
-  \caption{Doppler spectrum of a link when only one array is moving. ``Bathtub shape'' can be appreciated.}
+  \caption{Doppler spectrum of a link when only one array is moving. "Bathtub shape" can be appreciated.}
   \label{fig:singledopp}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=10cm]{dualdopp.eps}
-  \caption{Doppler spectrum of a link when only one array is moving. ``Tent shape'' can be appreciated.}
+  \caption{Doppler spectrum of a link when both array is moving. "Tent shape" can be appreciated.}
   \label{fig:dualdopp}
 \end{figure}
 
 \subsection{e)}
 \textit{Identify channel type (based on sketch and/or eigen distribution etc)}\\
 
-Something Nice. 
+As already have been seen through these exercises, we have identified both "mixed" and "tubes" channel types. The two extremes have been demonstrated in the Doppler spectrums and the plot of the eigenmodes.
