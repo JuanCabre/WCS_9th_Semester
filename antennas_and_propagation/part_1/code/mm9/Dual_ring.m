@@ -25,11 +25,11 @@ d=0.3*lambda; %antenna spacing in ULA
 radius1=100*lambda;
 radius2=radius1;
 
-scatter_separation= 3*lambda; % between two scatter rings
+scatter_separation= 300*lambda; % between two scatter rings
 
 x_step = 300;
 r1 = linspace(0,20,x_step)*lambda; % movement of one array
-r2 = zeros(1,x_step);
+r2 = r1;%zeros(1,x_step);
 
 no_scatter = 50;
 
@@ -59,12 +59,12 @@ for x=1:length(r1);  % move one array
     for n=1:no_tx;   % tx anetnnas    centerd in scatter1
         for m=1:no_rx; % rx anetnnas, centerd in scatter2
 
-           h_2(n,m,x)=sum(exp(j*(r1(x)+(n-half_tx)*d)*k.*cos(angle(scatter1_xy))).*scatter1.*...
+           h(n,m,x)=sum(exp(j*(r1(x)+(n-half_tx)*d)*k.*cos(angle(scatter1_xy))).*scatter1.*...
                         exp(j*(r2(x)+(m-half_tx)*d)*k*cos(angle(scatter2_xy-scatter_separation))).*scatter2.*...
                         exp(j*cos(angle(scatter2_xy-scatter1_xy)))); 
                     
         % sum all scatteres to get total link signal            
-           h(n,m,x)=sum((sum(exp(j*(r2(x)+(m-half_tx)*d)*k*cos(angle(scatter2_xy-scatter_separation))).*scatter2.*...
+           h_2(n,m,x)=sum((sum(exp(j*(r2(x)+(m-half_tx)*d)*k*cos(angle(scatter2_xy-scatter_separation))).*scatter2.*...
                         exp(j*cos(angle(scatter2_xy-scatter1_xy)))))*exp(j*(r1(x)+(n-half_tx)*d)*k.*cos(angle(scatter1_xy))).*scatter1);
       
          % Doppler at Tx  
@@ -190,5 +190,3 @@ ylabel('Y [m]')
 %     for k = 1:50
 %         angle(scatter1_xy(m,k)-scatter2_xy)
 
-cos(angle(scatter2_xy-scatter1_xy))
-%angle(scatter1_xy-scatter2_xy)
