@@ -56,18 +56,18 @@
 			}
 		},
 		{
-			"file": "dokumentation/mm13/Problem_1.tex",
+			"file": "dokumentation/mm11/Problem_1.tex",
 			"settings":
 			{
-				"buffer_size": 1763,
+				"buffer_size": 19,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "dokumentation/mm8/Ex2.tex",
+			"file": "dokumentation/mm12/Problem_b.tex",
 			"settings":
 			{
-				"buffer_size": 1575,
+				"buffer_size": 2721,
 				"line_ending": "Unix"
 			}
 		}
@@ -213,10 +213,14 @@
 	[
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm10",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm11",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm12"
 	],
 	"file_history":
 	[
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm8/Ex2.tex",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm13/Problem_1.tex",
 		"/home/juan/Dropbox/WCS_9/Antennas and Propagation/mm11/exercise_MM9_PO.m",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/multi_agent_radio_communication/mini_project_1/dokumentation/mm12/Problem_a.tex",
 		"/home/juan/Desktop/netlogo/netlogo-5.1.0/readme.md",
@@ -342,9 +346,7 @@
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/scripts/juan_leaner_and_meaner/on_dev_rasp_measure_power_script.sh",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/scripts/juan_leaner_and_meaner/s3_measure_power_script.sh",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/rasps_juan_test_using_gauge/source/source_gauge.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/tables-eaf062/4.1.0/src/tables/csv_format.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/tables-eaf062/4.1.0/src/tables/format.hpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/stdout_printer.cpp"
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/tables-eaf062/4.1.0/src/tables/csv_format.cpp"
 	],
 	"find":
 	{
@@ -417,7 +419,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -445,24 +447,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "dokumentation/mm13/Problem_1.tex",
+					"file": "dokumentation/mm11/Problem_1.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1763,
+						"buffer_size": 19,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								873,
-								873
+								19,
+								19
 							]
 						],
 						"settings":
@@ -473,29 +475,28 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "dokumentation/mm8/Ex2.tex",
-					"semi_transient": false,
+					"file": "dokumentation/mm12/Problem_b.tex",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1575,
+						"buffer_size": 2721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1222,
-								1222
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"spell_check": true,
 							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,

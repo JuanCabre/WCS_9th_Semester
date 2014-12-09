@@ -102,10 +102,10 @@ E(2,:)=ifft((w_prop).*((E(1,:))),ny);
 
 plot(abs(E(2,:)),'-k')
 legend('Transmited field','Truncated and neutralized field','Resulting field after the screen')
-title('Fields When rtx=100')
+title('Fields when rtx=1000, delta_{x}=10','FontSize',15)
 
 1/delta_y
-% plot([red_zone/delta_y,red_zone/delta_y],[0,0.4],'k')
+plot([red_zone/delta_y,red_zone/delta_y],[0,0.02],'k')
 
 %what do observe wrt expected diffraction field?? - what does it indicate
 %we might have to do?
