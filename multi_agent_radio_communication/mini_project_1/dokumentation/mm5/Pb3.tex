@@ -12,7 +12,8 @@
  \end{description}
 Assume that the probability of packet error due to the noise is $P_{e}$. Assume that each packet has D bits and the packet duration is equal to the slot durations T. There is only one terminal in the system which communicates with a Base station, such that there are no collisions in the system and a packet can be lost only due to the noise. A new packet arrives to terminal whenever the previous packet has been transmitted correctly.}
 \subsection {a)}
-\textit{What is the maximal throughput that the terminal can achieve?}
+\textit{What is the maximal throughput that the terminal can achieve?}\\
+
 The terminal transmit the packet with an error of $P_{e}$ and retransmit it with probability q. The probability that the retransmitting is failing is the probability that it retransmit multiplied with the probability of fail. $P(retransmit|fail) = P_{e} \cdot q$ So the probability that the terminal successfully transmit the packet is $P(succes) = 1 - q\cdot P_{e}$. 
 
 The maximum throughput is then given by
@@ -21,8 +22,9 @@ The maximum throughput is then given by
 \end{flalign}
 
 \subsection {b)}
-\textit{What is the throughput that the terminal can achieve if it turns off the ALOHA protocol and retransmits the packet until successful transmission?} 
-If it transmit right away q is set equal 1. 
+\textit{What is the throughput that the terminal can achieve if it turns off the ALOHA protocol and retransmits the packet until successful transmission?}\\
+
+If it transmits right away q is set equal to 1. 
 \begin{flalign}
  && G_{noAloha} = & (1-P_{e})\frac{D}{T_{s}} &
 \end{flalign}

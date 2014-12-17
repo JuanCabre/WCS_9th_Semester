@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"end",
+				"end{flalign}	master.tex"
+			],
+			[
 				"figu",
 				"begin{figure*}	latex-document"
 			],
@@ -48,10 +52,18 @@
 	"buffers":
 	[
 		{
-			"file": "part1_aap.sublime-project",
+			"file": "master.tex",
 			"settings":
 			{
-				"buffer_size": 134,
+				"buffer_size": 2808,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dokumentation/mm11/Pb1.tex",
+			"settings":
+			{
+				"buffer_size": 4119,
 				"line_ending": "Unix"
 			}
 		}
@@ -196,12 +208,16 @@
 	"expanded_folders":
 	[
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/code",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10",
-		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm6"
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm11"
 	],
 	"file_history":
 	[
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm11/Pb1.tex",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm12/Pb1.tex",
+		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/part1_aap.sublime-project",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/dokumentation/mm10/Pb1.tex",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/chres_kodo/juan_test_using_gauge/destination/plot_avrg_packet_vs_coefficient.py",
 		"/home/juan/Documents/University/WCS_Master_Program/9th_semester/WCS_9th_Semester/antennas_and_propagation/part_1/master.fdb_latexmk",
@@ -326,14 +342,11 @@
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/csv_printer.hpp",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/deps/gauge-01d1a5/7.1.0/src/gauge/csv_printer.cpp",
 		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/juan_test_using_gauge/destination/destination_gauge.cpp",
-		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/scripts/juan_leaner_and_meaner/pc_measure_power_script.sh",
-		"/home/juan/Desktop/playing.cpp",
-		"/etc/systemd/logind.conf",
-		"/home/juan/.bash_history"
+		"/home/juan/Documents/University/Student_Helper/chres_tunable_sparse/kodo/scripts/juan_leaner_and_meaner/pc_measure_power_script.sh"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -347,6 +360,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"difractive",
 			" \n",
 			"build",
 			"semilogy",
@@ -403,31 +417,58 @@
 			[
 				{
 					"buffer": 0,
-					"file": "part1_aap.sublime-project",
+					"file": "master.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 134,
+						"buffer_size": 2808,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								73,
-								73
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 204.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "dokumentation/mm11/Pb1.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

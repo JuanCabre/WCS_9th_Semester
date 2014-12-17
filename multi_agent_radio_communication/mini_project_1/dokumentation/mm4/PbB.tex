@@ -4,9 +4,10 @@
 \subsection{Question 1}
 \textit{Now consider a 120 degree sector serviced with above antenna pattern in a SDMA operation (i.e. identical but offset patterns for N users). Consider the system to have power control so all users have same power received at the BS when the individual users antenna pattern maximum is pointed to their respective direction. Assume only a single path from user to BS (like exercise A1))}
 
-\subsubsection{a and b) For a target C/I=9dB (spatial interference), what is the required user-to-interferer offset angle (to left and right)?. If C/I is 15 dB what then? and how many spatially separated users can be served in the sector, under the conditions mentioned in a)?. I.e. what is N=?}
+\subsubsection{a and b)}
+\textit{For a target C/I=9dB (spatial interference), what is the required user-to-interferer offset angle (to left and right)?. If C/I is 15 dB what then? and how many spatially separated users can be served in the sector, under the conditions mentioned in a)?. I.e. what is N=?}\\
 
-The first approach made was trying to find the angle for which the radiation pattern presented a 12dB difference to its maximum. By doing this it was assured that when we added other users shifted to the left and to the right with the found angle, we would achieve a CIR of at least 9dB.
+The first approach made was trying to find the angle for which the radiation pattern presented a 12dB difference to its maximum. By doing this it was assured that when we added other users shifted to the left and to the right with the found angle, we would achieve a CIR of at least 9dB.\\
 
 The first step was find the angle for which this 12dB difference was satisfied for the side lobe. In this way we are sure that we would have no more than 2 other users that are interfering (one to the left and one to he right). We found such angle was \SI{56}{\degree}. In \figref{fig:offset56deg} the setting is shown. It can be seen that 3 users can share the medium.
 
@@ -74,7 +75,7 @@ The \figref{fig:offset_angles} is shown as a reference to show all the mentioned
 \end{figure}
 
 \subsection{Question 2}
-\textit{Exchange the single path connections in exercise 1, to an angular uniform distribution over 20degree span and with a power density of 1 (similar to Cs in exercise A2). What changes result in the questions 1a) and 1b)?}
+\textit{Exchange the single path connections in exercise 1, to an angular uniform distribution over 20degree span and with a power density of 1 (similar to Cs in exercise A2). What changes result in the questions 1a) and 1b)?}\\
 
 For this problem a similar approach than the made in the previous section was done, however, the pattern used for the calculations was the equivalent radiation pattern show in \figref{fig:equiv_rad_pat_mm4} which was the result of the convolution of the original pattern and the user distributed over \SI{20}{\degree}.
 

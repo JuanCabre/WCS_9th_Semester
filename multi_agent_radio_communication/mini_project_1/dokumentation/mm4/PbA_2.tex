@@ -30,7 +30,8 @@ The effect of a distribution instead of a simple dirac can be seen in \figref{fi
 
 
 
-\subsubsection{b) and c) What is the Cs/Is of the measured responses and what direction will the response function be centered at if performing a sweep (radar scan) with the antenna on the user and on the interferer?}
+\subsubsection{b) and c)}
+\textit{What is the Cs/Is of the measured responses and what direction will the response function be centered at if performing a sweep (radar scan) with the antenna on the user and on the interferer?}\\
 
 This value can be computed by two different methods. One is to integrate the product of the antenna pattern and the angular distribution of the users over the whole circle as shown in \equref{eq:bruteforce}.
 
@@ -38,8 +39,8 @@ This value can be computed by two different methods. One is to integrate the pro
 &&	\frac{Cs}{Is} =& \frac{\oint C(\varphi)\cdot a(\varphi)d\varphi}{\oint I(\varphi)\cdot a(\varphi)d\varphi}	 &\label{eq:bruteforce}
 \end{flalign}
 
-Another method to compute this result is to use the azimuthal measurement response of both, the user and the interferer. In \figref{fig:dist_eff_pattern}, the graph of the $m_{C}(\varphi)$ (blue) and $m_{I}(\varphi)$ (red) are shown.
+Another method to compute this result is to use the azimuthal measurement response of both, the user and the interferer. In \figref{fig:dist_eff_pattern}, the graph of the $m_{C}(\varphi)$ (blue) and $m_{I}(\varphi)$ (red) are shown.\\
 
-Mathematically, performing a sweep (radar scan) is equivalent to find the correlation function described in \equref{eq:effective}. Due to the properties of this ``convolution'', the user (whose mean is located at 90 degrees) will be shifted $90 + 90$ degrees. As seen in \figref{fig:dist_eff_pattern}. The interferer, because of the same argument, will be shifted $60.5 + 60.5$ degrees.
+Mathematically, performing a sweep (radar scan) is equivalent to find the correlation function described in \equref{eq:effective}. Due to the properties of this ``convolution'', the user (whose mean is located at 90 degrees) will be shifted $90 + 90$ degrees. As seen in \figref{fig:dist_eff_pattern}. The interferer, because of the same argument, will be shifted $60.5 + 60.5$ degrees.\\
 
-In order to compute this result by this second method, we need to calculate the $Cs$ and the $Is$ using $m_{C}(\varphi)$ and $m_{I}(\varphi)$. This is done considering the user as a single source in $m_{C}(\varphi)$ at 180 degrees and the interferer as a single source in $m_{I}(\varphi)$ at 121 degrees. \textbf{MAYBE EXPAND THIS EXPLANATION}
+In order to compute this result by this second method, we need to calculate the $Cs$ and the $Is$ using $m_{C}(\varphi)$ and $m_{I}(\varphi)$. This is done considering the user as a single source in $m_{C}(\varphi)$ at 180 degrees and the interferer as a single source in $m_{I}(\varphi)$ at 121 degrees.
